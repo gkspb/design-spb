@@ -1,0 +1,74 @@
+.premium {
+    background-image: url("../../img/background-1.png");
+}
+.design {
+    background-image: url("../../img/background-2.png");
+}
+.process {
+    background-image: url("../../img/background-3.png");
+}
+.selection {
+    background-image: url("../../img/background-4.png");
+}
+.supervision {
+    background-image: url("../../img/background-5.png");
+}
+
+.section {
+    height: 100vh;
+    background-size: cover;
+    &__title {
+        line-height: 6.5rem;
+        color: $white;
+        font-family: Montserrat Semi Bold;
+        font-size: 5.35rem;
+        font-weight: 600;
+    }
+    &__subtitle {
+        color: $white;
+        font-family: Montserrat Medium;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2.5rem;
+    }
+    &-buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+        position: absolute;
+        bottom: 7rem;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+    &-btn {
+        width: 21.5rem;
+        border-radius: 3.5rem;
+        padding: 2rem 0;
+        color: $white;
+        font-family: Montserrat Medium;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2rem;
+    }
+    &-content{
+        position: relative;
+    }
+    &-content::before {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 300px;
+        background: $white;
+        position: absolute;
+        left: -7%;
+        top: -100%;
+    }
+}
+
+.calculate {
+    background: $black;
+}
+
+.more {
+    border: 1px solid $white;
+}

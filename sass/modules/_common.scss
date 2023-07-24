@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 359px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  html {
+    font-size: calc(10px + 10 * (100vw - 360px) / 407);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: calc(8px + 2.7 * (100vw - 768px) / 255);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  html {
+    font-size: calc(7.4px + 2 * (100vw - 1024px) / 255);
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  html {
+    font-size: calc(9px + 1 * (100vw - 1280px) / 159);
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: calc(10px + 1 * (100vw - 1440px) / 240);
+  }
+}
+
+body.open-menu {
+  overflow: hidden;
+}
+
+body.disabled {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 125rem;
+}
+
+.section-container{
+  max-width: 82rem;
+  width: 100%;
+  margin: 0 auto;
+}
