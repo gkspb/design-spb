@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design-spb</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -118,11 +119,50 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div class="section choise black-header">
+            <div class="container">
+                <div class="choise-wrapper">
+                    <div class="choise-content">
+                        <h3 class="choise__title">Выберите стиль вашего дизайна</h3>
+                        <div class="select">
+                            <p class="select__item">Минимализм</p>
+                            <p class="select__item select_active">Модерн</p>
+                            <p class="select__item">Лофт</p>
+                        </div>
+                        <button class="btn choise__btn">Рассчитать стоимость</button>
+                    </div>
+                    <div class="choise-img-wrapper">
+                        <img src="img/choise.png" alt="выбор стиля дизайна" class="choise__img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section about">
+            <div class="container">
+                <div class="about-wrapper">
+                    <h2 class="about__title">О студии «ДизайнСПБ»</h2>
+                    <p class="about__subtitle">Мы работаем со всеми стилями дизайна в Санкт-Петербурге. Для каждого проекта создаем стильный интерьер с душой и ответственностью. Проектами наших интерьеров удобно пользоваться и материалы долго сохраняют свой презентабельный вид.</p>
+                    <p class="about__subtitle">Студия Дизайн СПБ проведет замеры квартиры или дома для создания дизайн-проекта вашего идеального интерьера. В нашей команде 20 ведущих дизайнеров, которые следуют последним трендам мира и используют только продуманные решения архитектуры.</p>
+                    <p class="about__subtitle">Создаем 3D визуализацию, чтобы вы были уверены в результате, цветовой концепции и эргономики пространства.</p>
+                    <p class="about__subtitle">Проектную документацию можно смело использовать для ремонтной компании и строительства, проекты отвечают современному видению жизни и удобства</p>
+                </div>
+                <div class="questions">
+                    <h3 class="questions__title">9 Экспертов готовы ответить на ваши вопросы</h3>
+                    <p class="questions__subtitle">Узнайте стоимость дизайна за 15 минут </p>
+                    <form class="calculation">
+                        <input type="text" class="calculation__input calculation__item" placeholder="Ваше имя">
+                        <input type="text" class="calculation__input tel calculation__item" placeholder="Ваш телефон" type="tel" name="tel">
+                        <input type="submit" class="btn calculation__button calculation__item" value="Узнать стоимость">
+                    </а>
+                </div>
+            </div>
+        </div>
     </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 10;
     width: 100%;
-    padding: 5rem 2rem 0;
+    padding: 4.18rem 1.67rem 0;
     &-wrapper {
         display: flex;
         justify-content: space-between;
@@ -12,14 +12,14 @@
     &__title {
         color: $white;
         font-family: Montserrat Mediun;
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 500;
-        line-height: 2.4rem;
+        line-height: 2rem;
         text-transform: uppercase;
     }
     &__contacts {
         display: flex;
-        column-gap: 2rem;
+        column-gap: 1.67rem;
     }
     &__call {
         &-button {
