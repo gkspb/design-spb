@@ -531,6 +531,11 @@ body.disabled {
   line-height: 1.7rem;
 }
 
+.link-tel-hover {
+  color: #141414;
+  transition: 0.5s;
+}
+
 .none {
   display: none;
 }

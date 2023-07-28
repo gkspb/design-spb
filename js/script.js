@@ -162,18 +162,27 @@ let swiper4 = new Swiper(".mySwiper4", {
 //Смена картинок в разделе "Выберите стиль вашего дизайна"
 let section = document.querySelector('.choise');
 swiper4.on('slideChangeTransitionEnd', function () {
-    let activeSlideIndex = swiper4.activeIndex;
-    let backgroundImages = [
-        '../../img/loft.png',
-        '../../img/modern.png',
-        '../../img/minimalizm.png',
-        '../../img/loft.png',
-    ];
-    if (activeSlideIndex < 0) {
-        activeSlideIndex = backgroundImages.length - 1;
-    }
-    var activeBackgroundImage = backgroundImages[activeSlideIndex];
-    section.style.backgroundImage = `url(${activeBackgroundImage})`;
+	let activeSlideIndex = swiper4.activeIndex;
+	let backgroundImages = [
+		'../../img/loft.png',
+		'../../img/modern.png',
+		'../../img/minimalizm.png',
+		'../../img/loft.png',
+	];
+	if (activeSlideIndex < 0) {
+		activeSlideIndex = backgroundImages.length - 1;
+	}
+	let activeBackgroundImage = backgroundImages[activeSlideIndex];
+	section.style.backgroundImage = `url(${activeBackgroundImage})`;
 });
 
-
+const callBtn = document.querySelector('.call-btn');
+const linkTel = document.querySelector('.link-tel');
+const addClassOnHover = () => {
+	linkTel.classList.add('link-tel-hover');
+}
+const removeClassOnHover = () => {
+	linkTel.classList.remove('link-tel-hover');
+}
+callBtn.addEventListener('mouseover', addClassOnHover);
+callBtn.addEventListener('mouseout', removeClassOnHover);
