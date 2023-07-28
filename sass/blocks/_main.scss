@@ -22,8 +22,15 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    &_bottom {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
     &-swiper1 {
         text-align: center;
+        padding-bottom: 1rem;
     }
     &-swiper2 {
         text-align: center;
@@ -55,7 +62,7 @@
     &-btn {
         width: 21.5rem;
         border-radius: 3.5rem;
-        padding: 1.67rem 0; //п
+        padding: 1.67rem 0;
         color: $white;
         font-family: Montserrat Medium;
         font-size: 1.6rem;
@@ -95,24 +102,19 @@
 
 .choise {
     position: relative;
+    background-image: url("../../img/modern.png");
+    transition: background-image 0.3s ease-in;
     &-wrapper {
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
-    &__img {
-        height: 100vh;
-        width: 100%;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
     &-content {
         display: flex;
         flex-direction: column;
-        row-gap: 4rem; //поменять
+        row-gap: 4rem;
         margin-top: 6rem;
-        height: 50rem; //поменять
+        height: 50rem;
         position: relative;
         z-index: 1;
         background: white;
@@ -165,12 +167,17 @@
     }
 }
 
+.process .section-content::before {
+    top: -35%;
+}
+
 .about {
     text-align: center;
     &-wrapper {
         display: flex;
         flex-direction: column;
         row-gap: 2.5rem;
+        margin-bottom: 5rem;
     }
     &__title {
         margin-bottom: 1.67rem;
@@ -214,7 +221,6 @@
         text-align: center;
     }
 }
-
 
 .calculation {
     display: flex;
@@ -276,7 +282,7 @@
             font-weight: 500;
             line-height: 140%;
         }
-        &__img{
+        &__img {
             width: 90%;
         }
     }
@@ -344,37 +350,42 @@
 
 .btn {
     transition: 0.5s;
+    border: 1px solid $colorLessFrame;
 }
 
 .btn:hover {
-    transition: 1.5s;
+    transition: 0.5s;
     background: $white;
     color: $black;
+    border: 1px solid $lightGrey;
 }
 
-.nav__link {
+.header-text {
     transition: 0.5s;
     padding: 0.33rem;
 }
 
-.nav__link:hover {
-    transition: 1.5s;
+.header-text:hover {
+    transition: 0.5s;
     background: $white;
     color: $black;
     border-radius: 1rem;
     opacity: 0.5;
 }
 
-.consultation{
-    width: 100%;
-    padding-top: 8rem;
+.header_black:hover{
+    background: $lightGrey;
+    color: $darkGrey;
+    opacity: 0.8;
 }
 
-#section11{
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.consultation {
+    width: 100%;
+    padding: 8rem 1.67rem 0;
+}
+
+.section-swiper-wrapper {
+    position: relative;
 }
 
 .mySwiper2 .swiper-slide {
@@ -405,6 +416,7 @@
     row-gap: 1.25rem;
     border-top: 2px solid $black;
     padding-top: 1.5rem;
+    padding-left: 1rem;
 }
 
 .mySwiper .swiper-slide-thumb-active {
@@ -420,7 +432,13 @@
 }
 
 .mySwiper {
-    margin-bottom: 2rem;
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    left: 0;
+    bottom: 12%;
+    background: white;
+    opacity: 0.7;
 }
 
 .swiper {
@@ -473,7 +491,6 @@
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    // overflow: visible; убрать
     &__name {
         color: $black;
         font-family: Montserrat Meduim;
@@ -481,7 +498,7 @@
         font-weight: 500;
         line-height: 140%;
     }
-    &__subtitle{
+    &__subtitle {
         color: $black;
         font-family: Montserrat Regular;
         font-size: 1.5rem;
@@ -533,40 +550,59 @@
     font-size: 1rem;
     color: $black;
     opacity: 1;
-    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid $lightGrey;
+    background: $white;
+    content: "";
 }
 
 .swiper-pagination-bullet-active {
-    color: $white;
-    background: #007aff;
+    background: $black;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: $black;
+    position: absolute;
+    top: 106.5%;
+}
+
+.swiper-button-next {
+    left: 55.5%;
+}
+
+.swiper-button-prev {
+    left: 42%;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 2rem;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom {
-    top: 93%;
+    top: 105%;
 }
 
-.header_black{
+.swiper-pagination-bullet {
+    margin: 0 0.84rem !important;
+}
+
+.header_black {
     color: $black;
     transition: 1s;
-} 
-
-.swiper-slide .middle-slide {
-    background: #ffcc00; /* Измените цвет фона по своему желанию */
-    font-weight: bold; /* Измените стили текста по своему желанию */
-    color: #fff; /* Измените цвет текста по своему желанию */
 }
 
-.mySwiper4 .swiper-slide-active{
+.mySwiper4 .swiper-slide-active {
     border-top: 3px solid $black;
     border-bottom: 3px solid $black;
 }
 
-.mySwiper4 .swiper-slide-active .select__item{
+.mySwiper4 .swiper-slide-active .select__item {
     color: $black;
 }
 
-.mySwiper4 .swiper-slide{
-    padding-top: 1.1rem;
+.mySwiper4 .swiper-slide {
+    padding: 0.7rem 0 1.5rem 0;
 }

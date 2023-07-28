@@ -39,20 +39,13 @@ window.addEventListener("DOMContentLoaded", function () {
 
 //анимация скролла
 $(document).ready(function () {
-	// Добавить плавную прокрутку до всех ссылок
 	$(".nav__link").on('click', function (event) {
-		// Убедись в этом что .hash имеет значение перед переопределением поведения по умолчанию
 		if (this.hash !== "") {
-			// Запретить поведение щелчка якоря по умолчанию
 			event.preventDefault();
-			// Хранить хэш
 			let hash = this.hash;
-			// Использование метода animate() jQuery для добавления плавной прокрутки страницы
-			// Необязательное число (800) указывает количество миллисекунд, необходимых для прокрутки до указанной области
 			$('html, body').animate({
 				scrollTop: $(hash).offset().top
 			}, 1000, function () {
-				// Добавить хэш (#) для URL-адреса после завершения прокрутки (поведение щелчка по умолчанию)
 				window.location.hash = hash;
 			});
 		}
@@ -67,6 +60,7 @@ $(function () {
 	});
 });
 
+//настройка прокрутки
 $.scrollify({
 	section: "section",
 	interstitialSection: "",
@@ -86,16 +80,15 @@ $.scrollify({
 			$(".icon-white").addClass("none");
 			$(".icon-black").removeClass("none");
 			$(".header").addClass("header_small-padding");
+			$(".header-wrapper").addClass("header_small-margin");
 		} else {
 			$(".header-text").removeClass("header_black");
 			$(".icon-white").removeClass("none");
 			$(".icon-black").addClass("none");
 			$(".header").removeClass("header_small-padding");
+			$(".header-wrapper").removeClass("header_small-margin");
 		}
 	},
-	after: function () { },
-	afterResize: function () { },
-	afterRender: function () { }
 });
 
 
@@ -114,6 +107,11 @@ let swiper2 = new Swiper(".mySwiper2", {
 	thumbs: {
 		swiper: swiper,
 	},
+	autoplay: {
+		delay: 3000,
+		disableOnInteraction: false,
+	},
+	effect: "fade",
 });
 
 let swiper3 = new Swiper(".mySwiper3", {
@@ -121,13 +119,18 @@ let swiper3 = new Swiper(".mySwiper3", {
 	grid: {
 		rows: 2,
 	},
+	autoplay: {
+		delay: 4000,
+		disableOnInteraction: false,
+	},
 	spaceBetween: 20,
 	pagination: {
 		el: ".swiper-pagination",
 		clickable: true,
-		renderBullet: function (index, className) {
-			return '<span class="' + className + '">' + (index + 1) + "</span>";
-		},
+	},
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
 	},
 });
 
@@ -138,11 +141,16 @@ let swiper4 = new Swiper(".mySwiper4", {
 	slidesPerGroup: 1,
 	centeredSlides: true,
 	initialSlide: 2,
-	loop: true,
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
+	autoplay: {
+		delay: 3000,
+		disableOnInteraction: false,
+	},
+	loop: true,
+	loopedSlides: 2,
 	on: {
 		click(event) {
 			console.log('event.target', this.clickedIndex);
@@ -150,4 +158,23 @@ let swiper4 = new Swiper(".mySwiper4", {
 		},
 	},
 });
+
+
+let section = document.querySelector('.choise');
+
+swiper4.on('slideChangeTransitionEnd', function () {
+    let activeSlideIndex = swiper4.activeIndex;
+    let backgroundImages = [
+        '../../img/loft.png',
+        '../../img/modern.png',
+        '../../img/minimalizm.png',
+        '../../img/loft.png',
+    ];
+    if (activeSlideIndex < 0) {
+        activeSlideIndex = backgroundImages.length - 1;
+    }
+    var activeBackgroundImage = backgroundImages[activeSlideIndex];
+    section.style.backgroundImage = `url(${activeBackgroundImage})`;
+});
+
 

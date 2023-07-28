@@ -11,7 +11,7 @@
     }
     &__title {
         color: $white;
-        font-family: Montserrat Mediun;
+        font-family: Montserrat Medium;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 2rem;
@@ -31,14 +31,10 @@
             padding-top: 2rem;
             transition: 2s;
         }
-    }
-    &__logo {
-        color: $white;
-        font-family: Montserrat Medium;
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 1.83;
-        text-transform: uppercase;
+        &-margin{
+            margin-bottom: 0.5rem;
+            transform: 2s;
+        }
     }
 }
 
