@@ -96,9 +96,6 @@
     background: $black;
 }
 
-.more {
-    border: 1px solid $white;
-}
 
 .choise {
     position: relative;
@@ -365,6 +362,10 @@
     padding: 0.33rem;
 }
 
+.more {
+    border: 1px solid $white;
+}
+
 .header-text:hover {
     transition: 0.5s;
     background: $white;
@@ -381,6 +382,7 @@
 
 .consultation {
     width: 100%;
+    flex: 1 1 50%;
     padding: 8rem 1.67rem 0;
 }
 

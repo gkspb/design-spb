@@ -159,9 +159,8 @@ let swiper4 = new Swiper(".mySwiper4", {
 	},
 });
 
-
+//Смена картинок в разделе "Выберите стиль вашего дизайна"
 let section = document.querySelector('.choise');
-
 swiper4.on('slideChangeTransitionEnd', function () {
     let activeSlideIndex = swiper4.activeIndex;
     let backgroundImages = [
