@@ -1,0 +1,102 @@
+.footer {
+    background: $black;
+    color: $white;
+    width: 100%;
+    padding: 4.18rem 1.67rem;
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-requisites {
+        &__text {
+            color: $white;
+            font-family: Montserrat Regular;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 140%;
+        }
+    }
+    &-item {
+        flex: 1 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.25rem;
+    }
+    &__logo {
+        color: $white;
+        font-family: Montserrat Regular;
+        font-size: 3.34rem;
+        font-weight: 400;
+        line-height: 140%;
+    }
+    &__title {
+        color: $white;
+        font-family: Montserrat Medium;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 140%;
+        margin-bottom: 0.42rem;
+    }
+    &__link {
+        color: $white;
+        font-family: Montserrat Regular;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 140%;
+    }
+    &__policy {
+        color: $white;
+        font-family: Montserra Regular;
+        font-size: 1.17rem;
+        font-weight: 400;
+        line-height: 140%;
+    }
+    &-rights {
+        color: $white;
+        font-family: Montserrat Regular;
+        font-size: 1.17rem;
+        font-weight: 400;
+        line-height: 140%;
+    }
+    &__schedule {
+        color: $white;
+        text-align: right;
+        font-family: Montserrat Regular;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 140%;
+    }
+    &-call {
+        color: $white;
+        font-family: Montserrat Medium;
+        font-size: 1.17rem;
+        font-weight: 500;
+        line-height: 1.42rem;
+        border-radius: 2rem;
+        border: 1px solid $white;
+        padding: 0.92rem 0;
+        width: 14.38rem;
+    }
+    &-social {
+        display: flex;
+        column-gap: 1.67rem;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    &__num {
+        color: $white;
+        font-family: Montserrat Medium;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 140%;
+    }
+    &-contacts {
+        text-align: right;
+        row-gap: 1.67rem;
+        align-items: flex-end;
+    }
+    &-telegram {
+        width: 2.67rem;
+        height: 2.67rem;
+    }
+}

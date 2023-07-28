@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design-spb</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,38 +14,40 @@
         <div class="container">
             <div class="header-wrapper">
                 <div class="header__logo">
-                    <a href="index.html" class="header__title">Дизайн спб</a>
+                    <a href="index.html" class="header__title header-text">Дизайн спб</a>
                 </div>
                 <ul class="nav">
                     <li class="nav__item">
-                        <a href="#" class="nav__link">О компании</a>
+                        <a href="#about" class="nav__link header-text">О компании</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Дизайн - проект</a>
+                        <a href="#" class="nav__link header-text">Дизайн - проект</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Интерьер</a>
+                        <a href="#" class="nav__link header-text">Интерьер</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Услуги</a>
+                        <a href="#" class="nav__link header-text">Услуги</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Стати</a>
+                        <a href="#news" class="nav__link header-text">Стати</a>
                     </li>
                 </ul>
                 <div class="header__contacts">
                     <div class="img-wrapper">
                         <a href="#" class="header__link">
-                            <img src="img/telegram.svg" alt="telegram">
+                            <img class="telegram icon-white" src="img/telegram.svg" alt="telegram">
+                            <img class="telegram icon-black none" src="img/telegram-black.svg" alt="telegram">
                         </a>
                     </div>
                     <div class="img-wrapper">
                         <a href="#" class="header__link">
-                            <img src="img/whatsapp.svg" alt="whatsapp">
+                            <img class="whatsapp icon-white" src="img/whatsapp.svg" alt="whatsapp">
+                            <img class="whatsapp icon-black none" src="img/whatsapp-black.svg" alt="whatsapp">
                         </a>
                     </div>
                     <div class="link-wrapper">
-                        <a href="tel:8900000000" class="tel">+7 ( 812 ) 670-07-47</a>
+                        <a href="tel:8900000000" class="tel header-text">+7 ( 812 ) 670-07-47</a>
                     </div>
                 </div>
             </div>
@@ -58,76 +59,98 @@
         </div>
     </header>
 
-    <div class="main" id="fullpage">
-        <div class="section premium">
+    <main class="main">
+        <section class="section premium" id="section1">
             <div class="section-container">
                 <div class="section-content">
                     <h2 class="section__title">Премиум дизайн интерьера</h2>
                     <p class="section__subtitle">Проектирование | Дизайн | Визуализация | Чертежи</p>
                 </div>
                 <div class="section-buttons">
+                    <p class="section__text">Полностью берем заботы <br> по планировке и уюту</p>
                     <button class="btn section-btn calculate">Рассчитать</button>
                     <button class="btn section-btn more">Подробнее</button>
                 </div>
             </div>
-        </div>
-        <div class="section design">
+        </section>
+        <section class="section design" id="section2">
             <div class="section-container">
                 <div class="section-content">
                     <h2 class="section__title">Дизайн - проект</h2>
                     <p class="section__subtitle">3 планировки на выбор, визуализация и рабочие чертежи</p>
                 </div>
                 <div class="section-buttons">
+                    <p class="section__text">Продуманный интерьер <br> от идеи до реализации</p>
                     <button class="btn section-btn calculate">Рассчитать</button>
                     <button class="btn section-btn more">Подробнее</button>
                 </div>
             </div>
-        </div>
-        <div class="section process">
+        </section>
+        <section class="section process" id="section3">
             <div class="section-container">
                 <div class="section-content">
                     <h2 class="section__title">Бесшовный процесс ремонта</h2>
                     <p class="section__subtitle">Свой штат специалистов по отделке и ремонту помещений</p>
                 </div>
                 <div class="section-buttons">
+                    <p class="section__text">Воплотили в жизнь <br> 300 интерьеров за 15 лет</p>
                     <button class="btn section-btn calculate">Рассчитать</button>
                     <button class="btn section-btn more">Подробнее</button>
                 </div>
             </div>
-        </div>
-        <div class="section selection">
+        </section>
+        <section class="section selection" id="section4">
             <div class="section-container">
                 <div class="section-content">
                     <h2 class="section__title">Подбор декора и техники</h2>
                     <p class="section__subtitle">Помогаем с мебелью, типом покрытий, вентиляцией и всем необходимым</p>
                 </div>
                 <div class="section-buttons">
+                    <p class="section__text">Полностью берем заботы <br> по планировке и уюту</p>
                     <button class="btn section-btn calculate">Рассчитать</button>
                     <button class="btn section-btn more">Подробнее</button>
                 </div>
             </div>
-        </div>
-        <div class="section supervision">
+        </section>
+        <section class="section supervision" id="section5">
             <div class="section-container">
                 <div class="section-content">
                     <h2 class="section__title">Авторский надзор</h2>
                     <p class="section__subtitle">Контроль соблюдения чертежей и дизайн-проекта в ремонте</p>
                 </div>
                 <div class="section-buttons">
+                    <p class="section__text">Полностью берем заботы <br> по планировке и уюту</p>
                     <button class="btn section-btn calculate">Рассчитать</button>
                     <button class="btn section-btn more">Подробнее</button>
                 </div>
             </div>
-        </div>
-        <div class="section choise black-header">
+        </section>
+        <section class="section choise" id="section6">
             <div class="container">
                 <div class="choise-wrapper">
                     <div class="choise-content">
                         <h3 class="choise__title">Выберите стиль вашего дизайна</h3>
-                        <div class="select">
-                            <p class="select__item">Минимализм</p>
-                            <p class="select__item select_active">Модерн</p>
-                            <p class="select__item">Лофт</p>
+                        <div class="swiper mySwiper4 select">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <p class="select__item">Минимализм</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <p class="select__item">Модерн</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <p class="select__item">Лофт</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <p class="select__item">Скандинавский</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <p class="select__item">Модерн</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <p class="select__item">Лофт</p>
+                                </div>
+                            </div>
                         </div>
                         <button class="btn choise__btn">Рассчитать стоимость</button>
                     </div>
@@ -136,33 +159,328 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="section about">
+        </section>
+        <section class="section about target-block" id="section7">
             <div class="container">
                 <div class="about-wrapper">
                     <h2 class="about__title">О студии «ДизайнСПБ»</h2>
-                    <p class="about__subtitle">Мы работаем со всеми стилями дизайна в Санкт-Петербурге. Для каждого проекта создаем стильный интерьер с душой и ответственностью. Проектами наших интерьеров удобно пользоваться и материалы долго сохраняют свой презентабельный вид.</p>
-                    <p class="about__subtitle">Студия Дизайн СПБ проведет замеры квартиры или дома для создания дизайн-проекта вашего идеального интерьера. В нашей команде 20 ведущих дизайнеров, которые следуют последним трендам мира и используют только продуманные решения архитектуры.</p>
-                    <p class="about__subtitle">Создаем 3D визуализацию, чтобы вы были уверены в результате, цветовой концепции и эргономики пространства.</p>
-                    <p class="about__subtitle">Проектную документацию можно смело использовать для ремонтной компании и строительства, проекты отвечают современному видению жизни и удобства</p>
+                    <p class="about__subtitle">Мы работаем со всеми стилями дизайна в Санкт-Петербурге. Для каждого
+                        проекта создаем стильный интерьер с душой и ответственностью. Проектами наших интерьеров удобно
+                        пользоваться и материалы долго сохраняют свой презентабельный вид.</p>
+                    <p class="about__subtitle">Студия Дизайн СПБ проведет замеры квартиры или дома для создания
+                        дизайн-проекта вашего идеального интерьера. В нашей команде 20 ведущих дизайнеров, которые
+                        следуют последним трендам мира и используют только продуманные решения архитектуры.</p>
+                    <p class="about__subtitle">Создаем 3D визуализацию, чтобы вы были уверены в результате, цветовой
+                        концепции и эргономики пространства.</p>
+                    <p class="about__subtitle">Проектную документацию можно смело использовать для ремонтной компании и
+                        строительства, проекты отвечают современному видению жизни и удобства</p>
                 </div>
                 <div class="questions">
                     <h3 class="questions__title">9 Экспертов готовы ответить на ваши вопросы</h3>
                     <p class="questions__subtitle">Узнайте стоимость дизайна за 15 минут </p>
                     <form class="calculation">
                         <input type="text" class="calculation__input calculation__item" placeholder="Ваше имя">
-                        <input type="text" class="calculation__input tel calculation__item" placeholder="Ваш телефон" type="tel" name="tel">
+                        <input type="text" class="calculation__input tel calculation__item" placeholder="Ваш телефон"
+                            type="tel" name="tel">
                         <input type="submit" class="btn calculation__button calculation__item" value="Узнать стоимость">
-                    </а>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section section-swiper1 target-block" id="section8">
+            <div class="container">
+                <div class="section-swiper-wrapper">
+                    <h1 class="swiper__title mySwiper2__title">Портфолио стильных и продуманных интерьеров</h1>
+                    <div class=" swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/slider1-1.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/slider1-2.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/slider1-3.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/slider1-1.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div thumbsSlider="" class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <h5 class="swiper1__text">Дизайн проект квартиры 64 м²</h5>
+                            </div>
+                            <div class="swiper-slide">
+                                <h5 class="swiper1__text">Дизайн проект квартиры 100 м²</h5>
+                            </div>
+                            <div class="swiper-slide">
+                                <h5 class="swiper1__text">Дизайн интерьера дома 640 м²</h5>
+                            </div>
+                            <div class="swiper-slide">
+                                <h5 class="swiper1__text">Дизайн интерьера коттеджа 300 м²</h5>
+                                <!-- <p class="swiper1__subtitle">Стиль - модерн. <br>
+                                    Натуральные материалы. <br>
+                                    Мебель российских дизайнеров</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn swiper1__button">Смотреть все портфолио</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-swiper2 target-block" id="section9">
+            <div class="container">
+                <div class="section-swiper-wrapper">
+                    <h1 class="swiper__title mySwiper3__title">О нас говорят</h1>
+                    <div class="swiper mySwiper3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/review-1.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subititle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/review-2.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subititle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/review-3.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subititle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/review-4.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subititle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/review-5.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subititle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/review-6.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subititle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/review-7.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subititle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/review-8.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subititle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/review-9.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subititle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/review-10.png" alt="фото человека" class="people-img">
+                                <h4 class="mySwiper3__name">Морозова Екатерина, <br> SEO - Специалист</h4>
+                                <p class="mySwiper3__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Integer id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque.
+                                    Donec tristique malesuada justo, nec viverra nulla viverra in. Donec facilisis
+                                    tellus in libero tempus, nec pharetra velit tincidunt. Sed nisl tellus, facilisis
+                                    nec arcu sed, bibendum maximus dolo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section news target-block" id="section10">
+            <div class="container">
+                <div class="news-wrapper">
+                    <h2 class="news__title">Новости и упоминания в СМИ</h2>
+                    <div class="news-columns">
+                        <div class="news-main">
+                            <div class="news-img-wrapper">
+                                <img src="img/main-news-img.png" alt="картинка новости" class="news-main__img">
+                            </div>
+                            <h4 class="news-main__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                tristique lobortis lectus vitae ullamcorper. </h4>
+                            <!-- <p class="news-main__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Integer
+                                id condimentum lorem. Quisque molestie ultricies lacus eu pellentesque. Donec tristique
+                                malesuada justo, nec viverra nulla viverra in.</p> -->
+                            <a href="#" class="news__sourse news-main__sourse">Источник: название источника</a>
+                            <button class="news__button btn">Читать</button>
+                        </div>
+                        <div class="news-list">
+                            <div class="news-item">
+                                <div class="news-img-wrapper">
+                                    <img src="img/news-list-img.png" alt="картинка новости" class="news-list__img">
+                                </div>
+                                <div class="news-content">
+                                    <h5 class="news-list__title">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit.
+                                        Cras tristique lobortis lectus vitae ullamcorper. </h5>
+                                    <a href="#" class="news__sourse">Источник: название источника</a>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="news-img-wrapper">
+                                    <img src="img/news-list-img.png" alt="картинка новости" class="news-list__img">
+                                </div>
+                                <div class="news-content">
+                                    <h5 class="news-list__title">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit. Cras tristique lobortis lectus vitae ullamcorper. </h5>
+                                    <a href="#" class="news__sourse">Источник: название источника</a>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="news-img-wrapper">
+                                    <img src="img/news-list-img.png" alt="картинка новости" class="news-list__img">
+                                </div>
+                                <div class="news-content">
+                                    <h5 class="news-list__title">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit. Cras tristique lobortis lectus vitae ullamcorper. </h5>
+                                    <a href="#" class="news__sourse">Источник: название источника</a>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="news-img-wrapper">
+                                    <img src="img/news-list-img.png" alt="картинка новости" class="news-list__img">
+                                </div>
+                                <div class="news-content">
+                                    <h5 class="news-list__title">Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Cras tristique lobortis lectus vitae ullamcorper. </h5>
+                                    <a href="#" class="news__sourse">Источник: название источника</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section target-block" id="section11">
+        <div class="consultation">
+            <div class="container">
+                <div class="questions questions_bottom">
+                    <h3 class="questions__title">Получите консультацию дизайнера по вашему проекту</h3>
+                    <form class="calculation">
+                        <input type="text" class="calculation__input calculation__item" placeholder="Ваше имя">
+                        <input type="text" class="calculation__input tel calculation__item" placeholder="Ваш телефон"
+                            type="tel" name="tel">
+                        <input type="submit" class="btn calculation__button calculation__item"
+                            value="Получить консультацию">
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-wrapper">
+                    <div class="footer-requisites footer-item">
+                        <a href="index.html" class="footer__logo">Logo</a>
+                        <p class="footer-requisites__text">Реквизиты</p>
+                        <p class="footer-requisites__text">Реквизиты</p>
+                        <p class="footer-requisites__text">Реквизиты</p>
+                        <p class="footer-requisites__text">Реквизиты</p>
+                        <p class="footer-requisites__text">Реквизиты</p>
+                        <p class="footer-requisites__text">Реквизиты</p>
+                        <a href="#" class="footer__policy">Политика конфиденциальности</a>
+                        <p class="footer__rights">Copyright ©2020-2022 <br> Все права защищены</p>
+                    </div>
+                    <div class="footer-design footer-item">
+                        <a href="#" class="footer__title">Дизайн проект</a>
+                        <a href="#" class="footer__link">Дизайн квартир</a>
+                        <a href="#" class="footer__link">Дизайн домов</a>
+                        <a href="#" class="footer__link">Дизайн комм. недвижимости</a>
+                    </div>
+                    <div class="footer-interior footer-item">
+                        <a href="#" class="footer__title">Интерьер</a>
+                        <a href="#" class="footer__link">Минимализм</a>
+                        <a href="#" class="footer__link">Скандинавский</a>
+                        <a href="#" class="footer__link">Хайтек</a>
+                        <a href="#" class="footer__link">Лофт</a>
+                        <a href="#" class="footer__link">Черно-белый</a>
+                        <a href="#" class="footer__link">Прованс</a>
+                        <a href="#" class="footer__link">Неоклассика</a>
+                        <a href="#" class="footer__link">Классика</a>
+                    </div>
+                    <div class="footer-services footer-item">
+                        <a href="#" class="footer__title">Услуги</a>
+                        <a href="#" class="footer__link">Дизайн эконом</a>
+                        <a href="#" class="footer__link">Дизайн комфорт</a>
+                        <a href="#" class="footer__link">Дизайн эксклюзив</a>
+                        <a href="#" class="footer__link">3D визуализация</a>
+                        <a href="#" class="footer__link">Архитектурный проект</a>
+                        <a href="#" class="footer__link">Строительный проект</a>
+                        <a href="#" class="footer__link">Эксклюзивный проект</a>
+                    </div>
+                    <div class="footer-contacts footer-item">
+                        <a href="tel:88126700747" class="footer__num">+7 ( 812 ) 670-07-47</a>
+                        <p class="footer__schedule">Пн - Пт 9:00 - 19:00</p>
+                        <button class="btn footer-call">Перезвоните мне</button>
+                        <div class="footer-social">
+                            <a href="#"><img src="img/instagram.svg" alt="instagram" class="instagram"></a>
+                            <a href="#"><img src="img/youtube.svg" alt="youtube" class="youtube"></a>
+                            <a href="#"><img src="img/telegram.svg" alt="telegram" class="telegram footer-telegram"></a>
+                        </div>
+                        <a href="#" class="footer__title">Портофолио</a>
+                        <a href="#" class="footer__title">Контакты</a>
+                        <a href="#" class="footer__title">Цены</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+    </main>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.20/jquery.scrollify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

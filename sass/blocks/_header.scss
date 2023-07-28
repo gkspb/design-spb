@@ -26,6 +26,20 @@
             text-align: end;
         }
     }
+    &_small {
+        &-padding {
+            padding-top: 2rem;
+            transition: 2s;
+        }
+    }
+    &__logo {
+        color: $white;
+        font-family: Montserrat Medium;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.83;
+        text-transform: uppercase;
+    }
 }
 
 .nav {
@@ -68,4 +82,8 @@
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.7rem;
+}
+
+.none {
+    display: none;
 }
