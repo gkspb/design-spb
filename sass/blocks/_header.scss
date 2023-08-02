@@ -147,7 +147,7 @@
     }
 }
 
-.link-tel-hover {
+.link-tel:hover {
     color: $black;
     transition: transform 0.3s ease;
 }
@@ -238,7 +238,7 @@
 }
 .menu-burger--is-active i {
     opacity: 0;
-    transition-delay: 0;
+    transition-delay: 0.2s;
 }
 .menu-burger--is-active:after {
     transform: rotate3d(0, 0, 1, 45deg) translate3d(-1px, 1px, 0);
