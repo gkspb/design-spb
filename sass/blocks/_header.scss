@@ -89,17 +89,22 @@
     &__link {
         color: $white;
         font-family: Montserrat Regular;
-        // font-size: 1.6rem;
         @include adaptiv-font(1.6, 1.2);
         font-weight: 400;
         line-height: 2rem;
+    }
+    &-logo {
+        @media (max-width: 767px) {
+            white-space: nowrap;
+            margin-left: 20%;
+            z-index: 1;
+        }
     }
 }
 
 .tel {
     color: $white;
     font-family: Montserrat Medium;
-    // font-size: 1.7rem;
     @include adaptiv-font(1.7, 1.3);
     font-weight: 500;
     line-height: 2rem;
@@ -134,7 +139,6 @@
 .link-tel {
     color: $white;
     font-family: Montserrat Medium;
-    // font-size: 1.4rem;
     @include adaptiv-font(1.4, 1.2);
     font-weight: 500;
     line-height: 1.7rem;
@@ -151,8 +155,6 @@
 .none {
     display: none;
 }
-
-//переведено
 
 .mobile-nav .header-text:hover {
     background: inherit;
@@ -277,12 +279,4 @@
     max-width: 100%;
     margin: 0 auto;
     column-gap: 2rem;
-}
-
-.nav-logo {
-    @media (max-width: 768px) {
-        white-space: nowrap;
-        margin-left: 20%;
-        z-index: 1;
-    }
 }
