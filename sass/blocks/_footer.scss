@@ -1,18 +1,31 @@
+@import "../modules/mixins";
+
 .footer {
     background: $black;
     color: $white;
     width: 100%;
     padding: 4.18rem 1.67rem;
     flex: 1 1 80%;
+    @media (max-width: 767px) {
+        flex: 0 0;
+    }
     &-wrapper {
         display: flex;
         justify-content: space-between;
+        @media (max-width: 767px) {
+            flex-direction: column;
+            row-gap: 3rem;
+            width: 100%;
+            max-width: 35rem;
+            border-radius: 0.4rem;
+        }
     }
     &-requisites {
         &__text {
             color: $white;
             font-family: Montserrat Regular;
-            font-size: 1.5rem;
+            // font-size: 1.5rem;
+            @include adaptiv-font(1.5, 1.2);
             font-weight: 400;
             line-height: 140%;
         }
@@ -26,14 +39,16 @@
     &__logo {
         color: $white;
         font-family: Montserrat Regular;
-        font-size: 3.34rem;
+        // font-size: 3.34rem;
+        @include adaptiv-font(3.4, 2.4);
         font-weight: 400;
         line-height: 140%;
     }
     &__title {
         color: $white;
         font-family: Montserrat Medium;
-        font-size: 2rem;
+        // font-size: 2rem;
+        @include adaptiv-font(2, 1.6);
         font-weight: 500;
         line-height: 140%;
         margin-bottom: 0.42rem;
@@ -41,21 +56,24 @@
     &__link {
         color: $white;
         font-family: Montserrat Regular;
-        font-size: 1.5rem;
+        // font-size: 1.5rem;
+        @include adaptiv-font(1.5, 1.2);
         font-weight: 400;
         line-height: 140%;
     }
     &__policy {
         color: $white;
         font-family: Montserra Regular;
-        font-size: 1.17rem;
+        // font-size: 1.17rem;
+        @include adaptiv-font(1.17, 1);
         font-weight: 400;
         line-height: 140%;
     }
     &-rights {
         color: $white;
         font-family: Montserrat Regular;
-        font-size: 1.17rem;
+        // font-size: 1.17rem;
+        @include adaptiv-font(1.17, 1);
         font-weight: 400;
         line-height: 140%;
     }
@@ -63,14 +81,16 @@
         color: $white;
         text-align: right;
         font-family: Montserrat Regular;
-        font-size: 1.5rem;
+        // font-size: 1.5rem;
+        @include adaptiv-font(1.5, 1.2);
         font-weight: 400;
         line-height: 140%;
     }
     &-call {
         color: $white;
         font-family: Montserrat Medium;
-        font-size: 1.17rem;
+        // font-size: 1.17rem;
+        @include adaptiv-font(1.17, 1);
         font-weight: 500;
         line-height: 1.42rem;
         border-radius: 2rem;
@@ -87,7 +107,8 @@
     &__num {
         color: $white;
         font-family: Montserrat Medium;
-        font-size: 2rem;
+        // font-size: 2rem;
+        @include adaptiv-font(2, 1.4);
         font-weight: 500;
         line-height: 140%;
     }
@@ -95,9 +116,82 @@
         text-align: right;
         row-gap: 1.67rem;
         align-items: flex-end;
+        @media (max-width: 767px) {
+            text-align: left;
+            align-items: start;
+        }
     }
-    &-telegram {
-        width: 2.67rem;
-        height: 2.67rem;
+    &__social {
+        &-logo {
+            width: 2.67rem;
+            height: 2.67rem;
+        }
+    }
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.accordion-menu li:last-child .dropdownlink {
+    border-bottom: 0;
+}
+.dropdownlink {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 45px;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    color: #212121;
+    position: relative;
+    transition: all 0.4s ease-out;
+    i {
+        position: absolute;
+        top: 17px;
+        left: 16px;
+    }
+    .fa-chevron-down {
+        right: 12px;
+        left: auto;
+    }
+}
+
+.submenuItems {
+    display: none;
+    background: #c8e6c9;
+    li {
+        border-bottom: 1px solid #b6b6b6;
+    }
+}
+
+.submenuItems a {
+    display: block;
+    color: #727272;
+    padding: 12px 12px 12px 45px;
+    transition: all 0.4s ease-out;
+    &:hover {
+        background-color: #cddc39;
+        color: #fff;
+        transform: scale(1.1);
+    }
+}
+
+.footer-text::after {
+    @media (max-width: 767px) {
+        content: "+";
+        display: inline-block;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+        position: absolute;
+        right: 10%;
+    }
+}
+
+.open .footer-text::after {
+    @media (max-width: 767px) {
+        content: "-";
+        transform: rotate(180deg);
     }
 }

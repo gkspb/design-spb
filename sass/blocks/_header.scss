@@ -1,8 +1,25 @@
+@import "../modules/mixins";
+
 .header {
     position: fixed;
     z-index: 10;
     width: 100%;
     padding: 4.18rem 1.67rem 0;
+    @media (max-width: 767px) {
+        padding: 1.67rem 0;
+    }
+    @media (max-height: 800px) {
+        padding: 1.5rem 0 0 0;
+        background: $black;
+        height: 10%;
+        opacity: 0.9;
+    }
+    &__social {
+        &-logo {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
     &-wrapper {
         display: flex;
         justify-content: space-between;
@@ -20,20 +37,39 @@
     &__contacts {
         display: flex;
         column-gap: 1.67rem;
+        @media (max-width: 767px) {
+            display: none;
+        }
+        &-mobile {
+            display: none;
+            @media (max-width: 767px) {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+            }
+        }
     }
     &__call {
         &-button {
             text-align: end;
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
     }
     &_small {
         &-padding {
-            padding-top: 2rem;
-            transition: 2s;
+            padding-top: 1.5rem;
+            transition: transform 0.5s ease;
         }
-        &-margin{
+        &-margin {
             margin-bottom: 0.5rem;
-            transition: 2s;
+            transition: transform 0.5s ease;
+        }
+    }
+    &__logo {
+        @media (max-width: 767px) {
+            display: none;
         }
     }
 }
@@ -43,10 +79,18 @@
     align-items: center;
     column-gap: 3rem;
     margin-left: 12rem;
+    @media (max-width: 1023px) {
+        margin-left: 0;
+        column-gap: 1.5rem;
+    }
+    @media (max-width: 767px) {
+        display: none;
+    }
     &__link {
         color: $white;
         font-family: Montserrat Regular;
-        font-size: 1.6rem;
+        // font-size: 1.6rem;
+        @include adaptiv-font(1.6, 1.2);
         font-weight: 400;
         line-height: 2rem;
     }
@@ -55,9 +99,21 @@
 .tel {
     color: $white;
     font-family: Montserrat Medium;
-    font-size: 1.7rem;
+    // font-size: 1.7rem;
+    @include adaptiv-font(1.7, 1.3);
     font-weight: 500;
     line-height: 2rem;
+}
+
+.burger {
+    display: none;
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 100%;
+    }
 }
 
 .btn {
@@ -70,21 +126,163 @@
     background: $black;
     width: 14.5rem;
     padding: 1.2rem 0;
+    @media (max-width: 767px) {
+        background: $white;
+    }
 }
 
 .link-tel {
     color: $white;
     font-family: Montserrat Medium;
-    font-size: 1.4rem;
+    // font-size: 1.4rem;
+    @include adaptiv-font(1.4, 1.2);
     font-weight: 500;
     line-height: 1.7rem;
+    @media (max-width: 767px) {
+        color: $black;
+    }
 }
 
 .link-tel-hover {
     color: $black;
-    transition: 0.5s;
+    transition: transform 0.3s ease;
 }
 
 .none {
     display: none;
+}
+
+//переведено
+
+.mobile-nav .header-text:hover {
+    background: inherit;
+}
+
+.mobile-nav {
+    display: none;
+    width: 100%;
+    @media (max-width: 767px) {
+        display: flex;
+        align-items: center;
+        column-gap: 5rem;
+        position: relative;
+    }
+    &_bottom {
+        padding: 2rem 0;
+        &-active {
+            position: absolute;
+            background: $black;
+            text-align: center;
+            display: flex !important;
+            flex-direction: column;
+            row-gap: 2.5rem;
+            left: -0.8px;
+            top: 160%;
+            width: 101%;
+        }
+        &-deactive {
+            display: none;
+        }
+    }
+}
+
+.menu-burger {
+    width: 2rem;
+    height: 1.4rem;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.3s ease;
+    transition-delay: 0.15s;
+    position: absolute;
+    top: 45%;
+    right: 20%;
+    margin: -0.7rem 0 0 -1rem;
+    @media (max-width: 767px) {
+        z-index: 1;
+    }
+    &--is-active {
+        transform: translate3d(0, 0, 0);
+        transition-delay: 0.2s;
+    }
+}
+.menu-burger i {
+    display: block;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 2px;
+    background-color: $white;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transition: transform 0.3s ease;
+    transition-delay: 0.2s;
+}
+.menu-burger:before,
+.menu-burger:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 0;
+    border-bottom: 2px solid $white;
+    width: 100%;
+    left: 0;
+    right: 0;
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: right bottom;
+}
+.menu-burger:after {
+    top: 100%;
+    transform-origin: right bottom;
+}
+.menu-burger--is-active i {
+    opacity: 0;
+    transition-delay: 0;
+}
+.menu-burger--is-active:after {
+    transform: rotate3d(0, 0, 1, 45deg) translate3d(-1px, 1px, 0);
+}
+.menu-burger--is-active:before {
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 0, 0);
+}
+
+.menu-burger_black:after,
+.menu-burger_black:before {
+    border-bottom: 2px solid $black;
+}
+
+.menu-item_black {
+    background-color: $black !important;
+}
+
+.mobile-nav button {
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: none;
+}
+.mobile-nav-active::after {
+    @media (max-width: 767px) {
+        content: "";
+        background: $black;
+        display: block;
+        height: 6.2rem;
+        width: 100%;
+        position: absolute;
+    }
+}
+
+.mobile-contacts {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+    column-gap: 2rem;
+}
+
+.nav-logo {
+    @media (max-width: 768px) {
+        white-space: nowrap;
+        margin-left: 20%;
+        z-index: 1;
+    }
 }
