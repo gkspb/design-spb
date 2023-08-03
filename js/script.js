@@ -288,41 +288,41 @@ $(window).on('load resize', function () {
 
 
 //удаление скролла по блокам на экранах менше, чем 800
-let isScrollifyDisabled = false;
-function disableScrollify() {
-    if (!isScrollifyDisabled) {
-        $.scrollify.disable();
-        $('.section').removeAttr('data-section-name');
-        $('.section').removeAttr('data-scrollify-offset');
-        $.scrollify.destroy();
-        isScrollifyDisabled = true;
-    }
-}
-function enableScrollify() {
-    if (isScrollifyDisabled) {
-        $.scrollify({
-            section: ".section",
-        });
-        isScrollifyDisabled = false;
-    }
-}
-function disableScrollifyOnScroll() {
-    if (window.innerHeight < 800 && !isScrollifyDisabled) {
-        disableScrollify();
-        $(window).off('scroll', disableScrollifyOnScroll);
-    } else if (window.innerHeight >= 800 && isScrollifyDisabled) {
-        enableScrollify();
-        $(window).on('scroll', disableScrollifyOnScroll);
-    }
-}
-$(document).ready(function () {
-    if (window.innerHeight < 800) {
-        disableScrollify();
-        $(window).off('scroll', disableScrollifyOnScroll);
-    } else {
-        $.scrollify({
-            section: ".section",
-        });
-    }
-    $(window).on('scroll', disableScrollifyOnScroll);
-});
+// let isScrollifyDisabled = false;
+// function disableScrollify() {
+//     if (!isScrollifyDisabled) {
+//         $.scrollify.disable();
+//         $('.section').removeAttr('data-section-name');
+//         $('.section').removeAttr('data-scrollify-offset');
+//         $.scrollify.destroy();
+//         isScrollifyDisabled = true;
+//     }
+// }
+// function enableScrollify() {
+//     if (isScrollifyDisabled) {
+//         $.scrollify({
+//             section: ".section",
+//         });
+//         isScrollifyDisabled = false;
+//     }
+// }
+// function disableScrollifyOnScroll() {
+//     if (window.innerHeight < 800 && !isScrollifyDisabled) {
+//         disableScrollify();
+//         $(window).off('scroll', disableScrollifyOnScroll);
+//     } else if (window.innerHeight >= 800 && isScrollifyDisabled) {
+//         enableScrollify();
+//         $(window).on('scroll', disableScrollifyOnScroll);
+//     }
+// }
+// $(document).ready(function () {
+//     if (window.innerHeight < 800) {
+//         disableScrollify();
+//         $(window).off('scroll', disableScrollifyOnScroll);
+//     } else {
+//         $.scrollify({
+//             section: ".section",
+//         });
+//     }
+//     $(window).on('scroll', disableScrollifyOnScroll);
+// });
