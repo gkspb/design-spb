@@ -4,16 +4,25 @@
     position: fixed;
     z-index: 10;
     width: 100%;
-    padding: 4.18rem 1.67rem 0;
+    padding: 1.5rem 1.67rem 0;
+    background: $black;
+    opacity: 0.8;
     @media (max-width: 767px) {
-        padding: 1.67rem 0;
+        padding: 0.5rem 1.67rem 0;
+        height: 6%;
     }
+    // @media (max-width: 767px) {
+    //     padding: 1.67rem 0;
+    // }
     // @media (max-height: 800px) {
     //     padding: 1.5rem 0 0 0;
     //     background: $black;
     //     height: 10%;
     //     opacity: 0.9;
     // }
+    &-mobile {
+        opacity: 1;
+    }
     &__social {
         &-logo {
             width: 2.4rem;
@@ -57,16 +66,16 @@
             }
         }
     }
-    &_small {
-        &-padding {
-            padding-top: 1.5rem;
-            transition: transform 0.5s ease;
-        }
-        &-margin {
-            margin-bottom: 0.5rem;
-            transition: transform 0.5s ease;
-        }
-    }
+    // &_small {
+    //     &-padding {
+    //         padding-top: 1.5rem;
+    //         transition: transform 0.5s ease;
+    //     }
+    //     &-margin {
+    //         margin-bottom: 0.5rem;
+    //         transition: transform 0.5s ease;
+    //     }
+    // }
     &__logo {
         @media (max-width: 767px) {
             display: none;
@@ -149,12 +158,12 @@
 
 .link-tel:hover {
     color: $black;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
-.none {
-    display: none;
-}
+// .none {
+//     display: none;
+// }
 
 .mobile-nav .header-text:hover {
     background: inherit;
@@ -178,9 +187,9 @@
             display: flex !important;
             flex-direction: column;
             row-gap: 2.5rem;
-            left: -0.8px;
-            top: 160%;
-            width: 101%;
+            left: -6%;
+            top: 100%;
+            width: 112%;
         }
         &-deactive {
             display: none;
@@ -192,8 +201,7 @@
     width: 2rem;
     height: 1.4rem;
     -webkit-tap-highlight-color: transparent;
-    transition: transform 0.3s ease;
-    transition-delay: 0.15s;
+    transition: transform 0.2s ease;
     position: absolute;
     top: 45%;
     right: 20%;
@@ -203,7 +211,6 @@
     }
     &--is-active {
         transform: translate3d(0, 0, 0);
-        transition-delay: 0.2s;
     }
 }
 .menu-burger i {
@@ -216,8 +223,7 @@
     width: 100%;
     position: absolute;
     top: 50%;
-    transition: transform 0.3s ease;
-    transition-delay: 0.2s;
+    transition: transform 0.2s ease;
 }
 .menu-burger:before,
 .menu-burger:after {
@@ -247,14 +253,14 @@
     transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 0, 0);
 }
 
-.menu-burger_black:after,
-.menu-burger_black:before {
-    border-bottom: 2px solid $black;
-}
+// .menu-burger_black:after,
+// .menu-burger_black:before {
+//     border-bottom: 2px solid $black;
+// }
 
-.menu-item_black {
-    background-color: $black !important;
-}
+// .menu-item_black {
+//     background-color: $black !important;
+// }
 
 .mobile-nav button {
     padding: 0;
