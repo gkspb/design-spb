@@ -67,10 +67,11 @@ $(function () {
         updateHash: true,
         touchScroll: true,
         updateHash: false,
-        before: function (index, sections) {
+        after: function (index, sections) {
             function updateStyles() {
                 let targetBlockClass = "target-block";
-                if (sections[index].hasClass(targetBlockClass) && window.innerHeight >= 800) {
+				// && window.innerHeight >= 800
+                if (sections[index].hasClass(targetBlockClass)) {
                     $(".header").addClass("header_small-padding");
                     $(".header-wrapper").addClass("header_small-margin");
                     if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
@@ -84,7 +85,8 @@ $(function () {
                         $(".menu-item").removeClass("menu-item_black");
                         $(".menu-burger").removeClass("menu-burger_black");
                     }
-                } else if (window.innerHeight >= 800) {
+					// if (window.innerHeight >= 800)
+                } else {
                     $(".header-text").removeClass("header_black");
                     $(".icon-white").removeClass("none");
                     $(".icon-black").addClass("none");

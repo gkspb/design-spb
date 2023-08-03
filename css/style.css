@@ -462,14 +462,6 @@ body.disabled {
     padding: 1.67rem 0;
   }
 }
-@media (max-height: 800px) {
-  .header {
-    padding: 1.5rem 0 0 0;
-    background: #141414;
-    height: 10%;
-    opacity: 0.9;
-  }
-}
 .header__social-logo {
   width: 2.4rem;
   height: 2.4rem;
@@ -817,11 +809,6 @@ body.disabled {
   justify-content: center;
   align-items: center;
   position: relative;
-}
-@media (max-height: 800px) {
-  .section {
-    height: auto !important;
-  }
 }
 @media (max-width: 767px) {
   .section-container {
@@ -1785,12 +1772,6 @@ body.disabled {
 
 .main-opacity {
   opacity: 0.7;
-}
-
-@media (max-height: 800px) {
-  .section:first-child {
-    padding: 6.18rem 1.67rem;
-  }
 }
 
 .footer {
