@@ -53,58 +53,58 @@ $(document).ready(function () {
 });
 
 $(function () {
-    // Настройка Scrollify
-    $.scrollify({
-        section: ".section",
-        interstitialSection: "",
-        easing: "easeOutExpo",
-        scrollSpeed: 1100,
-        offset: 0,
-        scrollbars: true,
-        standardScrollElements: "",
-        setHeights: true,
-        overflowScroll: true,
-        updateHash: true,
-        touchScroll: true,
-        updateHash: false,
-        after: function (index, sections) {
-            function updateStyles() {
-                let targetBlockClass = "target-block";
+	// Настройка Scrollify
+	$.scrollify({
+		section: ".section",
+		interstitialSection: "",
+		easing: "easeOutExpo",
+		scrollSpeed: 1100,
+		offset: 0,
+		scrollbars: true,
+		standardScrollElements: "",
+		setHeights: true,
+		overflowScroll: true,
+		updateHash: true,
+		touchScroll: true,
+		updateHash: false,
+		after: function (index, sections) {
+			function updateStyles() {
+				let targetBlockClass = "target-block";
 				// && window.innerHeight >= 800
-                if (sections[index].hasClass(targetBlockClass)) {
-                    $(".header").addClass("header_small-padding");
-                    $(".header-wrapper").addClass("header_small-margin");
-                    if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
-                        $(".header-text").addClass("header_black");
-                        $(".menu-item").addClass("menu-item_black");
-                        $(".menu-burger").addClass("menu-burger_black");
-                        $(".icon-white").addClass("none");
-                        $(".icon-black").removeClass("none");
-                    } else {
-                        $(".header-text").removeClass("header_black");
-                        $(".menu-item").removeClass("menu-item_black");
-                        $(".menu-burger").removeClass("menu-burger_black");
-                    }
+				if (sections[index].hasClass(targetBlockClass)) {
+					$(".header").addClass("header_small-padding");
+					$(".header-wrapper").addClass("header_small-margin");
+					if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
+						$(".header-text").addClass("header_black");
+						$(".menu-item").addClass("menu-item_black");
+						$(".menu-burger").addClass("menu-burger_black");
+						$(".icon-white").addClass("none");
+						$(".icon-black").removeClass("none");
+					} else {
+						$(".header-text").removeClass("header_black");
+						$(".menu-item").removeClass("menu-item_black");
+						$(".menu-burger").removeClass("menu-burger_black");
+					}
 					// if (window.innerHeight >= 800)
-                } else {
-                    $(".header-text").removeClass("header_black");
-                    $(".icon-white").removeClass("none");
-                    $(".icon-black").addClass("none");
-                    $(".header").removeClass("header_small-padding");
-                    $(".header-wrapper").removeClass("header_small-margin");
-                    $(".menu-burger").removeClass("menu-burger_black");
-                    $(".menu-item").removeClass("menu-item_black");
-                }
-            }
-            updateStyles();
-            $(window).on('scroll', function () {
-                updateStyles();
-            });
-            $('#menu-toggle').on('click', function () {
-                updateStyles();
-            });
-        },
-    });
+				} else {
+					$(".header-text").removeClass("header_black");
+					$(".icon-white").removeClass("none");
+					$(".icon-black").addClass("none");
+					$(".header").removeClass("header_small-padding");
+					$(".header-wrapper").removeClass("header_small-margin");
+					$(".menu-burger").removeClass("menu-burger_black");
+					$(".menu-item").removeClass("menu-item_black");
+				}
+			}
+			updateStyles();
+			$(window).on('scroll', function () {
+				updateStyles();
+			});
+			$('#menu-toggle').on('click', function () {
+				updateStyles();
+			});
+		},
+	});
 });
 
 
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (mobileMenu.classList.contains('mobile-nav_bottom-active')) {
 				$('.main').addClass('main-opacity');
 				$('.header').addClass('header-mobile');
-				$.scrollify.disable(); 
+				$.scrollify.disable();
 				document.body.style.overflow = "hidden";
 			} else {
 				$('.main').removeClass('main-opacity');
@@ -332,3 +332,52 @@ $(window).on('load resize', function () {
 //     }
 //     $(window).on('scroll', disableScrollifyOnScroll);
 // });
+
+  // Функция для обработки изменений при изменении размера экрана
+	function handleScreenResize() {
+    var screenWidth = window.innerWidth;
+
+	// Если экран меньше 550 пикселей
+	if (screenWidth < 550) {
+      var consultationBlock = document.querySelector('.consultation');
+	var footerBlock = document.querySelector('.footer');
+	var targetBlock = document.getElementById('11');
+
+	// Даем блоку consultation нужные классы и атрибуты
+	consultationBlock.classList.add('target-block', 'section');
+	consultationBlock.id = '11';
+
+	// Даем блоку footer нужные классы и атрибуты
+	footerBlock.classList.add('section');
+	footerBlock.id = '12';
+
+	// Удаляем блок section_bottom
+	targetBlock.parentElement.insertBefore(consultationBlock, targetBlock);
+	targetBlock.parentElement.insertBefore(footerBlock, targetBlock);
+	targetBlock.remove();
+    } else {
+      // Восстанавливаем исходную структуру
+      var consultationBlock = document.querySelector('.consultation');
+	var footerBlock = document.querySelector('.footer');
+	var targetBlock = document.createElement('div');
+	targetBlock.classList.add('section', 'section_bottom', 'target-block');
+	targetBlock.id = '11';
+
+	targetBlock.appendChild(consultationBlock);
+	targetBlock.appendChild(footerBlock);
+
+	consultationBlock.classList.remove('target-block', 'section');
+	consultationBlock.removeAttribute('id');
+
+	footerBlock.classList.remove('section');
+	footerBlock.removeAttribute('id');
+
+	consultationBlock.parentElement.insertBefore(targetBlock, consultationBlock);
+	consultationBlock.remove();
+	footerBlock.remove();
+    }
+  }
+
+	// Вызываем функцию при загрузке страницы и при изменении размера экрана
+	window.addEventListener('load', handleScreenResize);
+	window.addEventListener('resize', handleScreenResize);
