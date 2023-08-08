@@ -5,10 +5,8 @@
     z-index: 10;
     width: 100%;
     padding: 1.5rem 1.67rem 0;
-    background: $black;
-    opacity: 0.8;
     @media (max-width: 767px) {
-        padding: 0.5rem 1.67rem 0;
+        padding: 0.5rem 0;
         height: 4rem;
     }
     // @media (max-width: 767px) {
@@ -56,6 +54,7 @@
     &__contacts {
         display: flex;
         column-gap: 1.67rem;
+        align-items: center;
         @media (max-width: 767px) {
             display: none;
         }
@@ -207,7 +206,7 @@
     width: 2rem;
     height: 1.4rem;
     -webkit-tap-highlight-color: transparent;
-    transition: transform 0.2s ease;
+    transition: transform 0.5s ease;
     position: absolute;
     top: 45%;
     right: 20%;
@@ -229,7 +228,7 @@
     width: 100%;
     position: absolute;
     top: 50%;
-    transition: transform 0.2s ease;
+    transition: transform 0.5s ease;
 }
 .menu-burger:before,
 .menu-burger:after {
@@ -259,14 +258,14 @@
     transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 0, 0);
 }
 
-// .menu-burger_black:after,
-// .menu-burger_black:before {
-//     border-bottom: 2px solid $black;
-// }
+.menu-burger_black:after,
+.menu-burger_black:before {
+    border-bottom: 2px solid $black;
+}
 
-// .menu-item_black {
-//     background-color: $black !important;
-// }
+.menu-item_black {
+    background-color: $black !important;
+}
 
 .mobile-nav button {
     padding: 0;
