@@ -9,7 +9,7 @@
     opacity: 0.8;
     @media (max-width: 767px) {
         padding: 0.5rem 1.67rem 0;
-        height: 6%;
+        height: 4rem;
     }
     // @media (max-width: 767px) {
     //     padding: 1.67rem 0;
@@ -35,13 +35,23 @@
         align-items: center;
         margin-bottom: 2rem;
     }
+    &-text {
+        transition: 0.5s;
+        padding: 0.33rem;
+    }
     &__title {
         color: $white;
         font-family: Montserrat Medium;
-        font-size: 1.5rem;
+        @include adaptiv-font(1.8, 1.4);
         font-weight: 500;
         line-height: 2rem;
         text-transform: uppercase;
+        // @media(max-width:550px) {
+        //     padding-top: 0.8rem;
+        // }
+        // @media(max-width:550px) {
+        //     padding-top: 1rem;
+        // }
     }
     &__contacts {
         display: flex;
@@ -158,12 +168,8 @@
 
 .link-tel:hover {
     color: $black;
-    transition: transform 0.2s ease;
+    transition: transform 1s ease;
 }
-
-// .none {
-//     display: none;
-// }
 
 .mobile-nav .header-text:hover {
     background: inherit;
@@ -188,7 +194,7 @@
             flex-direction: column;
             row-gap: 2.5rem;
             left: -6%;
-            top: 100%;
+            top: 90%;
             width: 112%;
         }
         &-deactive {

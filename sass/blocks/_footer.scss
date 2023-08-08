@@ -86,7 +86,7 @@
         font-weight: 500;
         line-height: 1.42rem;
         border-radius: 2rem;
-        border: 1px solid $white;
+        border: 2px solid $white;
         padding: 0.92rem 0;
         width: 14.38rem;
     }
@@ -132,7 +132,7 @@
         content: "+";
         display: inline-block;
         margin-left: 0.5rem;
-        transition: transform 0.2s ease;
+        transition: 0.5s;
         position: absolute;
         right: 10%;
     }
