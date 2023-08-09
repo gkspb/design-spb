@@ -258,22 +258,22 @@ document.addEventListener('DOMContentLoaded', function () {
 //акордион футер
 $(window).on('load resize', function () {
 	if ($(window).width() <= 767) {
-		var Accordion = function (el, multiple) {
+		let Accordion = function (el, multiple) {
 			this.el = el || {};
 			this.multiple = multiple || false;
 			this.el.find('.links').hide();
-			var dropdownlink = this.el.find('.footer-text');
+			let dropdownlink = this.el.find('.footer-text');
 			dropdownlink.on('click',
 				{ el: this.el, multiple: this.multiple },
 				this.dropdown);
 		};
 		Accordion.prototype.dropdown = function (e) {
-			var $el = e.data.el,
+			let $el = e.data.el,
 				$this = $(this),
 				$next = $this.next();
 			$next.slideToggle();
 			$this.parent().toggleClass('open');
-			var headerIcon = $this.find('i.fa');
+			let headerIcon = $this.find('i.fa');
 			if ($this.parent().hasClass('open')) {
 				headerIcon.removeClass('fa-chevron-down').addClass('fa-minus');
 			} else {
@@ -284,7 +284,7 @@ $(window).on('load resize', function () {
 				$el.find('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
 			}
 		};
-		var accordion = new Accordion($('.footer-item'), false);
+		let accordion = new Accordion($('.footer-item'), false);
 	} else {
 		$('.footer-item').removeClass('open').find('.links').show();
 		$('.footer-text').off('click');
@@ -293,91 +293,51 @@ $(window).on('load resize', function () {
 });
 
 
-//удаление скролла по блокам на экранах менше, чем 800
-// let isScrollifyDisabled = false;
-// function disableScrollify() {
-//     if (!isScrollifyDisabled) {
-//         $.scrollify.disable();
-//         $('.section').removeAttr('data-section-name');
-//         $('.section').removeAttr('data-scrollify-offset');
-//         $.scrollify.destroy();
-//         isScrollifyDisabled = true;
-//     }
+// // Функция для обработки изменений при изменении размера экрана
+// function handleScreenResize() {
+// 	let screenWidth = window.innerWidth;
+
+// 	// Если экран меньше 550 пикселей
+// 	if (screenWidth < 550) {
+// 		let consultationBlock = document.querySelector('.consultation');
+// 		let footerBlock = document.querySelector('.footer');
+// 		let targetBlock = document.getElementById('11');
+
+// 		// Даем блоку consultation нужные классы и атрибуты
+// 		consultationBlock.classList.add('target-block', 'section');
+// 		consultationBlock.id = '11';
+
+// 		// Даем блоку footer нужные классы и атрибуты
+// 		footerBlock.classList.add('section');
+// 		footerBlock.id = '12';
+
+// 		// Удаляем блок section_bottom
+// 		targetBlock.parentElement.insertBefore(consultationBlock, targetBlock);
+// 		targetBlock.parentElement.insertBefore(footerBlock, targetBlock);
+// 		targetBlock.remove();
+// 	} else {
+// 		// Восстанавливаем исходную структуру
+// 		let consultationBlock = document.querySelector('.consultation');
+// 		let footerBlock = document.querySelector('.footer');
+// 		let targetBlock = document.createElement('div');
+// 		targetBlock.classList.add('section', 'section_bottom', 'target-block');
+// 		targetBlock.id = '11';
+
+// 		targetBlock.appendChild(consultationBlock);
+// 		targetBlock.appendChild(footerBlock);
+
+// 		consultationBlock.classList.remove('target-block', 'section');
+// 		consultationBlock.removeAttribute('id');
+
+// 		footerBlock.classList.remove('section');
+// 		footerBlock.removeAttribute('id');
+
+// 		consultationBlock.parentElement.insertBefore(targetBlock, consultationBlock);
+// 		consultationBlock.remove();
+// 		footerBlock.remove();
+// 	}
 // }
-// function enableScrollify() {
-//     if (isScrollifyDisabled) {
-//         $.scrollify({
-//             section: ".section",
-//         });
-//         isScrollifyDisabled = false;
-//     }
-// }
-// function disableScrollifyOnScroll() {
-//     if (window.innerHeight < 800 && !isScrollifyDisabled) {
-//         disableScrollify();
-//         $(window).off('scroll', disableScrollifyOnScroll);
-//     } else if (window.innerHeight >= 800 && isScrollifyDisabled) {
-//         enableScrollify();
-//         $(window).on('scroll', disableScrollifyOnScroll);
-//     }
-// }
-// $(document).ready(function () {
-//     if (window.innerHeight < 800) {
-//         disableScrollify();
-//         $(window).off('scroll', disableScrollifyOnScroll);
-//     } else {
-//         $.scrollify({
-//             section: ".section",
-//         });
-//     }
-//     $(window).on('scroll', disableScrollifyOnScroll);
-// });
 
-  // Функция для обработки изменений при изменении размера экрана
-	function handleScreenResize() {
-    var screenWidth = window.innerWidth;
-
-	// Если экран меньше 550 пикселей
-	if (screenWidth < 550) {
-      var consultationBlock = document.querySelector('.consultation');
-	var footerBlock = document.querySelector('.footer');
-	var targetBlock = document.getElementById('11');
-
-	// Даем блоку consultation нужные классы и атрибуты
-	consultationBlock.classList.add('target-block', 'section');
-	consultationBlock.id = '11';
-
-	// Даем блоку footer нужные классы и атрибуты
-	footerBlock.classList.add('section');
-	footerBlock.id = '12';
-
-	// Удаляем блок section_bottom
-	targetBlock.parentElement.insertBefore(consultationBlock, targetBlock);
-	targetBlock.parentElement.insertBefore(footerBlock, targetBlock);
-	targetBlock.remove();
-    } else {
-      // Восстанавливаем исходную структуру
-      var consultationBlock = document.querySelector('.consultation');
-	var footerBlock = document.querySelector('.footer');
-	var targetBlock = document.createElement('div');
-	targetBlock.classList.add('section', 'section_bottom', 'target-block');
-	targetBlock.id = '11';
-
-	targetBlock.appendChild(consultationBlock);
-	targetBlock.appendChild(footerBlock);
-
-	consultationBlock.classList.remove('target-block', 'section');
-	consultationBlock.removeAttribute('id');
-
-	footerBlock.classList.remove('section');
-	footerBlock.removeAttribute('id');
-
-	consultationBlock.parentElement.insertBefore(targetBlock, consultationBlock);
-	consultationBlock.remove();
-	footerBlock.remove();
-    }
-  }
-
-	// Вызываем функцию при загрузке страницы и при изменении размера экрана
-	window.addEventListener('load', handleScreenResize);
-	window.addEventListener('resize', handleScreenResize);
+// // Вызываем функцию при загрузке страницы и при изменении размера экрана
+// window.addEventListener('load', handleScreenResize);
+// window.addEventListener('resize', handleScreenResize);
