@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //акордион футер
 $(document).ready(function () {
-    let resizing = false; 
+    let resizing = false;
 
     $(window).on('load resize', function () {
         if (resizing) {
@@ -307,7 +307,7 @@ $(document).ready(function () {
 
     $(window).on('resize', function () {
         resizing = true;
-        resizing = false; 
+        resizing = false;
     });
 });
 
