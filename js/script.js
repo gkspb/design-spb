@@ -191,6 +191,15 @@ let swiper4 = new Swiper(".mySwiper4", {
 	},
 });
 
+let swiper5 = new Swiper(".mySwiper5", {
+	spaceBetween: 10,
+	slidesPerView: 3.5,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+});
+
 //Смена картинок в разделе "Выберите стиль вашего дизайна"
 let section = document.querySelector('.choise');
 swiper4.on('slideChangeTransitionEnd', function () {
@@ -291,6 +300,9 @@ $(window).on('load resize', function () {
 		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
 	}
 });
+
+
+
 
 
 // // Функция для обработки изменений при изменении размера экрана
