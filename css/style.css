@@ -3204,6 +3204,19 @@ body.disabled {
   flex-direction: column;
   row-gap: 1rem;
 }
+.links-mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .links-mobile {
+    display: flex;
+  }
+}
+@media (max-width: 767px) {
+  .links-desktop {
+    display: none;
+  }
+}
 
 @media (max-width: 767px) {
   .footer-text::after {
