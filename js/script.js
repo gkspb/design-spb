@@ -58,7 +58,7 @@ $(function () {
 		section: ".section",
 		interstitialSection: "",
 		easing: "easeOutExpo",
-		scrollSpeed: 1100,
+		scrollSpeed: 1000,
 		offset: 0,
 		scrollbars: true,
 		standardScrollElements: "",
@@ -138,9 +138,6 @@ let swiper2 = new Swiper(".mySwiper2", {
 
 let swiper3 = new Swiper(".mySwiper3", {
 	slidesPerView: 2.2,
-	grid: {
-		rows: 2,
-	},
 	autoplay: {
 		delay: 4000,
 		disableOnInteraction: false,
@@ -206,9 +203,9 @@ swiper4.on('slideChangeTransitionEnd', function () {
 	let activeSlideIndex = swiper4.activeIndex;
 	let backgroundImageNames = [
 		'loft.png',
-		'modern.png',
 		'minimalizm.png',
 		'loft.png',
+		'minimalizm.png'
 	];
 	if (activeSlideIndex < 0) {
 		activeSlideIndex = backgroundImageNames.length - 1;
@@ -265,40 +262,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //акордион футер
-$(window).on('load resize', function () {
-	if ($(window).width() <= 767) {
-		let Accordion = function (el, multiple) {
-			this.el = el || {};
-			this.multiple = multiple || false;
-			this.el.find('.links').hide();
-			let dropdownlink = this.el.find('.footer-text');
-			dropdownlink.on('click',
-				{ el: this.el, multiple: this.multiple },
-				this.dropdown);
-		};
-		Accordion.prototype.dropdown = function (e) {
-			let $el = e.data.el,
-				$this = $(this),
-				$next = $this.next();
-			$next.slideToggle();
-			$this.parent().toggleClass('open');
-			let headerIcon = $this.find('i.fa');
-			if ($this.parent().hasClass('open')) {
-				headerIcon.removeClass('fa-chevron-down').addClass('fa-minus');
-			} else {
-				headerIcon.removeClass('fa-minus').addClass('fa-chevron-down');
-			}
-			if (!e.data.multiple) {
-				$el.find('.links').not($next).slideUp().parent().removeClass('open');
-				$el.find('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
-			}
-		};
-		let accordion = new Accordion($('.footer-item'), false);
-	} else {
-		$('.footer-item').removeClass('open').find('.links').show();
-		$('.footer-text').off('click');
-		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
-	}
+$(document).ready(function () {
+    let resizing = false; 
+
+    $(window).on('load resize', function () {
+        if (resizing) {
+            return; 
+        }
+
+        if ($(window).width() <= 767) {
+            let Accordion = function (el, multiple) {
+                this.el = el || {};
+                this.multiple = multiple || false;
+                this.el.find('.links').hide();
+                let dropdownlink = this.el.find('.footer-text');
+                dropdownlink.on('click',
+                    { el: this.el, multiple: this.multiple },
+                    this.dropdown);
+            };
+            Accordion.prototype.dropdown = function (e) {
+                let $el = e.data.el,
+                    $this = $(this),
+                    $next = $this.next();
+                $next.slideToggle();
+                $this.parent().toggleClass('open');
+                let headerIcon = $this.find('i.fa');
+                if ($this.parent().hasClass('open')) {
+                    headerIcon.removeClass('fa-chevron-down').addClass('fa-minus');
+                } else {
+                    headerIcon.removeClass('fa-minus').addClass('fa-chevron-down');
+                }
+                if (!e.data.multiple) {
+                    $el.find('.links').not($next).slideUp().parent().removeClass('open');
+                    $el.find('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
+                }
+            };
+            let accordion = new Accordion($('.footer-item'), false);
+        } else {
+            $('.footer-item').removeClass('open').find('.links').show();
+            $('.footer-text').off('click');
+            $('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
+        }
+    });
+
+    $(window).on('resize', function () {
+        resizing = true;
+        resizing = false; 
+    });
 });
 
 

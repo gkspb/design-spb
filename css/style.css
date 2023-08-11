@@ -981,8 +981,10 @@ body.disabled {
 
 .choise {
   position: relative;
-  background-image: url("../img/modern.png");
-  transition: background-image 0.5s linear;
+  background-image: url("../img/loft.png");
+  transition: all 1s ease-in-out;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .choise-wrapper {
   display: flex;
@@ -1925,15 +1927,15 @@ body.disabled {
 .swiper-button-prev {
   color: #141414;
   position: absolute;
-  top: 106%;
+  top: 116.5%;
 }
 
 .swiper-button-next {
-  left: 57%;
+  left: 61%;
 }
 
 .swiper-button-prev {
-  left: 42%;
+  left: 37.5%;
 }
 
 @media (min-width: 76.7rem) {
@@ -1952,7 +1954,7 @@ body.disabled {
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom {
-  top: 105%;
+  top: 115%;
 }
 
 .swiper-pagination-bullet {
@@ -2976,6 +2978,23 @@ body.disabled {
   height: 100vh;
 }
 
+@keyframes imagesFading {
+  0% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .footer {
   background: #141414;
   color: #fff;
