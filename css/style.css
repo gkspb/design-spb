@@ -2099,13 +2099,14 @@ body.disabled {
 }
 
 .all-articles-items {
-  display: grid;
+  display: flex;
   gap: 2rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  flex-wrap: wrap;
 }
 .all-articles-item {
   border-radius: 10px;
   border: 1px solid #afafaf;
+  width: 23%;
 }
 .all-articles-item__title {
   color: #141414;
@@ -2203,10 +2204,16 @@ body.disabled {
     font-size: calc(2.8rem + 2.04 * ((100vw - 37.5rem) / 144));
   }
 }
+.popular-img {
+  width: 100%;
+}
 .popular-img-wrapper {
   margin-bottom: 1.67rem;
 }
 
+.article-img {
+  width: 100%;
+}
 .article__title {
   margin-bottom: 1rem;
   color: #141414;
@@ -2478,6 +2485,7 @@ body.disabled {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   cursor: pointer;
+  z-index: 9999;
   color: #fff;
   font-family: Montserrat Medium;
   font-weight: 500;
