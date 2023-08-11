@@ -1704,6 +1704,7 @@ body.disabled {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  border-radius: 1rem;
 }
 
 .swiper-slide img {
@@ -2044,6 +2045,7 @@ body.disabled {
   font-family: Montserrat Regular;
   font-weight: 400;
   line-height: 1.63rem;
+  height: 40rem;
 }
 @media (min-width: 76.7rem) {
   #content-1,
@@ -2104,7 +2106,7 @@ body.disabled {
   flex-wrap: wrap;
 }
 .all-articles-item {
-  border-radius: 10px;
+  border-radius: 1rem;
   border: 1px solid #afafaf;
   width: 23%;
 }
@@ -2236,7 +2238,7 @@ body.disabled {
   color: #141414;
   font-family: Montserrat Regular;
   font-weight: 400;
-  line-height: 130%; /* 26px */
+  line-height: 130%;
 }
 @media (min-width: 76.7rem) {
   .article__subtitle {
@@ -2252,7 +2254,7 @@ body.disabled {
   color: #141414;
   font-family: Montserrat Medium;
   font-weight: 500;
-  line-height: 140%; /* 25.2px */
+  line-height: 140%;
   text-decoration-line: underline;
 }
 @media (min-width: 76.7rem) {
@@ -2276,7 +2278,7 @@ body.disabled {
 .services-table {
   border-radius: 1rem;
   border-collapse: collapse;
-  border: 1px solid black;
+  border: 1px solid #141414;
 }
 
 .services-table td:first-child:after {
@@ -2746,7 +2748,7 @@ body.disabled {
 .prices-services-item {
   text-align: center;
   background: inherit;
-  border-radius: 10px;
+  border-radius: 1rem;
   border: 1px solid #141414;
   width: 33.3%;
   padding: 9rem 7rem 2rem;
