@@ -52,62 +52,6 @@ $(document).ready(function () {
 	});
 });
 
-$(function () {
-	// Настройка Scrollify
-	$.scrollify({
-		section: ".section",
-		interstitialSection: "",
-		easing: "easeOutExpo",
-		scrollSpeed: 1000,
-		offset: 0,
-		scrollbars: true,
-		standardScrollElements: "",
-		setHeights: true,
-		overflowScroll: true,
-		updateHash: true,
-		touchScroll: true,
-		updateHash: false,
-		after: function (index, sections) {
-			function updateStyles() {
-				let targetBlockClass = "target-block";
-				// && window.innerHeight >= 800
-				if (sections[index].hasClass(targetBlockClass)) {
-					$(".header").addClass("header_small-padding");
-					$(".header-wrapper").addClass("header_small-margin");
-					if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
-						$(".header-text").addClass("header_black");
-						$(".menu-item").addClass("menu-item_black");
-						$(".menu-burger").addClass("menu-burger_black");
-						$(".icon-white").addClass("none");
-						$(".icon-black").removeClass("none");
-					} else {
-						$(".header-text").removeClass("header_black");
-						$(".menu-item").removeClass("menu-item_black");
-						$(".menu-burger").removeClass("menu-burger_black");
-					}
-					// if (window.innerHeight >= 800)
-				} else {
-					$(".header-text").removeClass("header_black");
-					$(".icon-white").removeClass("none");
-					$(".icon-black").addClass("none");
-					$(".header").removeClass("header_small-padding");
-					$(".header-wrapper").removeClass("header_small-margin");
-					$(".menu-burger").removeClass("menu-burger_black");
-					$(".menu-item").removeClass("menu-item_black");
-				}
-			}
-			updateStyles();
-			$(window).on('scroll', function () {
-				updateStyles();
-			});
-			$('#menu-toggle').on('click', function () {
-				updateStyles();
-			});
-		},
-	});
-});
-
-
 //настройка слайдеров
 let swiper = new Swiper(".mySwiper", {
 	loop: true,
@@ -195,6 +139,17 @@ let swiper5 = new Swiper(".mySwiper5", {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1.5,
+		},
+		767: {
+			slidesPerView: 2.5
+		},
+		1023: {
+			slidesPerView: 3.5
+		}
+	}
 });
 
 //Смена картинок в разделе "Выберите стиль вашего дизайна"
@@ -216,19 +171,6 @@ swiper4.on('slideChangeTransitionEnd', function () {
 	section.style.backgroundImage = `url(${activeBackgroundImage})`;
 });
 
-
-// const callBtn = document.querySelector('.call-btn');
-// const linkTel = document.querySelector('.link-tel');
-// const addClassOnHover = () => {
-// 	linkTel.classList.add('link-tel-hover');
-// }
-// const removeClassOnHover = () => {
-// 	linkTel.classList.remove('link-tel-hover');
-// }
-// callBtn.addEventListener('mouseover', addClassOnHover);
-// callBtn.addEventListener('mouseout', removeClassOnHover);
-
-
 //меню бургер
 $(document).on('click', '#menu-toggle', function () {
 	$(this).toggleClass('menu-burger--is-active');
@@ -247,119 +189,116 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (mobileMenu.classList.contains('mobile-nav_bottom-active')) {
 				$('.main').addClass('main-opacity');
 				$('.header').addClass('header-mobile');
-				$.scrollify.disable();
 				document.body.style.overflow = "hidden";
 			} else {
 				$('.main').removeClass('main-opacity');
 				$('.header').removeClass('header-mobile');
-				$.scrollify.enable();
 				document.body.style.overflow = "auto";
 			}
 		});
 	}
 });
 
-
-
 //акордион футер
 $(document).ready(function () {
-    let resizing = false;
+	let resizing = false;
 
-    $(window).on('load resize', function () {
-        if (resizing) {
-            return; 
-        }
+	$(window).on('load resize', function () {
+		if (resizing) {
+			return;
+		}
 
-        if ($(window).width() <= 767) {
-            let Accordion = function (el, multiple) {
-                this.el = el || {};
-                this.multiple = multiple || false;
-                this.el.find('.links').hide();
-                let dropdownlink = this.el.find('.footer-text');
-                dropdownlink.on('click',
-                    { el: this.el, multiple: this.multiple },
-                    this.dropdown);
-            };
-            Accordion.prototype.dropdown = function (e) {
-                let $el = e.data.el,
-                    $this = $(this),
-                    $next = $this.next();
-                $next.slideToggle();
-                $this.parent().toggleClass('open');
-                let headerIcon = $this.find('i.fa');
-                if ($this.parent().hasClass('open')) {
-                    headerIcon.removeClass('fa-chevron-down').addClass('fa-minus');
-                } else {
-                    headerIcon.removeClass('fa-minus').addClass('fa-chevron-down');
-                }
-                if (!e.data.multiple) {
-                    $el.find('.links').not($next).slideUp().parent().removeClass('open');
-                    $el.find('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
-                }
-            };
-            let accordion = new Accordion($('.footer-item'), false);
-        } else {
-            $('.footer-item').removeClass('open').find('.links').show();
-            $('.footer-text').off('click');
-            $('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
-        }
-    });
+		if ($(window).width() <= 767) {
+			let Accordion = function (el, multiple) {
+				this.el = el || {};
+				this.multiple = multiple || false;
+				this.el.find('.links').hide();
+				let dropdownlink = this.el.find('.footer-text');
+				dropdownlink.on('click',
+					{ el: this.el, multiple: this.multiple },
+					this.dropdown);
+			};
+			Accordion.prototype.dropdown = function (e) {
+				let $el = e.data.el,
+					$this = $(this),
+					$next = $this.next();
+				$next.slideToggle();
+				$this.parent().toggleClass('open');
+				let headerIcon = $this.find('i.fa');
+				if ($this.parent().hasClass('open')) {
+					headerIcon.removeClass('fa-chevron-down').addClass('fa-minus');
+				} else {
+					headerIcon.removeClass('fa-minus').addClass('fa-chevron-down');
+				}
+				if (!e.data.multiple) {
+					$el.find('.links').not($next).slideUp().parent().removeClass('open');
+					$el.find('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
+				}
+			};
+			let accordion = new Accordion($('.footer-item'), false);
+		} else {
+			$('.footer-item').removeClass('open').find('.links').show();
+			$('.footer-text').off('click');
+			$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
+		}
+	});
 
-    $(window).on('resize', function () {
-        resizing = true;
-        resizing = false;
-    });
+	$(window).on('resize', function () {
+		resizing = true;
+		resizing = false;
+	});
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+	const accordionItems = document.querySelectorAll('.accordion-item');
 
+	accordionItems.forEach(item => {
+		const header = item.querySelector('.accordion-header');
+		const content = item.querySelector('.accordion-content');
+		const icon = item.querySelector('.accordion-icon');
 
+		header.addEventListener('click', () => {
+			item.classList.toggle('open');
+			content.style.display = item.classList.contains('open') ? 'block' : 'none';
+			icon.textContent = item.classList.contains('open') ? '-' : '+';
+		});
+	});
+});
 
+//замена картинки до/после
+// Получаем элементы кнопок и изображения
+const beforeButton = document.querySelector('.difference__before');
+const afterButton = document.querySelector('.difference__after');
+const imgElement = document.querySelector('.difference__img');
 
-// // Функция для обработки изменений при изменении размера экрана
-// function handleScreenResize() {
-// 	let screenWidth = window.innerWidth;
+// Устанавливаем пути к изображениям "До" и "После"
+const beforeImagePath = 'img/before.png';
+const afterImagePath = 'img/after.png';
 
-// 	// Если экран меньше 550 пикселей
-// 	if (screenWidth < 550) {
-// 		let consultationBlock = document.querySelector('.consultation');
-// 		let footerBlock = document.querySelector('.footer');
-// 		let targetBlock = document.getElementById('11');
+// Добавляем обработчики событий на кнопки
+beforeButton.addEventListener('click', () => {
+	imgElement.src = beforeImagePath;
+	beforeButton.classList.add('btn-active');
+	afterButton.classList.remove('btn-active');
+});
 
-// 		// Даем блоку consultation нужные классы и атрибуты
-// 		consultationBlock.classList.add('target-block', 'section');
-// 		consultationBlock.id = '11';
+afterButton.addEventListener('click', () => {
+	imgElement.src = afterImagePath;
+	afterButton.classList.add('btn-active');
+	beforeButton.classList.remove('btn-active');
+});
 
-// 		// Даем блоку footer нужные классы и атрибуты
-// 		footerBlock.classList.add('section');
-// 		footerBlock.id = '12';
+//подсказка в таблице
+const icons = document.querySelectorAll('.icon');
 
-// 		// Удаляем блок section_bottom
-// 		targetBlock.parentElement.insertBefore(consultationBlock, targetBlock);
-// 		targetBlock.parentElement.insertBefore(footerBlock, targetBlock);
-// 		targetBlock.remove();
-// 	} else {
-// 		// Восстанавливаем исходную структуру
-// 		let consultationBlock = document.querySelector('.consultation');
-// 		let footerBlock = document.querySelector('.footer');
-// 		let targetBlock = document.createElement('div');
-// 		targetBlock.classList.add('section', 'section_bottom', 'target-block');
-// 		targetBlock.id = '11';
+icons.forEach(icon => {
+	icon.addEventListener('mouseover', () => {
+		const tooltip = icon.nextElementSibling;
+		tooltip.style.display = 'block';
+	});
 
-// 		targetBlock.appendChild(consultationBlock);
-// 		targetBlock.appendChild(footerBlock);
-
-// 		consultationBlock.classList.remove('target-block', 'section');
-// 		consultationBlock.removeAttribute('id');
-
-// 		footerBlock.classList.remove('section');
-// 		footerBlock.removeAttribute('id');
-
-// 		consultationBlock.parentElement.insertBefore(targetBlock, consultationBlock);
-// 		consultationBlock.remove();
-// 		footerBlock.remove();
-// 	}
-// }
-
-// // Вызываем функцию при загрузке страницы и при изменении размера экрана
-// window.addEventListener('load', handleScreenResize);
-// window.addEventListener('resize', handleScreenResize);
+	icon.addEventListener('mouseout', () => {
+		const tooltip = icon.nextElementSibling;
+		tooltip.style.display = 'none';
+	});
+});

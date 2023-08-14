@@ -9,15 +9,6 @@
         padding: 0.5rem 0;
         height: 4rem;
     }
-    // @media (max-width: 767px) {
-    //     padding: 1.67rem 0;
-    // }
-    // @media (max-height: 800px) {
-    //     padding: 1.5rem 0 0 0;
-    //     background: $black;
-    //     height: 10%;
-    //     opacity: 0.9;
-    // }
     &-mobile {
         opacity: 1;
     }
@@ -44,12 +35,6 @@
         font-weight: 500;
         line-height: 2rem;
         text-transform: uppercase;
-        // @media(max-width:550px) {
-        //     padding-top: 0.8rem;
-        // }
-        // @media(max-width:550px) {
-        //     padding-top: 1rem;
-        // }
     }
     &__contacts {
         display: flex;
@@ -75,16 +60,6 @@
             }
         }
     }
-    // &_small {
-    //     &-padding {
-    //         padding-top: 1.5rem;
-    //         transition: transform 0.5s ease;
-    //     }
-    //     &-margin {
-    //         margin-bottom: 0.5rem;
-    //         transition: transform 0.5s ease;
-    //     }
-    // }
     &__logo {
         @media (max-width: 767px) {
             display: none;
