@@ -494,7 +494,7 @@
 
 .btn:hover {
     transition: 0.5s;
-    background: $white;
+    background: $darkGrey;
     color: $black;
     border: 2px solid $lightGrey;
 }
@@ -594,12 +594,11 @@
         flex: 1;
         color: $white;
     }
-    &__img{
+    &__img {
         height: 100vh;
         position: absolute;
     }
 }
-
 
 .swiper-background {
     position: absolute;
@@ -608,7 +607,6 @@
     overflow: hidden;
     z-index: 0;
 }
-
 
 .mySwiper {
     width: 100%;
@@ -890,9 +888,16 @@
 .map iframe {
     position: absolute;
     height: 100vh;
+    @media (max-width: 767px) {
+        height: 100vh;
+        position: static;
+    }
 }
 
 .map {
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
     &-item {
         display: flex;
         margin-bottom: 4.18rem;
@@ -938,7 +943,10 @@
     @media (max-width: 1023px) {
         width: 40%;
     }
-
+    @media (max-width: 767px) {
+        width: 100%;
+        margin-left: 0;
+    }
     &-label {
         &_first {
             border-radius: 1rem 0 0 0;
@@ -1835,26 +1843,24 @@
         padding: 4.18rem 2rem;
     }
     &-content {
-        @media (max-width: 1023px) {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 70vh;
-        }
-    }
-    &-content {
+        height: 80vh;
         max-width: 30%;
         text-align: left;
         @media (max-width: 1023px) {
             max-width: 100%;
             position: relative;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 70vh;
         }
     }
     &__img {
         position: absolute;
         right: 0;
         top: 0;
+        transition: opacity 0.3s ease-in-out;
         @media (max-width: 1650px) {
             width: 60%;
             height: 100%;
@@ -1873,7 +1879,7 @@
         @include adaptiv-font(4, 2.8);
         font-weight: 600;
         line-height: 140%;
-        @media(max-width: 1023px) {
+        @media (max-width: 1023px) {
             text-align: left;
         }
     }
@@ -1902,9 +1908,9 @@
     border: 2px solid $black;
     color: $black;
     font-family: Montserrat Medium;
-    font-size: 24px;
+    @include adaptiv-font(2, 1.6);
     font-weight: 500;
-    line-height: 30px;
+    line-height: 2.5rem;
     @media (max-width: 1023px) {
         width: 50%;
         margin: 0 auto;
@@ -1912,7 +1918,7 @@
 }
 
 .difference .btn:hover {
-    background: $darkGrey;
+    background: $colorHoverButtons;
 }
 
 .btn {
@@ -1961,4 +1967,146 @@
 
 .icon-container:hover + .tooltip {
     display: block;
+}
+
+.advantages {
+    position: relative;
+    background-image: url("../img/advantages.png");
+    &-content {
+        &_left {
+            max-width: 41%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            @media (max-width: 767px) {
+                max-width: 100%;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                height: 80%;
+                width: 1px;
+                color: #fff;
+                display: block;
+                right: 55%;
+                top: 10%;
+                z-index: 9999;
+                background: $white;
+                @media (max-width: 767px) {
+                    width: 80%;
+                    height: 1px;
+                    right: 12%;
+                    top: 25%;
+                }
+            }
+        }
+        &_right {
+            max-width: 41%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 5rem;
+            @media (max-width: 767px) {
+                max-width: 100%;
+            }
+        }
+    }
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: 767px) {
+            row-gap: 5rem;
+            flex-direction: column;
+        }
+    }
+    &__title {
+        color: $white;
+        font-family: Montserrat Semi Bold;
+        @include adaptiv-font(4, 2.8);
+        font-weight: 600;
+        line-height: 140%;
+    }
+    &__subtitle {
+        color: $white;
+        font-family: Montserrat Regular;
+        @include adaptiv-font(1.67, 1.2);
+        font-weight: 400;
+        line-height: 130%;
+    }
+    &-paragraph {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        &__title {
+            color: $white;
+            font-family: Montserrat Medium;
+            @include adaptiv-font(2.67, 1.8);
+            font-weight: 500;
+            line-height: 3.2rem;
+        }
+        &__subtitle {
+            color: $white;
+            font-family: Montserrat Regular;
+            @include adaptiv-font(1.67, 1.2);
+            font-weight: 400;
+            line-height: 130%;
+        }
+    }
+}
+
+.error-404 {
+    padding: 8rem 2rem;
+    display: block;
+    &__img{
+        width: 100%;
+    }
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    &__title {
+        margin-bottom: 3rem;
+        color: $black;
+        font-family: Montserrat Semi Bold;
+        @include adaptiv-font(4, 2.8);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+    }
+    &__subtitle {
+        margin-bottom: 10rem;
+        color: $black;
+        font-family: Montserrat Regular;
+        @include adaptiv-font(1.67, 1.2);
+        font-weight: 400;
+        line-height: 130%;
+        @media(max-width: 767px) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__button {
+        padding: 3rem 0;
+        width: 35%;
+        border-radius: 1rem;
+        margin: 0 auto;
+        background: $black;
+        border: 2px solid $black;
+        @media(max-width: 767px) {
+            width: auto;
+            padding: 2rem 1rem;
+        }
+    }
+    &__text {
+        color: $white;
+        font-family: Montserrat Medium;
+        @include adaptiv-font(2, 1.6);
+        font-weight: 500;
+        line-height: 140%;
+    }
+}
+
+.footer-error-404{
+    display: block;
+    height: 110%!important;
 }

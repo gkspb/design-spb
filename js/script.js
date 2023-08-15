@@ -200,41 +200,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //аккордеон футер
 $(document).ready(function () {
-    const breakpoint = 767; // Пороговое значение для медиазапроса
+	const breakpoint = 767; // Пороговое значение для медиазапроса
 
-    function initializeAccordion() {
-        $('.footer-item').each(function () {
-            const $footerItem = $(this);
-            const $footerText = $footerItem.find('.footer-text');
-            const $links = $footerItem.find('.links');
+	function initializeAccordion() {
+		$('.footer-item').each(function () {
+			const $footerItem = $(this);
+			const $footerText = $footerItem.find('.footer-text');
+			const $links = $footerItem.find('.links');
 
-            $links.hide(); // Скрываем блоки .links по умолчанию
+			$links.hide(); // Скрываем блоки .links по умолчанию
 
-            $footerText.on('click', function () {
-                if ($(window).width() <= breakpoint) {
-                    $links.slideToggle();
-                    $footerItem.toggleClass('open');
-                    $footerText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
-                }
-            });
-        });
-    }
+			$footerText.on('click', function () {
+				if ($(window).width() <= breakpoint) {
+					$links.slideToggle();
+					$footerItem.toggleClass('open');
+					$footerText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
+				}
+			});
+		});
+	}
 
-    function resetAccordion() {
-        $('.footer-item').removeClass('open').find('.links').removeAttr('style');
-        $('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
-    }
+	function resetAccordion() {
+		$('.footer-item').removeClass('open').find('.links').removeAttr('style');
+		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
+	}
 
-    $(window).on('load resize', function () {
-        if ($(window).width() <= breakpoint) {
-            initializeAccordion();
-        } else {
-            resetAccordion();
-        }
-    });
+	$(window).on('load resize', function () {
+		if ($(window).width() <= breakpoint) {
+			initializeAccordion();
+		} else {
+			resetAccordion();
+		}
+	});
 });
 
-//замена картинки до/после
 // Получаем элементы кнопок и изображения
 const beforeButton = document.querySelector('.difference__before');
 const afterButton = document.querySelector('.difference__after');
@@ -246,16 +245,25 @@ const afterImagePath = 'img/after.png';
 
 // Добавляем обработчики событий на кнопки
 beforeButton.addEventListener('click', () => {
-	imgElement.src = beforeImagePath;
+	imgElement.style.opacity = '0'; // Уменьшаем прозрачность перед сменой картинки
+	setTimeout(() => {
+		imgElement.src = beforeImagePath;
+		imgElement.style.opacity = '1'; // Постепенно возвращаем прозрачность
+	}, 300); // Задержка совпадает с временем перехода в CSS
 	beforeButton.classList.add('btn-active');
 	afterButton.classList.remove('btn-active');
 });
 
 afterButton.addEventListener('click', () => {
-	imgElement.src = afterImagePath;
+	imgElement.style.opacity = '0'; // Уменьшаем прозрачность перед сменой картинки
+	setTimeout(() => {
+		imgElement.src = afterImagePath;
+		imgElement.style.opacity = '1'; // Постепенно возвращаем прозрачность
+	}, 300); // Задержка совпадает с временем перехода в CSS
 	afterButton.classList.add('btn-active');
 	beforeButton.classList.remove('btn-active');
 });
+
 
 
 //подсказка в таблице
@@ -271,3 +279,4 @@ icons.forEach(icon => {
 		tooltip.style.display = 'none';
 	});
 });
+
