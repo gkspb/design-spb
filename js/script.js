@@ -234,32 +234,30 @@ $(document).ready(function () {
 	});
 });
 
-// Получаем элементы кнопок и изображения
+// до/после меняем картинки
 const beforeButton = document.querySelector('.difference__before');
 const afterButton = document.querySelector('.difference__after');
 const imgElement = document.querySelector('.difference__img');
 
-// Устанавливаем пути к изображениям "До" и "После"
 const beforeImagePath = 'img/before.png';
 const afterImagePath = 'img/after.png';
 
-// Добавляем обработчики событий на кнопки
 beforeButton.addEventListener('click', () => {
-	imgElement.style.opacity = '0'; // Уменьшаем прозрачность перед сменой картинки
+	imgElement.style.opacity = '0'; 
 	setTimeout(() => {
 		imgElement.src = beforeImagePath;
-		imgElement.style.opacity = '1'; // Постепенно возвращаем прозрачность
-	}, 300); // Задержка совпадает с временем перехода в CSS
+		imgElement.style.opacity = '1';
+	}, 300); 
 	beforeButton.classList.add('btn-active');
 	afterButton.classList.remove('btn-active');
 });
 
 afterButton.addEventListener('click', () => {
-	imgElement.style.opacity = '0'; // Уменьшаем прозрачность перед сменой картинки
+	imgElement.style.opacity = '0'; 
 	setTimeout(() => {
 		imgElement.src = afterImagePath;
-		imgElement.style.opacity = '1'; // Постепенно возвращаем прозрачность
-	}, 300); // Задержка совпадает с временем перехода в CSS
+		imgElement.style.opacity = '1'; 
+	}, 300); 
 	afterButton.classList.add('btn-active');
 	beforeButton.classList.remove('btn-active');
 });

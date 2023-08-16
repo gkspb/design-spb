@@ -889,7 +889,7 @@
     position: absolute;
     height: 100vh;
     @media (max-width: 767px) {
-        height: 100vh;
+        height: 50vh;
         position: static;
     }
 }
@@ -897,6 +897,9 @@
 .map {
     @media (max-width: 767px) {
         flex-direction: column;
+        height: auto;
+        padding: 2rem 1.67rem;
+        row-gap: 2rem;
     }
     &-item {
         display: flex;
@@ -946,6 +949,7 @@
     @media (max-width: 767px) {
         width: 100%;
         margin-left: 0;
+        border: 1px solid $black;
     }
     &-label {
         &_first {
@@ -965,6 +969,9 @@
     /* скрыть контент по умолчанию */
     display: none;
     padding: 2.51rem 2rem 3.5rem 2.51rem;
+    @media (max-width: 767px) {
+        padding: 1.5rem;
+    }
 }
 
 /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
@@ -981,6 +988,9 @@
     font-weight: 400;
     line-height: 1.63rem;
     height: 40rem;
+    @media (max-width: 767px) {
+        height: auto;
+    }
 }
 
 .tabs > label {
@@ -2057,8 +2067,10 @@
 .error-404 {
     padding: 8rem 2rem;
     display: block;
-    &__img{
-        width: 100%;
+    &__img {
+        @media (max-width: 767px) {
+            width: 100%;
+        }
     }
     &-wrapper {
         display: flex;
@@ -2081,7 +2093,7 @@
         @include adaptiv-font(1.67, 1.2);
         font-weight: 400;
         line-height: 130%;
-        @media(max-width: 767px) {
+        @media (max-width: 767px) {
             margin-bottom: 2rem;
         }
     }
@@ -2092,7 +2104,7 @@
         margin: 0 auto;
         background: $black;
         border: 2px solid $black;
-        @media(max-width: 767px) {
+        @media (max-width: 767px) {
             width: auto;
             padding: 2rem 1rem;
         }
@@ -2106,7 +2118,7 @@
     }
 }
 
-.footer-error-404{
+.footer-error-404 {
     display: block;
-    height: 110%!important;
+    height: 110% !important;
 }

@@ -2024,7 +2024,7 @@ body.disabled {
 }
 @media (max-width: 767px) {
   .map iframe {
-    height: 100vh;
+    height: 50vh;
     position: static;
   }
 }
@@ -2032,6 +2032,9 @@ body.disabled {
 @media (max-width: 767px) {
   .map {
     flex-direction: column;
+    height: auto;
+    padding: 2rem 1.67rem;
+    row-gap: 2rem;
   }
 }
 .map-item {
@@ -2086,6 +2089,7 @@ body.disabled {
   .tabs {
     width: 100%;
     margin-left: 0;
+    border: 1px solid #141414;
   }
 }
 .tabs-label_first {
@@ -2103,6 +2107,11 @@ body.disabled {
   /* скрыть контент по умолчанию */
   display: none;
   padding: 2.51rem 2rem 3.5rem 2.51rem;
+}
+@media (max-width: 767px) {
+  .tabs > div {
+    padding: 1.5rem;
+  }
 }
 
 /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
@@ -2129,6 +2138,12 @@ body.disabled {
   #content-1,
   #content-2 {
     font-size: calc(1.2rem + 0.238 * ((100vw - 37.5rem) / 144));
+  }
+}
+@media (max-width: 767px) {
+  #content-1,
+  #content-2 {
+    height: auto;
   }
 }
 
@@ -3596,8 +3611,10 @@ body.disabled {
   padding: 8rem 2rem;
   display: block;
 }
-.error-404__img {
-  width: 100%;
+@media (max-width: 767px) {
+  .error-404__img {
+    width: 100%;
+  }
 }
 .error-404-wrapper {
   display: flex;
