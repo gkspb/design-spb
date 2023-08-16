@@ -1306,6 +1306,7 @@
 
 .services-item:hover .details {
     opacity: 1;
+    transition: 1s;
 }
 
 .details {
@@ -1450,6 +1451,10 @@
             @include adaptiv-font(2, 1.6);
             font-weight: 500;
             line-height: 140%;
+            @media (max-width: 767px) {
+                width: 50%;
+                padding: 1.5rem 0;
+            }
         }
     }
     &-services {
@@ -1601,6 +1606,18 @@
             position: absolute;
             left: -7%;
             top: 1px;
+            @media (max-width: 1400px) {
+                top: -10%;
+            }
+            @media (max-height: 992px) {
+                left: -9%;
+            }
+            @media (max-width: 767px) {
+                top: 0;
+            }
+            @media (max-width: 600px) {
+                top: -10%;
+            }
         }
     }
     &-content {
@@ -1965,9 +1982,19 @@
     margin-left: 2rem;
     top: 0;
     cursor: pointer;
-    @media (max-width: 1023px) {
+    @media (max-width: 1400px) {
+        top: -15%;
+    }
+    @media (max-height: 1100px) {
+        top: -25%;
+    }
+    @media (max-width: 767px) {
         margin-left: 1rem;
-        top: 27%;
+        top: 5%;
+    }
+    @media (max-width: 550px) {
+        margin-left: 1rem;
+        top: 0;
     }
 }
 

@@ -1,4 +1,4 @@
-$(function () {
+if ($('body').hasClass('scrollify-page')) {
 	// Настройка Scrollify
 	$.scrollify({
 		section: ".section",
@@ -49,5 +49,6 @@ $(function () {
 			});
 		},
 	});
-});
+};
+
 

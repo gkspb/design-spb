@@ -243,21 +243,21 @@ const beforeImagePath = 'img/before.png';
 const afterImagePath = 'img/after.png';
 
 beforeButton.addEventListener('click', () => {
-	imgElement.style.opacity = '0'; 
+	imgElement.style.opacity = '0';
 	setTimeout(() => {
 		imgElement.src = beforeImagePath;
 		imgElement.style.opacity = '1';
-	}, 300); 
+	}, 300);
 	beforeButton.classList.add('btn-active');
 	afterButton.classList.remove('btn-active');
 });
 
 afterButton.addEventListener('click', () => {
-	imgElement.style.opacity = '0'; 
+	imgElement.style.opacity = '0';
 	setTimeout(() => {
 		imgElement.src = afterImagePath;
-		imgElement.style.opacity = '1'; 
-	}, 300); 
+		imgElement.style.opacity = '1';
+	}, 300);
 	afterButton.classList.add('btn-active');
 	beforeButton.classList.remove('btn-active');
 });
@@ -278,3 +278,6 @@ icons.forEach(icon => {
 	});
 });
 
+
+let div = document.querySelector('.services-item');
+div.addEventListener('mouseenter', e => e.target.classList.add('active'),{ once: true });

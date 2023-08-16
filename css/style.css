@@ -460,7 +460,7 @@ body.disabled {
 }
 @media (max-width: 767px) {
   .header {
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     height: 4rem;
   }
 }
@@ -2584,6 +2584,7 @@ body.disabled {
 
 .services-item:hover .details {
   opacity: 1;
+  transition: 1s;
 }
 
 .details {
@@ -2801,6 +2802,12 @@ body.disabled {
 @media (max-width: 76.7rem) {
   .prices-table-button {
     font-size: calc(1.6rem + 0.68 * ((100vw - 37.5rem) / 144));
+  }
+}
+@media (max-width: 767px) {
+  .prices-table-button {
+    width: 50%;
+    padding: 1.5rem 0;
   }
 }
 .prices-services {
@@ -3021,6 +3028,26 @@ body.disabled {
   position: absolute;
   left: -7%;
   top: 1px;
+}
+@media (max-width: 1400px) {
+  .selection-list__item::before {
+    top: -10%;
+  }
+}
+@media (max-height: 992px) {
+  .selection-list__item::before {
+    left: -9%;
+  }
+}
+@media (max-width: 767px) {
+  .selection-list__item::before {
+    top: 0;
+  }
+}
+@media (max-width: 600px) {
+  .selection-list__item::before {
+    top: -10%;
+  }
 }
 .selection-content-item {
   max-width: 45%;
@@ -3465,10 +3492,26 @@ body.disabled {
   top: 0;
   cursor: pointer;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1400px) {
+  .icon-container:first-child:after {
+    top: -15%;
+  }
+}
+@media (max-height: 1100px) {
+  .icon-container:first-child:after {
+    top: -25%;
+  }
+}
+@media (max-width: 767px) {
   .icon-container:first-child:after {
     margin-left: 1rem;
-    top: 27%;
+    top: 5%;
+  }
+}
+@media (max-width: 550px) {
+  .icon-container:first-child:after {
+    margin-left: 1rem;
+    top: 0;
   }
 }
 
