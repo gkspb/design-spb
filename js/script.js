@@ -209,14 +209,6 @@ $(document).ready(function () {
 			const $links = $footerItem.find('.links');
 
 			$links.hide(); // Скрываем блоки .links по умолчанию
-
-			$footerText.on('click', function () {
-				if ($(window).width() <= breakpoint) {
-					$links.slideToggle();
-					$footerItem.toggleClass('open');
-					$footerText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
-				}
-			});
 		});
 	}
 
@@ -224,6 +216,17 @@ $(document).ready(function () {
 		$('.footer-item').removeClass('open').find('.links').removeAttr('style');
 		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
 	}
+
+	$('.footer').on('click', '.footer-text', function () {
+		if ($(window).width() <= breakpoint) {
+			const $footerItem = $(this).closest('.footer-item');
+			const $links = $footerItem.find('.links');
+
+			$links.slideToggle();
+			$footerItem.toggleClass('open');
+			$(this).find('i.fa').toggleClass('fa-chevron-down fa-minus');
+		}
+	});
 
 	$(window).on('load resize', function () {
 		if ($(window).width() <= breakpoint) {
@@ -233,6 +236,7 @@ $(document).ready(function () {
 		}
 	});
 });
+
 
 // до/после меняем картинки
 const beforeButton = document.querySelector('.difference__before');
