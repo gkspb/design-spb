@@ -9,6 +9,12 @@
     @media (max-width: 767px) {
         flex: 0 0;
     }
+    &-error-404 {
+        @media (max-width: 767px) {
+            display: block;
+            height: auto!important;
+        }
+    }
     &-wrapper {
         display: flex;
         justify-content: space-between;
@@ -85,7 +91,7 @@
         @include adaptiv-font(1.17, 1);
         font-weight: 500;
         line-height: 1.42rem;
-        border-radius: 2rem;
+        border-radius: 1rem;
         border: 2px solid $white;
         padding: 0.92rem 0;
         width: 14.38rem;
@@ -125,8 +131,6 @@
     flex-direction: column;
     row-gap: 1rem;
 }
-
-
 
 .footer-text::after {
     @media (max-width: 767px) {
