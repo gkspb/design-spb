@@ -1232,6 +1232,11 @@ body.disabled {
   padding: 4.18rem 0;
   text-align: center;
 }
+@media (max-width: 767px) {
+  .questions_bottom {
+    padding-top: 0;
+  }
+}
 
 .calculation {
   display: flex;
@@ -1528,6 +1533,11 @@ body.disabled {
 
 .scrollify-page .consultation {
   padding: 8rem 1.67rem 0;
+}
+@media (max-width: 767px) {
+  .scrollify-page .consultation {
+    padding-top: 6rem;
+  }
 }
 
 .section-swiper-wrapper {

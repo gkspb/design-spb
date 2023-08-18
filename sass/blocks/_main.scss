@@ -317,6 +317,9 @@
     &_bottom {
         padding: 4.18rem 0;
         text-align: center;
+        @media(max-width: 767px) {
+            padding-top: 0;
+        }
     }
 }
 
@@ -530,6 +533,9 @@
 
 .scrollify-page .consultation{
     padding: 8rem 1.67rem 0;
+    @media(max-width: 767px) {
+        padding-top: 6rem;
+    }
 }
 
 

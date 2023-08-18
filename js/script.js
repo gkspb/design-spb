@@ -201,14 +201,19 @@ document.addEventListener('DOMContentLoaded', function () {
 //аккордеон футер
 $(document).ready(function () {
 	const breakpoint = 767; // Пороговое значение для медиазапроса
-
 	function initializeAccordion() {
 		$('.footer-item').each(function () {
 			const $footerItem = $(this);
 			const $footerText = $footerItem.find('.footer-text');
 			const $links = $footerItem.find('.links');
-
-			$links.hide(); // Скрываем блоки .links по умолчанию
+			$links.hide(); 
+			$footerText.on('click', function () {
+				if ($(window).width() <= breakpoint) {
+					$links.slideToggle();
+					$footerItem.toggleClass('open');
+					$footerText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
+				}
+			});
 		});
 	}
 
@@ -216,17 +221,6 @@ $(document).ready(function () {
 		$('.footer-item').removeClass('open').find('.links').removeAttr('style');
 		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
 	}
-
-	$('.footer').on('click', '.footer-text', function () {
-		if ($(window).width() <= breakpoint) {
-			const $footerItem = $(this).closest('.footer-item');
-			const $links = $footerItem.find('.links');
-
-			$links.slideToggle();
-			$footerItem.toggleClass('open');
-			$(this).find('i.fa').toggleClass('fa-chevron-down fa-minus');
-		}
-	});
 
 	$(window).on('load resize', function () {
 		if ($(window).width() <= breakpoint) {
@@ -237,6 +231,40 @@ $(document).ready(function () {
 	});
 });
 
+// $(document).ready(function () {
+// 	const breakpoint = 767; // Пороговое значение для медиазапроса
+
+// 	function initializeAccordion() {
+// 		$('.footer-item').each(function () {
+// 			const $footerItem = $(this);
+// 			const $footerText = $footerItem.find('.footer-text');
+// 			const $links = $footerItem.find('.links');
+
+// 			$links.hide(); // Скрываем блоки .links по умолчанию
+
+// 			$footerText.on('click', function () {
+// 				if ($(window).width() <= breakpoint) {
+// 					$links.slideToggle();
+// 					$footerItem.toggleClass('open');
+// 					$footerText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
+// 				}
+// 			});
+// 		});
+// 	}
+
+// 	function resetAccordion() {
+// 		$('.footer-item').removeClass('open').find('.links').removeAttr('style');
+// 		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
+// 	}
+
+// 	$(window).on('load resize', function () {
+// 		if ($(window).width() <= breakpoint) {
+// 			initializeAccordion();
+// 		} else {
+// 			resetAccordion();
+// 		}
+// 	});
+// });
 
 // до/после меняем картинки
 const beforeButton = document.querySelector('.difference__before');
