@@ -149,7 +149,7 @@
 }
 
 .main-page .section-container {
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .calculate {
@@ -563,7 +563,7 @@
     width: 100%;
     flex: 1 1 50%;
     @media (max-width: 767px) {
-        padding: 0 1.67rem;
+        padding: 3rem 1.67rem 0;
         flex: 0 0;
     }
 }
@@ -667,7 +667,8 @@
         font-family: Montserrat Semi Bold;
         @include adaptiv-font(5.35, 3.8);
         font-weight: 600;
-        line-height: 6.5rem;
+        line-height: 130%;
+        margin-bottom: 2rem;
     }
     &__subtitle {
         text-align: rigth;
@@ -1719,7 +1720,7 @@
     width: 100%;
     align-items: center;
     row-gap: 5rem;
-    height: 85vh;
+    height: 80vh;
     @media (max-width: 767px) {
         row-gap: 2rem;
     }
@@ -1916,7 +1917,7 @@
 .tab label::after {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
     display: block;
     width: 3em;
     height: 1em;
@@ -2052,19 +2053,19 @@
 .tooltip {
     display: none;
     position: absolute;
-    top: 0;
-    left: 30%;
+    top: -0.5rem;
+    left: 115%;
     background-color: #111;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
     color: $white;
-    width: 50%;
     z-index: 99999;
 }
 
 .icon-container {
     position: relative;
+    display: inline;
 }
 
 .icon-container:first-child:after {
@@ -2092,11 +2093,7 @@
     }
 }
 
-.icon-container:hover::after {
-    display: inline-block;
-}
-
-.icon-container:hover + .tooltip {
+.icon-container:hover .tooltip {
     display: block;
 }
 
@@ -2442,7 +2439,7 @@
             display: flex;
             justify-content: space-between;
             gap: 2rem;
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 flex-direction: column;
             }
         }
@@ -2453,19 +2450,18 @@
         @include adaptiv-font(2, 1.6);
         font-weight: 400;
         line-height: 130%;
-        &_bottom{
+        &_bottom {
             margin-bottom: 7rem;
         }
     }
 }
 
-
-.article_first .article__img{
+.article_first .article__img {
     width: 100%;
 }
 
-.article_third .article__img{
-    @media(max-width: 992px) {
+.article_third .article__img {
+    @media (max-width: 992px) {
         width: 100%;
     }
 }

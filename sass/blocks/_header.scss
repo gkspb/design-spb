@@ -269,4 +269,7 @@
 
 .substrate {
     background: $headerNotScrollify;
+    &_white{
+        background: $headerScrollify;
+    }
 }

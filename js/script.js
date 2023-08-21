@@ -195,8 +195,7 @@ if ($('body').hasClass('scrollify-page')) {
 	function updateStyles(currentSection) {
 		let targetBlockClass = "target-block";
 		if (currentSection.hasClass(targetBlockClass)) {
-			$(".header").addClass("header_small-padding");
-			$(".header-wrapper").addClass("header_small-margin");
+			$(".header").addClass("substrate_white");
 			if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
 				$(".header-text").addClass("header_black");
 				$(".menu-item").addClass("menu-item_black");
@@ -212,8 +211,7 @@ if ($('body').hasClass('scrollify-page')) {
 			$(".header-text").removeClass("header_black");
 			$(".icon-white").removeClass("none");
 			$(".icon-black").addClass("none");
-			$(".header").removeClass("header_small-padding");
-			$(".header-wrapper").removeClass("header_small-margin");
+			$(".header").removeClass("substrate_white");
 			$(".menu-burger").removeClass("menu-burger_black");
 			$(".menu-item").removeClass("menu-item_black");
 		}
@@ -481,18 +479,18 @@ if (beforeButton && afterButton && imgElement) {
 
 
 //подсказка в таблице
-const icons = document.querySelectorAll('.icon');
-icons.forEach(icon => {
-	icon.addEventListener('mouseover', () => {
-		const tooltip = icon.nextElementSibling;
-		tooltip.style.display = 'block';
-	});
+// const icons = document.querySelectorAll('.icon-container');
+// icons.forEach(icon => {
+// 	icon.addEventListener('mouseover', () => {
+// 		const tooltip = icon.nextElementSibling;
+// 		tooltip.style.display = 'block';
+// 	});
 
-	icon.addEventListener('mouseout', () => {
-		const tooltip = icon.nextElementSibling;
-		tooltip.style.display = 'none';
-	});
-});
+// 	icon.addEventListener('mouseout', () => {
+// 		const tooltip = icon.nextElementSibling;
+// 		tooltip.style.display = 'none';
+// 	});
+// });
 
 
 
