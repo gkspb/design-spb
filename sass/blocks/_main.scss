@@ -148,6 +148,10 @@
     }
 }
 
+.main-page .section-container {
+    justify-content: space-between;
+}
+
 .calculate {
     background: $black;
 }
@@ -1074,6 +1078,7 @@
         display: flex;
         gap: 2rem;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
     &-item {
         border-radius: 1rem;
@@ -1199,11 +1204,11 @@
     }
 }
 
-.table-header th:first-child{
+.table-header th:first-child {
     border-radius: 1rem 0 0 0;
 }
 
-.table-header th:last-child{
+.table-header th:last-child {
     border-radius: 0 1rem 0 0;
 }
 
@@ -1222,9 +1227,19 @@
     }
 }
 
-.table-square tr:nth-child(2n),
-.services-table tr:nth-child(2n) {
+.table-square tr:nth-child(2n) td,
+.services-table tr:nth-child(2n) td {
     background: $tableColor;
+}
+
+.table-square tr:last-child td:first-child,
+.services-table tr:last-child td:first-child {
+    border-radius: 0 0 0 1rem;
+}
+
+.table-square tr:last-child td:last-child,
+.services-table tr:last-child td:last-child {
+    border-radius: 0 0 1rem 0;
 }
 
 .table-square td:first-child,
@@ -1278,6 +1293,10 @@
         font-weight: 500;
         line-height: 130%;
     }
+}
+
+.table-wrapper tr:last-child td {
+    border-bottom: none;
 }
 
 .services {
@@ -2391,4 +2410,62 @@
 
 .styles-item {
     background-size: cover;
+}
+
+.articles .article {
+    height: auto !important;
+}
+
+.articles .all-articles {
+    height: auto;
+}
+
+.article {
+    &__title {
+        margin-bottom: 4.18rem;
+        color: $black;
+        font-family: Montserrat Semi Bold;
+        @include adaptiv-font(4, 2.8);
+        font-weight: 600;
+        line-height: 140%;
+        &_small {
+            margin-bottom: 2rem;
+            color: $black;
+            font-family: Montserrat Medium;
+            @include adaptiv-font(2.67, 1.8);
+            font-weight: 500;
+            line-height: 3.2rem;
+        }
+    }
+    &_third {
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            @media(max-width: 992px) {
+                flex-direction: column;
+            }
+        }
+    }
+    &__subtitle {
+        color: $black;
+        font-family: Montserrat Regular;
+        @include adaptiv-font(2, 1.6);
+        font-weight: 400;
+        line-height: 130%;
+        &_bottom{
+            margin-bottom: 7rem;
+        }
+    }
+}
+
+
+.article_first .article__img{
+    width: 100%;
+}
+
+.article_third .article__img{
+    @media(max-width: 992px) {
+        width: 100%;
+    }
 }

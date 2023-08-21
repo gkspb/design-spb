@@ -98,9 +98,6 @@ let swiper3 = new Swiper(".mySwiper3", {
 	breakpoints: {
 		320: {
 			slidesPerView: 1,
-			grid: {
-				rows: 1,
-			},
 		},
 		767: {
 			slidesPerView: 2.2
@@ -171,39 +168,217 @@ swiper4.on('slideChangeTransitionEnd', function () {
 	section.style.backgroundImage = `url(${activeBackgroundImage})`;
 });
 
-//меню бургер
-$(document).on('click', '#menu-toggle', function () {
-	$(this).toggleClass('menu-burger--is-active');
-});
-document.addEventListener('DOMContentLoaded', function () {
-	let btnBurger = document.querySelector('.menu-burger');
-	if (btnBurger) {
-		btnBurger.addEventListener('click', function () {
-			let mobileMenu = document.querySelector('.mobile-nav_bottom');
-			let mobileNav = document.querySelector('.mobile-nav');
-			let header = document.querySelector('.header');
-			mobileMenu.classList.toggle('mobile-nav_bottom-active');
-			mobileMenu.classList.toggle('mobile-nav_bottom-deactive');
-			mobileNav.classList.toggle('mobile-nav-active');
-			let targetBlockClass = "target-block";
-			if (mobileMenu.classList.contains('mobile-nav_bottom-active')) {
-				$('.main').addClass('main-opacity');
-				$('.header').addClass('header-mobile');
-				$('.nav-item').removeClass('header_black');
-				document.body.style.overflow = "hidden";
+
+
+
+
+if ($('body').hasClass('scrollify-page')) {
+	// Настройка Scrollify
+	$.scrollify({
+		section: ".section",
+		interstitialSection: "",
+		easing: "easeOutExpo",
+		scrollSpeed: 1000,
+		offset: 0,
+		scrollbars: true,
+		standardScrollElements: "",
+		setHeights: true,
+		overflowScroll: true,
+		updateHash: true,
+		touchScroll: true,
+		after: function (index, sections) {
+			updateStyles(sections[index]);
+		},
+	});
+
+	// Функция обновления стилей
+	function updateStyles(currentSection) {
+		let targetBlockClass = "target-block";
+		if (currentSection.hasClass(targetBlockClass)) {
+			$(".header").addClass("header_small-padding");
+			$(".header-wrapper").addClass("header_small-margin");
+			if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
+				$(".header-text").addClass("header_black");
+				$(".menu-item").addClass("menu-item_black");
+				$(".menu-burger").addClass("menu-burger_black");
+				$(".icon-white").addClass("none");
+				$(".icon-black").removeClass("none");
 			} else {
-				$('.main').removeClass('main-opacity');
-				$('.header').removeClass('header-mobile');
-				document.body.style.overflow = "auto";
-				// if () {
-				// 	$('.nav-item').addeClass('header_black');
-				// } else {
-				// 	$('.nav-item').removeClass('header_black');
-				// }
+				$(".header-text").removeClass("header_black");
+				$(".menu-item").removeClass("menu-item_black");
+				$(".menu-burger").removeClass("menu-burger_black");
 			}
-		});
+		} else {
+			$(".header-text").removeClass("header_black");
+			$(".icon-white").removeClass("none");
+			$(".icon-black").addClass("none");
+			$(".header").removeClass("header_small-padding");
+			$(".header-wrapper").removeClass("header_small-margin");
+			$(".menu-burger").removeClass("menu-burger_black");
+			$(".menu-item").removeClass("menu-item_black");
+		}
 	}
+
+	// Вызов функции обновления стилей при скролле и при загрузке страницы
+	$(document).ready(function () {
+		let currentIndex = $.scrollify.currentIndex();
+		let currentSection = $(".section").eq(currentIndex);
+		updateStyles(currentSection);
+
+		$(window).on('scroll', function () {
+			let currentIndex = $.scrollify.currentIndex();
+			let currentSection = $(".section").eq(currentIndex);
+			updateStyles(currentSection);
+		});
+	});
+};
+
+
+// if ($('body').hasClass('scrollify-page')) {
+// 	// Настройка Scrollify
+// 	$.scrollify({
+// 		section: ".section",
+// 		interstitialSection: "",
+// 		easing: "easeOutExpo",
+// 		scrollSpeed: 1000,
+// 		offset: 0,
+// 		scrollbars: true,
+// 		standardScrollElements: "",
+// 		setHeights: true,
+// 		overflowScroll: true,
+// 		updateHash: true,
+// 		touchScroll: true,
+// 		updateHash: false,
+// 		after: function (index, sections) {
+// 			function updateStyles() {
+// 				let targetBlockClass = "target-block";
+// 				if (sections[index].hasClass(targetBlockClass)) {
+// 					$(".header").addClass("header_small-padding");
+// 					$(".header-wrapper").addClass("header_small-margin");
+// 					if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
+// 						$(".header-text").addClass("header_black");
+// 						$(".menu-item").addClass("menu-item_black");
+// 						$(".menu-burger").addClass("menu-burger_black");
+// 						$(".icon-white").addClass("none");
+// 						$(".icon-black").removeClass("none");
+// 					} else {
+// 						$(".header-text").removeClass("header_black");
+// 						$(".menu-item").removeClass("menu-item_black");
+// 						$(".menu-burger").removeClass("menu-burger_black");
+// 					}
+// 				} else {
+// 					$(".header-text").removeClass("header_black");
+// 					$(".icon-white").removeClass("none");
+// 					$(".icon-black").addClass("none");
+// 					$(".header").removeClass("header_small-padding");
+// 					$(".header-wrapper").removeClass("header_small-margin");
+// 					$(".menu-burger").removeClass("menu-burger_black");
+// 					$(".menu-item").removeClass("menu-item_black");
+// 				}
+// 			}
+// 			updateStyles();
+// 			$(window).on('scroll', function () {
+// 				updateStyles();
+// 			});
+// 			$('#menu-toggle').on('click', function () {
+// 				updateStyles();
+// 			});
+// 		},
+// 	});
+// };
+
+
+// Функция для получения текущего блока с использованием Scrollify
+function getCurrentSection() {
+    let currentSection = null;
+    
+    // Получаем текущий активный блок Scrollify
+    const activeIndex = $.scrollify.current().index();
+    
+    // Предположим, что у вас есть массив секций, которые вы хотите отслеживать
+    // Замените этот массив на фактический список секций на вашем сайте
+    const sections = [$("#1"), $("#2"), $("#3"), $("#4"), $("#5"), $("#6"), $("#7"), $("#8"), $("#9"), $("#10"), $("#11")];
+    
+    // Проверяем, в каком блоке находится активный индекс Scrollify
+    if (activeIndex >= 0 && activeIndex < sections.length) {
+        currentSection = sections[activeIndex];
+    }
+    
+    return currentSection;
+}
+
+$(document).on('click', '#menu-toggle', function () {
+    $(this).toggleClass('menu-burger--is-active');
+    
+    // Получаем текущий блок и вызываем функцию обновления стилей
+    let currentSection = getCurrentSection(); // Здесь реализуйте получение текущего блока
+    updateStyles(currentSection);
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    let btnBurger = document.querySelector('.menu-burger');
+    if (btnBurger) {
+        btnBurger.addEventListener('click', function () {
+            let mobileMenu = document.querySelector('.mobile-nav_bottom');
+            let mobileNav = document.querySelector('.mobile-nav');
+            let header = document.querySelector('.header');
+            mobileMenu.classList.toggle('mobile-nav_bottom-active');
+            mobileMenu.classList.toggle('mobile-nav_bottom-deactive');
+            mobileNav.classList.toggle('mobile-nav-active');
+            
+            // Получаем текущий блок и вызываем функцию обновления стилей
+            let currentSection = getCurrentSection(); // Здесь реализуйте получение текущего блока
+            updateStyles(currentSection);
+            
+            if (mobileMenu.classList.contains('mobile-nav_bottom-active')) {
+                $('.main').addClass('main-opacity');
+                $('.header').addClass('header-mobile');
+                $('.nav-item').removeClass('header_black');
+                document.body.style.overflow = "hidden";
+            } else {
+                $('.main').removeClass('main-opacity');
+                $('.header').removeClass('header-mobile');
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+});
+
+
+
+//меню бургер
+// $(document).on('click', '#menu-toggle', function () {
+// 	$(this).toggleClass('menu-burger--is-active');
+// });
+// document.addEventListener('DOMContentLoaded', function () {
+// 	let btnBurger = document.querySelector('.menu-burger');
+// 	if (btnBurger) {
+// 		btnBurger.addEventListener('click', function () {
+// 			let mobileMenu = document.querySelector('.mobile-nav_bottom');
+// 			let mobileNav = document.querySelector('.mobile-nav');
+// 			let header = document.querySelector('.header');
+// 			mobileMenu.classList.toggle('mobile-nav_bottom-active');
+// 			mobileMenu.classList.toggle('mobile-nav_bottom-deactive');
+// 			mobileNav.classList.toggle('mobile-nav-active');
+// 			let targetBlockClass = "target-block";
+// 			if (mobileMenu.classList.contains('mobile-nav_bottom-active')) {
+// 				$('.main').addClass('main-opacity');
+// 				$('.header').addClass('header-mobile');
+// 				$('.nav-item').removeClass('header_black');
+// 				document.body.style.overflow = "hidden";
+// 			} else {
+// 				$('.main').removeClass('main-opacity');
+// 				$('.header').removeClass('header-mobile');
+// 				document.body.style.overflow = "auto";
+// 				// if () {
+// 				// 	$('.nav-item').addeClass('header_black');
+// 				// } else {
+// 				// 	$('.nav-item').removeClass('header_black');
+// 				// }
+// 			}
+// 		});
+// 	}
+// });
 
 //аккордеон футер
 $(document).ready(function () {
@@ -277,29 +452,31 @@ $(document).ready(function () {
 const beforeButton = document.querySelector('.difference__before');
 const afterButton = document.querySelector('.difference__after');
 const imgElement = document.querySelector('.difference__img');
-
 const beforeImagePath = 'img/before.png';
 const afterImagePath = 'img/after.png';
 
-beforeButton.addEventListener('click', () => {
-	imgElement.style.opacity = '0';
-	setTimeout(() => {
-		imgElement.src = beforeImagePath;
-		imgElement.style.opacity = '1';
-	}, 300);
-	beforeButton.classList.add('btn-active');
-	afterButton.classList.remove('btn-active');
-});
+if (beforeButton && afterButton && imgElement) {
+    beforeButton.addEventListener('click', () => {
+        imgElement.style.opacity = '0';
+        setTimeout(() => {
+            imgElement.src = beforeImagePath;
+            imgElement.style.opacity = '1';
+        }, 300);
+        beforeButton.classList.add('btn-active');
+        afterButton.classList.remove('btn-active');
+    });
 
-afterButton.addEventListener('click', () => {
-	imgElement.style.opacity = '0';
-	setTimeout(() => {
-		imgElement.src = afterImagePath;
-		imgElement.style.opacity = '1';
-	}, 300);
-	afterButton.classList.add('btn-active');
-	beforeButton.classList.remove('btn-active');
-});
+    afterButton.addEventListener('click', () => {
+        imgElement.style.opacity = '0';
+        setTimeout(() => {
+            imgElement.src = afterImagePath;
+            imgElement.style.opacity = '1';
+        }, 300);
+        afterButton.classList.add('btn-active');
+        beforeButton.classList.remove('btn-active');
+    });
+}
+
 
 
 
