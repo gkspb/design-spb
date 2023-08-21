@@ -185,14 +185,21 @@ document.addEventListener('DOMContentLoaded', function () {
 			mobileMenu.classList.toggle('mobile-nav_bottom-active');
 			mobileMenu.classList.toggle('mobile-nav_bottom-deactive');
 			mobileNav.classList.toggle('mobile-nav-active');
+			let targetBlockClass = "target-block";
 			if (mobileMenu.classList.contains('mobile-nav_bottom-active')) {
 				$('.main').addClass('main-opacity');
 				$('.header').addClass('header-mobile');
+				$('.nav-item').removeClass('header_black');
 				document.body.style.overflow = "hidden";
 			} else {
 				$('.main').removeClass('main-opacity');
 				$('.header').removeClass('header-mobile');
 				document.body.style.overflow = "auto";
+				// if () {
+				// 	$('.nav-item').addeClass('header_black');
+				// } else {
+				// 	$('.nav-item').removeClass('header_black');
+				// }
 			}
 		});
 	}
@@ -311,5 +318,27 @@ icons.forEach(icon => {
 });
 
 
-let div = document.querySelector('.services-item');
-div.addEventListener('mouseenter', e => e.target.classList.add('active'),{ once: true });
+
+
+
+function removeBlur(element) {
+	element.removeEventListener("mouseover", removeBlur);
+
+	var blurElement = element.querySelector(".item-blur");
+	if (blurElement) {
+		blurElement.style.opacity = "0";
+		setTimeout(function() {
+			blurElement.remove();
+		}, 1000);
+	}
+}
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     var blocks = document.querySelectorAll(".your-block-class"); // Замените ".your-block-class" на соответствующий селектор
+
+//     blocks.forEach(function(block) {
+//         block.addEventListener("mouseover", function() {
+//             removeBlur(block);
+//         });
+//     });
+// });

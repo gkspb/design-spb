@@ -29,7 +29,7 @@
             display: flex;
             flex-direction: column;
             height: 80vh;
-            justify-content: space-between;
+            justify-content: center;
         }
     }
     &-contacts {
@@ -45,6 +45,9 @@
         background-image: url("../img/background-1.png");
     }
     &-one-room {
+        background-image: url("../img/background-1.png");
+    }
+    &-styles {
         background-image: url("../img/background-1.png");
     }
     &_bottom {
@@ -246,6 +249,21 @@
     top: -130%;
 }
 
+.section-styles .section-content::before {
+    top: -130%;
+}
+
+.styles {
+    &-about {
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
 .about {
     text-align: center;
     &-wrapper {
@@ -317,7 +335,7 @@
     &_bottom {
         padding: 4.18rem 0;
         text-align: center;
-        @media(max-width: 767px) {
+        @media (max-width: 767px) {
             padding-top: 0;
         }
     }
@@ -424,7 +442,7 @@
         border: 1px solid $darkGrey;
         display: flex;
         flex-direction: column;
-        row-gap: 0.5rem;
+        row-gap: 1rem;
         flex: 1 0;
         text-align: left;
         @media (max-width: 767px) {
@@ -433,6 +451,9 @@
         &__img {
             width: 100%;
             object-fit: cover;
+            @media (max-height: 800px) {
+                width: 60%;
+            }
         }
         &__title {
             color: $black;
@@ -459,6 +480,9 @@
         width: 21.5rem;
         border-radius: 1rem;
         padding: 1.67rem 0;
+        @media (max-height: 800px) {
+            padding: 0.5rem;
+        }
     }
     &-item {
         display: flex;
@@ -471,6 +495,11 @@
             column-gap: 3rem;
         }
     }
+    &-item:last-child {
+        @media (max-height: 800px) {
+            display: none;
+        }
+    }
     &-content {
         display: flex;
         flex-direction: column;
@@ -481,6 +510,10 @@
         &-img {
             &-wrapper {
                 height: 70%;
+                @media (max-height: 800px) {
+                    height: 60%;
+                    text-align: center;
+                }
             }
         }
     }
@@ -531,13 +564,12 @@
     }
 }
 
-.scrollify-page .consultation{
+.scrollify-page .consultation {
     padding: 8rem 1.67rem 0;
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
         padding-top: 6rem;
     }
 }
-
 
 .section-swiper-wrapper {
     position: relative;
@@ -900,7 +932,7 @@
 
 .map iframe {
     position: absolute;
-    height: 100vh;
+    height: 100%;
     @media (max-width: 767px) {
         height: 50vh;
         position: static;
@@ -1158,7 +1190,6 @@
 .services-table {
     border-radius: 1rem;
     border-collapse: collapse;
-    border: 1px solid $black;
     @media (max-width: 767px) {
         display: inline-block;
         vertical-align: top;
@@ -1166,6 +1197,14 @@
         overflow-x: auto;
         white-space: nowrap;
     }
+}
+
+.table-header th:first-child{
+    border-radius: 1rem 0 0 0;
+}
+
+.table-header th:last-child{
+    border-radius: 0 1rem 0 0;
 }
 
 .table-square td,
@@ -1217,8 +1256,12 @@
 }
 
 .table {
-    &-square {
+    &-wrapper {
+        border: 1px solid #000;
+        border-radius: 1rem;
         margin-bottom: 4rem;
+    }
+    &-square {
         border-radius: 1rem;
         width: 100%;
     }
@@ -1239,62 +1282,12 @@
 
 .services {
     &-table {
-        margin-bottom: 2.5rem;
         width: 100%;
     }
     &-img {
         background: $colorPricesConsultation;
         filter: blur(5px);
         transition: 1s;
-    }
-    &-item {
-        width: 24%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-size: cover;
-        position: relative;
-        height: 33rem;
-        position: relative;
-        @media (max-width: 1023px) {
-            width: 49%;
-        }
-        @media (max-width: 767px) {
-            width: 100%;
-        }
-        &_first {
-            background: url("../img/services-1.png");
-        }
-        &_second {
-            background: url("../img/services-2.png");
-        }
-        &_third {
-            background: url("../img/services-3.png");
-        }
-        &_fourth {
-            background: url("../img/services-4.png");
-        }
-        &_fifth {
-            background: url("../img/services-5.png");
-        }
-        &_sixth {
-            background: url("../img/services-6.png");
-        }
-        &_seventh {
-            background: url("../img/services-7.png");
-        }
-        &_eighth {
-            background: url("../img/services-8.png");
-        }
-    }
-    &-item::after {
-        content: "";
-        width: 100%;
-        height: 33rem;
-        backdrop-filter: blur(7px);
-        transition: 1s;
-        position: absolute;
-        z-index: 8;
     }
     &-list {
         &-wrapper {
@@ -1315,14 +1308,61 @@
     }
 }
 
-.services-item:hover::after {
-    backdrop-filter: blur(0px);
-    transition: 1s;
+.services-item {
+    width: 24%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 33rem;
+    @media (max-width: 1023px) {
+        width: 49%;
+    }
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+    &_first {
+        background: url("../img/services-1.png");
+    }
+    &_second {
+        background: url("../img/services-2.png");
+    }
+    &_third {
+        background: url("../img/services-3.png");
+    }
+    &_fourth {
+        background: url("../img/services-4.png");
+    }
+    &_fifth {
+        background: url("../img/services-5.png");
+    }
+    &_sixth {
+        background: url("../img/services-6.png");
+    }
+    &_seventh {
+        background: url("../img/services-7.png");
+    }
+    &_eighth {
+        background: url("../img/services-8.png");
+    }
+}
+
+.item-blur {
+    content: "";
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(7px);
+    transition: opacity 1s ease;
+    position: absolute;
 }
 
 .services-item:hover .details {
     opacity: 1;
     transition: 1s;
+}
+
+.services-item {
+    background-size: cover;
 }
 
 .details {
@@ -1711,7 +1751,7 @@
         width: 100%;
     }
     &-img {
-        &-wrapper{
+        &-wrapper {
             position: relative;
         }
         &-wrapper::before {
@@ -2145,7 +2185,7 @@
         font-style: normal;
         font-weight: 600;
         line-height: 140%;
-        @media(max-width: 767px) {
+        @media (max-width: 767px) {
             margin-bottom: 1rem;
         }
     }
@@ -2180,8 +2220,6 @@
         line-height: 140%;
     }
 }
-
-
 
 .design-info {
     padding: 4.18rem 0;
@@ -2265,4 +2303,92 @@
 
 .contacts .section-contacts {
     height: 100vh;
+}
+
+.section_bottom {
+    height: auto;
+}
+
+.scrollify-page .section_bottom {
+    height: 100vh;
+}
+
+.styles {
+    &-about {
+        height: auto;
+        &-wrapper {
+            text-align: center;
+        }
+    }
+    &-img {
+        background: $colorPricesConsultation;
+        filter: blur(5px);
+        transition: 1s;
+    }
+    &-list {
+        height: auto;
+        &-wrapper {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+    &__text {
+        color: $white;
+        font-family: Montserrat Medium;
+        @include adaptiv-font(2.67, 1.8);
+        font-weight: 500;
+        line-height: 3.25rem;
+        z-index: 9;
+        position: relative;
+    }
+}
+
+.styles-item {
+    width: 32%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 33rem;
+    border-radius: 10px;
+    @media (max-width: 1023px) {
+        width: 48%;
+    }
+    @media (max-width: 767px) {
+        width: 47%;
+        height: 40vh;
+    }
+    @media (max-width: 550px) {
+        width: 100%;
+        height: 60vh;
+    }
+    &_first {
+        background: url("../img/styles-1.png");
+    }
+    &_second {
+        background: url("../img/styles-2.png");
+    }
+    &_third {
+        background: url("../img/styles-3.png");
+    }
+    &_fourth {
+        background: url("../img/styles-4.png");
+    }
+    &_fifth {
+        background: url("../img/styles-5.png");
+    }
+    &_sixth {
+        background: url("../img/styles-6.png");
+    }
+}
+
+.styles-item:hover .details {
+    opacity: 1;
+    transition: 1s;
+}
+
+.styles-item {
+    background-size: cover;
 }
