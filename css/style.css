@@ -4512,6 +4512,8 @@ body.disabled {
   color: #141414;
   transform: scale(1.05);
   transition: 0.3s;
+  border: 1px solid #141414;
+  border-radius: 1rem;
 }
 
 .footer {
