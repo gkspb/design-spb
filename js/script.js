@@ -381,12 +381,14 @@ document.addEventListener('DOMContentLoaded', function () {
 //аккордеон футер
 $(document).ready(function () {
 	const breakpoint = 767; // Пороговое значение для медиазапроса
+	let accordionInitialized = false;
+
 	function initializeAccordion() {
 		$('.footer-item').each(function () {
 			const $footerItem = $(this);
 			const $footerText = $footerItem.find('.footer-text');
 			const $links = $footerItem.find('.links');
-			$links.hide(); 
+			$links.hide();
 			$footerText.on('click', function () {
 				if ($(window).width() <= breakpoint) {
 					$links.slideToggle();
@@ -395,6 +397,7 @@ $(document).ready(function () {
 				}
 			});
 		});
+		accordionInitialized = true;
 	}
 
 	function resetAccordion() {
@@ -404,12 +407,49 @@ $(document).ready(function () {
 
 	$(window).on('load resize', function () {
 		if ($(window).width() <= breakpoint) {
-			initializeAccordion();
+			if (!accordionInitialized) {
+				initializeAccordion();
+			}
 		} else {
 			resetAccordion();
+			accordionInitialized = false;
 		}
 	});
 });
+
+
+
+// $(document).ready(function () {
+// 	const breakpoint = 767; // Пороговое значение для медиазапроса
+// 	function initializeAccordion() {
+// 		$('.footer-item').each(function () {
+// 			const $footerItem = $(this);
+// 			const $footerText = $footerItem.find('.footer-text');
+// 			const $links = $footerItem.find('.links');
+// 			$links.hide(); 
+// 			$footerText.on('click', function () {
+// 				if ($(window).width() <= breakpoint) {
+// 					$links.slideToggle();
+// 					$footerItem.toggleClass('open');
+// 					$footerText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
+// 				}
+// 			});
+// 		});
+// 	}
+
+// 	function resetAccordion() {
+// 		$('.footer-item').removeClass('open').find('.links').removeAttr('style');
+// 		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
+// 	}
+
+// 	$(window).on('load resize', function () {
+// 		if ($(window).width() <= breakpoint) {
+// 			initializeAccordion();
+// 		} else {
+// 			resetAccordion();
+// 		}
+// 	});
+// });
 
 // $(document).ready(function () {
 // 	const breakpoint = 767; // Пороговое значение для медиазапроса
