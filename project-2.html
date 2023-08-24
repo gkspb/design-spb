@@ -19,15 +19,35 @@
                 <ul class="nav">
                     <li class="nav__item">
                         <a href="about.html" class="nav__link header-text">О компании</a>
+                        <ul>
+                            <li><a href="#">Партнерам</a></li>
+                            <li><a href="#">Блог</a></li>
+                            <li><a href="#">Отзывы</a></li>
+                        </ul>
                     </li>
                     <li class="nav__item">
                         <a href="one-room.html" class="nav__link header-text">Дизайн - проект</a>
+                        <ul>
+                            <li><a href="#">Дизайн интерьера квартиры</a></li>
+                            <li><a href="#">Дизайн интерьера дома</a></li>
+                            <li><a href="#">Дизайн интерьера коммерч. помещения</a></li>
+                        </ul>
                     </li>
                     <li class="nav__item">
                         <a href="blog.html" class="nav__link header-text">Интерьер</a>
                     </li>
                     <li class="nav__item">
                         <a href="services.html" class="nav__link header-text">Услуги</a>
+                        <ul>
+                            <li><a href="#">Дизайн Эконом</a></li>
+                            <li><a href="#">Дизайн Комфорт</a></li>
+                            <li><a href="#">Дизайн Эксклюзив</a></li>
+                            <li><a href="#">3d визуализация</a></li>
+                            <li><a href="#">Планировка</a></li>
+                            <li><a href="#">Перепланировка</a></li>
+                            <li><a href="#">Архитектура и проектирование домов</a></li>
+                            <li><a href="#">Авторский надзор</a></li>
+                        </ul>
                     </li>
                     <li class="nav__item">
                         <a href="articles.html" class="nav__link header-text">Статьи</a>
@@ -103,17 +123,28 @@
     <main class="main projects">
         <section class="section section-projects" id="1">
             <div class="section-container">
-                <div class="section-content">
-                    <h2 class="section__title">Название проекта 2</h2>
+                <div class="section-content-wrapper">
+                    <div class="back-to-portfotio">
+                        <a href="portfolio.html">
+                            <img src="img/back-to-portfolio.svg" alt="вернуться в портфолио"
+                                class="back-to-portfolio-img">
+                        </a>
+                        <span class="back-to-portfotio-text">Портфолио</span>
+                    </div>
+                    <div class="section-vertical-line"></div>
+                    <div class="section-content">
+                        <h2 class="section__title">Название второго проекта</h2>
+                        <p class="section__subtitle">Квартиры, частные дома, офис, коммерческие помещения</p>
+                    </div>
                     <div class="projects-navigation-mob">
-                        <div class="left-arr ">
+                        <div class="left-arr projects-mobile-arr">
                             <a href="project-1.html">
-                                <img src="https://vae.by/wp-content/themes/vue/img/others/arr_sl_l_black.png" alt="">
+                                <img src="img/arrow-projects.svg" alt="стрелка">
                             </a>
                         </div>
-                        <div class="right-arr ">
+                        <div class="right-arr projects-mobile-arr">
                             <a href="project-1.html">
-                                <img src="https://vae.by/wp-content/themes/vue/img/others/arr_sl_l_black.png" alt="">
+                                <img src="img/arrow-projects.svg" alt="стрелка">
                             </a>
                         </div>
                     </div>
@@ -255,7 +286,8 @@
                             placeholder="Ваше имя">
                         <input class="prices-consultation__input tel prices-consultation__item"
                             placeholder="Ваш телефон" type="tel" name="tel">
-                        <input type="submit" class="btn btn_yellow prices-consultation__button prices-consultation__item"
+                        <input type="submit"
+                            class="btn btn_yellow prices-consultation__button prices-consultation__item"
                             value="Получить консультацию">
                     </form>
                 </div>

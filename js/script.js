@@ -58,7 +58,7 @@ let swiper = new Swiper(".mySwiper", {
 	spaceBetween: 20,
 	slidesPerView: 4,
 	breakpoints: {
-		320: {
+		280: {
 			slidesPerView: 2,
 			spaceBetween: 0,
 		},
@@ -96,7 +96,7 @@ let swiper3 = new Swiper(".mySwiper3", {
 		prevEl: '.swiper-button-prev',
 	},
 	breakpoints: {
-		320: {
+		280: {
 			slidesPerView: 1,
 		},
 		767: {
@@ -137,7 +137,7 @@ let swiper5 = new Swiper(".mySwiper5", {
 		prevEl: '.swiper-button-prev',
 	},
 	breakpoints: {
-		320: {
+		250: {
 			slidesPerView: 1.5,
 		},
 		767: {

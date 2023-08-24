@@ -35,6 +35,9 @@
     &-contacts {
         background-image: url("../img/background-1.png");
     }
+    &-about-page {
+        background-image: url("../img/background-1.png");
+    }
     &-blog {
         background-image: url("../img/background-1.png");
     }
@@ -93,7 +96,7 @@
         line-height: 120%;
         color: $white;
         font-family: Montserrat Semi Bold;
-        @include adaptiv-font(5.35, 3.8);
+        @include adaptiv-font(4, 2.8);
         font-weight: 600;
         margin-bottom: 2rem;
     }
@@ -128,22 +131,23 @@
         @include adaptiv-font(1.6, 1.2);
         font-weight: 500;
         line-height: 1.67rem;
+        @media (max-width: 500px) {
+            width: 100%;
+        }
     }
     &-content {
-        position: relative;
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
     }
-    &-content::before {
-        content: "";
-        display: block;
+    &-vertical-line {
         width: 2px;
         height: 25rem;
         background: $white;
         position: absolute;
-        left: -7%;
-        top: -50%;
-        @media (max-width: 767px) {
-            display: none;
-        }
+        left: -5%;
     }
     &__text {
         color: $white;
@@ -348,11 +352,10 @@
         }
     }
     &_bottom {
-        padding: 4.18rem 0;
         text-align: center;
-        @media (max-width: 767px) {
-            padding-top: 0;
-        }
+        // @media (max-width: 767px) {
+        //     padding-top: 0;
+        // }
     }
 }
 
@@ -498,6 +501,9 @@
         @media (max-height: 800px) {
             padding: 0.5rem;
         }
+        @media (max-width: 500px) {
+            width: 100%;
+        }
     }
     &-item {
         display: flex;
@@ -583,15 +589,21 @@
 
 .consultation {
     width: 100%;
-    flex: 1 1 50%;
+    flex: 1 1 35%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 4.18rem 1.67rem;
     @media (max-width: 767px) {
-        padding: 3rem 1.67rem 0;
         flex: 0 0;
     }
+    // @media(min-height: 1100px) {
+    //     flex: 0;
+    // }
 }
 
 .scrollify-page .consultation {
-    padding: 8rem 1.67rem 0;
+    padding: 8rem 1.67rem 2rem;
     @media (max-width: 767px) {
         padding-top: 6rem;
     }
@@ -688,7 +700,7 @@
     &__title {
         color: $black;
         font-family: Montserrat Semi Bold;
-        @include adaptiv-font(5.35, 3.8);
+        @include adaptiv-font(4, 2.8);
         font-weight: 600;
         line-height: 130%;
         margin-bottom: 2rem;
@@ -780,6 +792,9 @@
         width: 33.85rem;
         background: $black;
         border-radius: 1rem;
+        @media (max-width: 500px) {
+            width: 100%;
+        }
     }
 }
 
@@ -1742,6 +1757,10 @@
     height: 100vh;
 }
 
+.prices .section_bottom {
+    height: 45vh;
+}
+
 .section-swiper1 .section-swiper-wrapper {
     display: flex;
     flex-direction: column;
@@ -1822,11 +1841,15 @@
 }
 
 .blog .consultation {
-    padding: 0 2rem;
+    padding: 0 2rem 1rem;
 }
 
 .blog .section-blog {
     height: 100vh;
+}
+
+.blog .section_bottom {
+    height: 70vh;
 }
 
 .prices .section-swiper1 {
@@ -1843,6 +1866,10 @@
 
 .services .section-services {
     height: 100vh;
+}
+
+.services .section_bottom {
+    height: 70vh;
 }
 
 @keyframes imagesFading {
@@ -1884,6 +1911,10 @@
 
 .one-room .all-articles {
     padding-top: 9rem;
+}
+
+.one-room .section_bottom {
+    height: 45vh;
 }
 
 .tab {
@@ -1975,6 +2006,7 @@
 .difference {
     padding: 10rem 0;
     position: relative;
+    height: auto;
     @media (max-width: 1023px) {
         padding: 4.18rem 2rem;
         display: block;
@@ -1995,6 +2027,9 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            height: 60vh;
+        }
+        @media (max-height: 550px) {
             height: 70vh;
         }
     }
@@ -2023,6 +2058,9 @@
         line-height: 140%;
         @media (max-width: 1023px) {
             text-align: left;
+        }
+        @media (max-width: 767px) {
+            margin-bottom: 1rem;
         }
     }
     &__subtitle {
@@ -2099,7 +2137,7 @@
     display: inline;
 }
 
-.icon-container{
+.icon-container {
     display: flex;
     align-items: center;
 }
@@ -2118,6 +2156,7 @@
 .advantages {
     position: relative;
     background-image: url("../img/advantages.png");
+    height: auto;
     &-content {
         &_left {
             max-width: 41%;
@@ -2136,7 +2175,7 @@
                 display: block;
                 right: 55%;
                 top: 10%;
-                z-index: 9999;
+                z-index: 9;
                 background: $white;
                 @media (max-width: 767px) {
                     width: 80%;
@@ -2338,8 +2377,12 @@
     height: 100vh;
 }
 
+.contacts .section_bottom {
+    height: 70vh;
+}
+
 .section_bottom {
-    height: auto;
+    height: 70vh;
 }
 
 .scrollify-page .section_bottom {
@@ -2434,6 +2477,10 @@
     height: auto;
 }
 
+.articles .section_bottom {
+    height: 45vh;
+}
+
 .article {
     &__title {
         margin-bottom: 4.18rem;
@@ -2513,6 +2560,7 @@
         &-list {
             display: flex;
             gap: 2rem;
+            justify-content: space-between;
             @media (max-width: 767px) {
                 flex-direction: column;
             }
@@ -2553,7 +2601,9 @@
             @media (max-width: 767px) {
                 display: flex;
                 justify-content: space-around;
-                margin-top: 5rem;
+                position: absolute;
+                top: 188%;
+                left: 68%;
             }
         }
     }
@@ -2675,6 +2725,10 @@
     }
 }
 
+.projects .section_bottom {
+    height: 45vh;
+}
+
 .left-arr {
     transform: rotate(180deg);
 }
@@ -2708,23 +2762,12 @@
         left: 0;
     }
     @media (max-width: 767px) {
-        top: -10rem;
-    }
-    @media (max-width: 650px) {
-        top: -15rem;
+        top: 20rem;
     }
     &:hover {
         scale: 1.1;
         transition: 0.3s;
     }
-}
-
-.cell {
-    max-width: 40%;
-}
-
-.icon-container {
-    max-width: 40%;
 }
 
 .nav li {
@@ -2745,8 +2788,8 @@
     left: -9999px;
     opacity: 0;
     width: auto;
-    background: $colorLessFrame;
     border-radius: 1rem;
+    padding-top: 1rem;
 }
 
 .nav ul a {
@@ -2757,6 +2800,10 @@
     @include adaptiv-font(1.6, 1.2);
     font-weight: 400;
     line-height: 2rem;
+    border: 1px solid $white;
+    border-radius: 1rem;
+    background: $colorLessFrame;
+    margin-bottom: 0.5rem;
 }
 
 .nav li:hover ul {

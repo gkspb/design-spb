@@ -831,6 +831,9 @@ body.disabled {
 .section-contacts {
   background-image: url("../img/background-1.png");
 }
+.section-about-page {
+  background-image: url("../img/background-1.png");
+}
 .section-blog {
   background-image: url("../img/background-1.png");
 }
@@ -898,12 +901,12 @@ body.disabled {
 }
 @media (min-width: 76.7rem) {
   .section__title {
-    font-size: calc(3.8rem + 1.55 * (100vw / 144));
+    font-size: calc(2.8rem + 1.2 * (100vw / 144));
   }
 }
 @media (max-width: 76.7rem) {
   .section__title {
-    font-size: calc(3.8rem + 2.635 * ((100vw - 37.5rem) / 144));
+    font-size: calc(2.8rem + 2.04 * ((100vw - 37.5rem) / 144));
   }
 }
 .section__subtitle {
@@ -959,23 +962,22 @@ body.disabled {
     font-size: calc(1.2rem + 0.68 * ((100vw - 37.5rem) / 144));
   }
 }
-.section-content {
+@media (max-width: 500px) {
+  .section-btn {
+    width: 100%;
+  }
+}
+.section-content-wrapper {
+  display: flex;
+  align-items: center;
   position: relative;
 }
-.section-content::before {
-  content: "";
-  display: block;
+.section-vertical-line {
   width: 2px;
   height: 25rem;
   background: #fff;
   position: absolute;
-  left: -7%;
-  top: -50%;
-}
-@media (max-width: 767px) {
-  .section-content::before {
-    display: none;
-  }
+  left: -5%;
 }
 .section__text {
   color: #fff;
@@ -1259,13 +1261,7 @@ body.disabled {
   }
 }
 .questions_bottom {
-  padding: 4.18rem 0;
   text-align: center;
-}
-@media (max-width: 767px) {
-  .questions_bottom {
-    padding-top: 0;
-  }
 }
 
 .calculation {
@@ -1499,6 +1495,11 @@ body.disabled {
     padding: 0.5rem;
   }
 }
+@media (max-width: 500px) {
+  .news__button {
+    width: 100%;
+  }
+}
 .news-item {
   display: flex;
   align-items: center;
@@ -1570,17 +1571,20 @@ body.disabled {
 
 .consultation {
   width: 100%;
-  flex: 1 1 50%;
+  flex: 1 1 35%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 4.18rem 1.67rem;
 }
 @media (max-width: 767px) {
   .consultation {
-    padding: 3rem 1.67rem 0;
     flex: 0 0;
   }
 }
 
 .scrollify-page .consultation {
-  padding: 8rem 1.67rem 0;
+  padding: 8rem 1.67rem 2rem;
 }
 @media (max-width: 767px) {
   .scrollify-page .consultation {
@@ -1708,12 +1712,12 @@ body.disabled {
 }
 @media (min-width: 76.7rem) {
   .mySwiper5__title {
-    font-size: calc(3.8rem + 1.55 * (100vw / 144));
+    font-size: calc(2.8rem + 1.2 * (100vw / 144));
   }
 }
 @media (max-width: 76.7rem) {
   .mySwiper5__title {
-    font-size: calc(3.8rem + 2.635 * ((100vw - 37.5rem) / 144));
+    font-size: calc(2.8rem + 2.04 * ((100vw - 37.5rem) / 144));
   }
 }
 .mySwiper5__subtitle {
@@ -1859,6 +1863,11 @@ body.disabled {
 @media (max-width: 76.7rem) {
   .swiper1__button {
     font-size: calc(1.2rem + 0.799 * ((100vw - 37.5rem) / 144));
+  }
+}
+@media (max-width: 500px) {
+  .swiper1__button {
+    width: 100%;
   }
 }
 
@@ -3165,6 +3174,10 @@ body.disabled {
   height: 100vh;
 }
 
+.prices .section_bottom {
+  height: 45vh;
+}
+
 .section-swiper1 .section-swiper-wrapper {
   display: flex;
   flex-direction: column;
@@ -3267,11 +3280,15 @@ body.disabled {
 }
 
 .blog .consultation {
-  padding: 0 2rem;
+  padding: 0 2rem 1rem;
 }
 
 .blog .section-blog {
   height: 100vh;
+}
+
+.blog .section_bottom {
+  height: 70vh;
 }
 
 .prices .section-swiper1 {
@@ -3288,6 +3305,10 @@ body.disabled {
 
 .services .section-services {
   height: 100vh;
+}
+
+.services .section_bottom {
+  height: 70vh;
 }
 
 @keyframes imagesFading {
@@ -3328,6 +3349,10 @@ body.disabled {
 
 .one-room .all-articles {
   padding-top: 9rem;
+}
+
+.one-room .section_bottom {
+  height: 45vh;
 }
 
 .tab {
@@ -3442,6 +3467,7 @@ body.disabled {
 .difference {
   padding: 10rem 0;
   position: relative;
+  height: auto;
 }
 @media (max-width: 1023px) {
   .difference {
@@ -3469,6 +3495,11 @@ body.disabled {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 60vh;
+  }
+}
+@media (max-height: 550px) {
+  .difference-content {
     height: 70vh;
   }
 }
@@ -3512,6 +3543,11 @@ body.disabled {
 @media (max-width: 1023px) {
   .difference__title {
     text-align: left;
+  }
+}
+@media (max-width: 767px) {
+  .difference__title {
+    margin-bottom: 1rem;
   }
 }
 .difference__subtitle {
@@ -3630,6 +3666,7 @@ body.disabled {
 .advantages {
   position: relative;
   background-image: url("../img/advantages.png");
+  height: auto;
 }
 .advantages-content_left {
   max-width: 41%;
@@ -3651,7 +3688,7 @@ body.disabled {
   display: block;
   right: 55%;
   top: 10%;
-  z-index: 9999;
+  z-index: 9;
   background: #fff;
 }
 @media (max-width: 767px) {
@@ -3952,8 +3989,12 @@ body.disabled {
   height: 100vh;
 }
 
+.contacts .section_bottom {
+  height: 70vh;
+}
+
 .section_bottom {
-  height: auto;
+  height: 70vh;
 }
 
 .scrollify-page .section_bottom {
@@ -4061,6 +4102,10 @@ body.disabled {
   height: auto;
 }
 
+.articles .section_bottom {
+  height: 45vh;
+}
+
 .article__title {
   margin-bottom: 4.18rem;
   color: #141414;
@@ -4163,6 +4208,7 @@ body.disabled {
 .projects-any-list {
   display: flex;
   gap: 2rem;
+  justify-content: space-between;
 }
 @media (max-width: 767px) {
   .projects-any-list {
@@ -4229,7 +4275,9 @@ body.disabled {
   .projects-navigation-mob {
     display: flex;
     justify-content: space-around;
-    margin-top: 5rem;
+    position: absolute;
+    top: 188%;
+    left: 68%;
   }
 }
 .projects-arr {
@@ -4394,6 +4442,10 @@ body.disabled {
   width: 100%;
 }
 
+.projects .section_bottom {
+  height: 45vh;
+}
+
 .left-arr {
   transform: rotate(180deg);
 }
@@ -4440,25 +4492,12 @@ body.disabled {
 }
 @media (max-width: 767px) {
   .back-to-portfotio {
-    top: -10rem;
-  }
-}
-@media (max-width: 650px) {
-  .back-to-portfotio {
-    top: -15rem;
+    top: 20rem;
   }
 }
 .back-to-portfotio:hover {
   scale: 1.1;
   transition: 0.3s;
-}
-
-.cell {
-  max-width: 40%;
-}
-
-.icon-container {
-  max-width: 40%;
 }
 
 .nav li {
@@ -4479,8 +4518,8 @@ body.disabled {
   left: -9999px;
   opacity: 0;
   width: auto;
-  background: rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
+  padding-top: 1rem;
 }
 
 .nav ul a {
@@ -4490,6 +4529,10 @@ body.disabled {
   font-family: Montserrat Regular;
   font-weight: 400;
   line-height: 2rem;
+  border: 1px solid #fff;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
 }
 @media (min-width: 76.7rem) {
   .nav ul a {
@@ -4521,7 +4564,7 @@ body.disabled {
   color: #fff;
   width: 100%;
   padding: 4.18rem 1.67rem;
-  flex: 1 1 80%;
+  flex: 1 1 65%;
 }
 @media (max-width: 767px) {
   .footer {
