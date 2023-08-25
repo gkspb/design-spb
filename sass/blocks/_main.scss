@@ -134,6 +134,9 @@
         @include adaptiv-font(1.6, 1.2);
         font-weight: 500;
         line-height: 1.67rem;
+        @media(max-width: 767px) {
+            padding: 1rem 0;
+        }
         @media (max-width: 500px) {
             width: 100%;
         }
@@ -963,11 +966,11 @@
 }
 
 .swiper-button-next {
-    left: 61%;
+    left: 59%;
 }
 
 .swiper-button-prev {
-    left: 37.5%;
+    left: 34.5%;
 }
 
 .swiper-button-next::after,
@@ -987,6 +990,7 @@
 
 .swiper-pagination {
     z-index: 1;
+    max-width: 100%;
 }
 
 .header_black {

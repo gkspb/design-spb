@@ -5,7 +5,7 @@
     z-index: 10;
     width: 100%;
     padding: 1.5rem 1.67rem 0;
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
         padding: 1rem 0;
         height: 4rem;
     }
@@ -45,31 +45,36 @@
         column-gap: 1.67rem;
         align-items: center;
         @media (max-width: 1023px) {
-            margin-left: auto;
-        }
-        @media (max-width: 767px) {
             display: none;
         }
         &-mobile {
             display: none;
-            @media (max-width: 767px) {
+            @media (max-width: 1023px) {
                 display: flex;
                 flex-direction: column;
                 row-gap: 2rem;
+            }
+        }
+        &-tablet {
+            display: flex;
+            column-gap: 1.67rem;
+            align-items: center;
+            @media(max-width: 767px) {
+                display: none;
             }
         }
     }
     &__call {
         &-button {
             text-align: end;
-            @media (max-width: 767px) {
+            @media (max-width: 1023px) {
                 display: none;
             }
         }
     }
     &__logo {
         white-space: nowrap;
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
             display: none;
         }
     }
@@ -84,7 +89,7 @@
         margin-left: 0;
         column-gap: 1.5rem;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
         display: none;
     }
     &__item {
@@ -98,7 +103,7 @@
         line-height: 2rem;
     }
     &-logo {
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
             white-space: nowrap;
             margin-left: 20%;
             z-index: 1;
@@ -116,7 +121,7 @@
 
 .burger {
     display: none;
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -163,7 +168,7 @@
 .mobile-nav {
     display: none;
     width: 100%;
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
         display: flex;
         align-items: center;
         column-gap: 5rem;
@@ -197,7 +202,7 @@
     top: 45%;
     right: 20%;
     margin: -0.7rem 0 0 -1rem;
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
         z-index: 1;
     }
     &--is-active {
@@ -260,7 +265,7 @@
     background: none;
 }
 .mobile-nav-active::after {
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
         content: "";
         background: $black;
         display: block;
