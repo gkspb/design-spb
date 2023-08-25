@@ -855,6 +855,9 @@ body.disabled {
 .section-projects {
   background-image: url("../img/projects-background.png");
 }
+.section-portfolio {
+  background-image: url("../img/background-1.png");
+}
 .section_bottom {
   padding: 0;
   display: flex;
@@ -1563,6 +1566,11 @@ body.disabled {
   border: 2px solid #141414;
   background: #fff;
   color: #141414;
+}
+.btn_white-on-white:hover {
+  background: #141414;
+  color: #fff;
+  transition: 0.5s;
 }
 
 .more {
@@ -2415,12 +2423,12 @@ body.disabled {
 }
 @media (min-width: 76.7rem) {
   .article__subtitle {
-    font-size: calc(1.6rem + 0.4 * (100vw / 144));
+    font-size: calc(1.2rem + 0.47 * (100vw / 144));
   }
 }
 @media (max-width: 76.7rem) {
   .article__subtitle {
-    font-size: calc(1.6rem + 0.68 * ((100vw - 37.5rem) / 144));
+    font-size: calc(1.2rem + 0.799 * ((100vw - 37.5rem) / 144));
   }
 }
 .article__link {
@@ -2502,7 +2510,7 @@ body.disabled {
 @media (max-width: 1023px) {
   .table-square td,
   .services-table td {
-    padding: 0.5rem;
+    padding: 1rem;
   }
 }
 
@@ -2822,6 +2830,7 @@ body.disabled {
 .prices-consultation__button {
   background: #FF9900;
   border: 2px solid #fff;
+  cursor: pointer;
 }
 .prices-consultation__title {
   color: #fff;
@@ -3037,7 +3046,7 @@ body.disabled {
   transition: 0.5s;
 }
 
-.prices-services-item:hover .prices-services-item-text {
+.prices-services-item:hover .prices-services-item-text_black {
   color: #fff;
   transition: 0.5s;
 }
@@ -3144,7 +3153,8 @@ body.disabled {
 }
 @media (max-height: 992px) {
   .selection-list__item::before {
-    left: -9%;
+    left: -10%;
+    top: -15%;
   }
 }
 @media (max-width: 767px) {
@@ -3175,6 +3185,18 @@ body.disabled {
 }
 
 .prices .section_bottom {
+  height: 45vh;
+}
+
+.portfolio .section {
+  height: auto;
+}
+
+.portfolio .section-portfolio {
+  height: 100vh;
+}
+
+.portfolio .section_bottom {
   height: 45vh;
 }
 
@@ -3308,7 +3330,7 @@ body.disabled {
 }
 
 .services .section_bottom {
-  height: 70vh;
+  height: 80vh;
 }
 
 @keyframes imagesFading {
@@ -3791,10 +3813,8 @@ body.disabled {
   }
 }
 
-@media (max-width: 767px) {
-  .error-404__img {
-    width: 100%;
-  }
+.error-404__img {
+  width: 40%;
 }
 .error-404-wrapper {
   display: flex;
@@ -4443,7 +4463,7 @@ body.disabled {
 }
 
 .projects .section_bottom {
-  height: 45vh;
+  height: 55vh;
 }
 
 .left-arr {

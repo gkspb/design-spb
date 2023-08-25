@@ -59,6 +59,9 @@
     &-projects {
         background-image: url("../img/projects-background.png");
     }
+    &-portfolio {
+        background-image: url("../img/background-1.png");
+    }
     &_bottom {
         padding: 0;
         display: flex;
@@ -568,6 +571,11 @@
         border: 2px solid $black;
         background: $white;
         color: $black;
+    }
+    &_white-on-white:hover {
+        background: $black;
+        color: $white;
+        transition: 0.5s;
     }
 }
 
@@ -1209,7 +1217,7 @@
         margin-bottom: 1.67rem;
         color: $black;
         font-family: Montserrat Regular;
-        @include adaptiv-font(2, 1.6);
+        @include adaptiv-font(1.67, 1.2);
         font-weight: 400;
         line-height: 130%;
     }
@@ -1264,7 +1272,7 @@
     line-height: 130%;
     padding: 2.5rem;
     @media (max-width: 1023px) {
-        padding: 0.5rem;
+        padding: 1rem;
     }
 }
 
@@ -1519,6 +1527,7 @@
         &__button {
             background: $yellow;
             border: 2px solid $white;
+            cursor: pointer;
         }
         &__title {
             color: $white;
@@ -1654,7 +1663,7 @@
     transition: 0.5s;
 }
 
-.prices-services-item:hover .prices-services-item-text {
+.prices-services-item:hover .prices-services-item-text_black {
     color: $white;
     transition: 0.5s;
 }
@@ -1729,7 +1738,8 @@
                 top: -10%;
             }
             @media (max-height: 992px) {
-                left: -9%;
+                left: -10%;
+                top: -15%;
             }
             @media (max-width: 767px) {
                 top: 0;
@@ -1758,6 +1768,18 @@
 }
 
 .prices .section_bottom {
+    height: 45vh;
+}
+
+.portfolio .section {
+    height: auto;
+}
+
+.portfolio .section-portfolio {
+    height: 100vh;
+}
+
+.portfolio .section_bottom {
     height: 45vh;
 }
 
@@ -1869,7 +1891,7 @@
 }
 
 .services .section_bottom {
-    height: 70vh;
+    height: 80vh;
 }
 
 @keyframes imagesFading {
@@ -2241,9 +2263,7 @@
 
 .error-404 {
     &__img {
-        @media (max-width: 767px) {
-            width: 100%;
-        }
+        width: 40%;
     }
     &-wrapper {
         display: flex;
@@ -2726,7 +2746,7 @@
 }
 
 .projects .section_bottom {
-    height: 45vh;
+    height: 55vh;
 }
 
 .left-arr {
