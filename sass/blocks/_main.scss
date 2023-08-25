@@ -137,6 +137,10 @@
         @media (max-width: 500px) {
             width: 100%;
         }
+        @media(max-height: 400px) {
+            padding: 0.2rem;
+            width: 40%;
+        }
     }
     &-content {
         &-wrapper {
@@ -158,11 +162,17 @@
         @include adaptiv-font(1.5, 1.2);
         font-weight: 500;
         line-height: 140%;
+        @media(max-height: 400px) {
+            display: none;
+        }
     }
 }
 
 .main-page .section-container {
     justify-content: space-around;
+    @media(max-height:400px){
+        row-gap: 2rem;
+    }
 }
 
 .calculate {
@@ -650,6 +660,9 @@
             line-height: 13rem;
             left: -12%;
             top: 0;
+            @media (max-width: 650px) {
+                left: -5%;
+            }
         }
     }
     &__title {
@@ -2099,6 +2112,9 @@
             max-width: none;
             margin-bottom: 2rem;
         }
+        @media(max-height: 400px) {
+            display: none;
+        }
     }
     &-buttons {
         display: flex;
@@ -2349,6 +2365,10 @@
             padding: 0 1rem;
             flex-direction: column;
             row-gap: 2rem;
+        }
+        @media(max-height: 400px) {
+            margin-top: 0.5rem;
+            flex-direction: row;
         }
     }
     &-more {
@@ -2822,7 +2842,7 @@
     line-height: 2rem;
     border: 1px solid $white;
     border-radius: 1rem;
-    background: $colorLessFrame;
+    background: $colorLessFrame2;
     margin-bottom: 0.5rem;
 }
 
@@ -2838,4 +2858,30 @@
     transition: 0.3s;
     border: 1px solid $black;
     border-radius: 1rem;
+}
+
+a {
+    color: inherit;
+}
+
+.section {
+    @media (max-height: 400px) {
+        height: auto !important;
+    }
+}
+
+.main-page section:nth-child(1),
+.main-page section:nth-child(2),
+.main-page section:nth-child(3),
+.main-page section:nth-child(4),
+.main-page section:nth-child(5) {
+    @media (max-height: 400px) {
+        height: 150vh !important;
+    }
+}
+
+.section:first-child {
+    @media (max-height: 400px) {
+        height: 150vh !important;
+    }
 }

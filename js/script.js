@@ -81,7 +81,7 @@ let swiper2 = new Swiper(".mySwiper2", {
 });
 
 let swiper3 = new Swiper(".mySwiper3", {
-	slidesPerView: 2.2,
+	slidesPerView: 2,
 	autoplay: {
 		delay: 4000,
 		disableOnInteraction: false,
@@ -100,7 +100,7 @@ let swiper3 = new Swiper(".mySwiper3", {
 			slidesPerView: 1,
 		},
 		767: {
-			slidesPerView: 2.2
+			slidesPerView: 2
 		}
 	}
 });
@@ -131,20 +131,23 @@ let swiper4 = new Swiper(".mySwiper4", {
 
 let swiper5 = new Swiper(".mySwiper5", {
 	spaceBetween: 10,
-	slidesPerView: 3.5,
+	slidesPerView: 4,
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
 	breakpoints: {
 		250: {
-			slidesPerView: 1.5,
+			slidesPerView: 1
+		},
+		650: {
+			slidesPerView: 2
 		},
 		767: {
-			slidesPerView: 2.5
+			slidesPerView: 3
 		},
 		1023: {
-			slidesPerView: 3.5
+			slidesPerView: 4
 		}
 	}
 });
@@ -169,10 +172,18 @@ swiper4.on('slideChangeTransitionEnd', function () {
 });
 
 
+//проверка на горизонтальных экранах
+if (window.innerHeight < 400) {
+    let headerElement = document.querySelector('header');
+    if (headerElement) {
+        headerElement.classList.add('substrate');
+    }
+}
 
 
 
-if ($('body').hasClass('scrollify-page')) {
+
+if ($('body').hasClass('scrollify-page') && window.innerHeight > 400) {
 	// Настройка Scrollify
 	$.scrollify({
 		section: ".section",
