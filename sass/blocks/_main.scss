@@ -2537,10 +2537,8 @@
     justify-content: center;
     position: relative;
     height: 33rem;
+    text-align: center;
     border-radius: 1rem;
-    @media (max-width: 1023px) {
-        width: 48%;
-    }
     @media (max-width: 767px) {
         width: 47%;
         height: 40vh;
@@ -2962,6 +2960,7 @@ a {
         row-gap: 2rem;
     }
     &-list{
+        height: auto;
         &-wrapper{
             display: flex;
             flex-wrap: wrap;
