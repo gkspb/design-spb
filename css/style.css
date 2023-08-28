@@ -688,8 +688,8 @@ body.disabled {
   .mobile-nav {
     display: flex;
     align-items: center;
-    -moz-column-gap: 5rem;
-         column-gap: 5rem;
+    -moz-column-gap: 10%;
+         column-gap: 10%;
     position: relative;
   }
 }
