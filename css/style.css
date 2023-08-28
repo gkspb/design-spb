@@ -2747,6 +2747,7 @@ body.disabled {
           backdrop-filter: blur(7px);
   transition: opacity 1s ease;
   position: absolute;
+  border-radius: 1rem;
 }
 
 .services-item:hover .details {
@@ -4196,6 +4197,60 @@ body.disabled {
   background-size: cover;
 }
 
+.project-item {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 33rem;
+  border-radius: 1rem;
+}
+@media (max-width: 1023px) {
+  .project-item {
+    width: 48%;
+  }
+}
+@media (max-width: 767px) {
+  .project-item {
+    width: 47%;
+    height: 40vh;
+  }
+}
+@media (max-width: 550px) {
+  .project-item {
+    width: 100%;
+    height: 60vh;
+  }
+}
+.project-item_first {
+  background: url("../img/styles-1.png");
+}
+.project-item_second {
+  background: url("../img/styles-2.png");
+}
+.project-item_third {
+  background: url("../img/styles-3.png");
+}
+.project-item_fourth {
+  background: url("../img/styles-4.png");
+}
+.project-item_fifth {
+  background: url("../img/styles-5.png");
+}
+.project-item_sixth {
+  background: url("../img/styles-6.png");
+}
+
+.project-item:hover .details {
+  opacity: 1;
+  transition: 1s;
+}
+
+.project-item {
+  background-size: cover;
+}
+
 .articles .article {
   height: auto !important;
 }
@@ -4692,6 +4747,29 @@ a {
   flex-direction: column;
   row-gap: 2rem;
 }
+.project-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.project__text {
+  color: #fff;
+  font-family: Montserrat Medium;
+  font-weight: 500;
+  line-height: 3.25rem;
+  z-index: 9;
+  position: relative;
+}
+@media (min-width: 76.7rem) {
+  .project__text {
+    font-size: calc(1.8rem + 0.87 * (100vw / 144));
+  }
+}
+@media (max-width: 76.7rem) {
+  .project__text {
+    font-size: calc(1.8rem + 1.479 * ((100vw - 37.5rem) / 144));
+  }
+}
 
 .footer {
   background: #141414;
@@ -4907,6 +4985,11 @@ a {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+}
+@media (min-width: 767px) {
+  .links-mobile {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
