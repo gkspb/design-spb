@@ -32,6 +32,11 @@
         transition: 0.5s;
         padding: 0.33rem;
     }
+    &-text:hover{
+        color: $black;
+        background: $headerScrollify;
+        border-radius: 1rem;
+    }
     &__title {
         color: $white;
         font-family: Montserrat Medium;
@@ -84,7 +89,6 @@
     display: flex;
     align-items: center;
     column-gap: 3rem;
-    margin-left: 12rem;
     @media (max-width: 1023px) {
         margin-left: 0;
         column-gap: 1.5rem;

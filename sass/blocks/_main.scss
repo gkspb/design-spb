@@ -998,6 +998,12 @@
     transition: transform 0.3s ease;
 }
 
+.header_black:hover{
+    color: $white;
+    background: $colorLessFrame2;
+    border-radius: 1rem;
+}
+
 .map iframe {
     position: absolute;
     height: 100%;
@@ -1183,7 +1189,7 @@
         }
     }
     &__title {
-        margin-bottom: 1rem;
+        margin-bottom: 4.18rem;
         color: $black;
         font-family: Montserrat Medium;
         @include adaptiv-font(4, 2.8);
@@ -1967,6 +1973,9 @@
     &_first {
         border-top: 1px solid $black;
     }
+    p:first-child{
+        max-width: 95%;
+    }
 }
 
 .tab input {
@@ -1980,7 +1989,7 @@
     cursor: pointer;
     color: $black;
     font-family: Montserrat Medium;
-    @include adaptiv-font(2.67, 1.8);
+    @include adaptiv-font(2, 1.6);
     font-weight: 500;
     line-height: 3.2rem;
 }
@@ -2000,9 +2009,11 @@
     max-width: 70%;
     color: $black;
     font-family: Montserrat Regular;
-    @include adaptiv-font(1.67, 1.2);
+    @include adaptiv-font(1.6, 1.2);
     font-weight: 400;
     line-height: 130%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .tab input:checked ~ .tab-content {
@@ -2039,6 +2050,10 @@
         @include adaptiv-font(4, 2.8);
         margin-bottom: 4.18rem;
         text-align: center;
+    }
+    @media(min-width: 767px) {
+        max-width: 70%;
+        margin: 0 auto;
     }
 }
 
@@ -2887,5 +2902,13 @@ a {
 .section:first-child {
     @media (max-height: 400px) {
         height: 150vh !important;
+    }
+}
+
+.project{
+    &-wrapper{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
     }
 }
