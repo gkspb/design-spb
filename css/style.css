@@ -849,7 +849,7 @@ body.disabled {
   background: rgba(0, 0, 0, 0.3);
 }
 .substrate_white {
-  background: rgba(255, 255, 255, 0.3);
+  background: #fff;
 }
 
 .premium {
@@ -4432,7 +4432,7 @@ body.disabled {
   }
 }
 .projects-navigation {
-  z-index: 10;
+  z-index: 8;
   position: absolute;
   top: -30%;
   right: -20%;
@@ -4822,6 +4822,10 @@ a {
     content: "-";
     transform: rotate(180deg);
   }
+}
+
+.swiper-button-next, .swiper-button-prev {
+  z-index: 8;
 }
 
 .footer {

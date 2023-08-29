@@ -301,87 +301,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //аккордеон футер
-$(document).ready(function () {
-    const breakpoint = 767;
-    let accordionInitialized = false;
-    let resizeTimeout;
-
-    function initializeAccordion() {
-        $('.accordeon-item').each(function () {
-            const $accordeonItem = $(this);
-            const $accordeonText = $accordeonItem.find('.accordeon-text');
-            const $links = $accordeonItem.find('.links');
-            $links.hide();
-            $accordeonText.on('click', function () {
-                if ($(window).width() <= breakpoint) {
-                    $links.slideToggle();
-                    $accordeonItem.toggleClass('open');
-                    $accordeonText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
-                }
-            });
-        });
-        accordionInitialized = true;
-    }
-
-    function resetAccordion() {
-        $('.footer-item').removeClass('open').find('.links').removeAttr('style');
-        $('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
-    }
-
-    function handleResize() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function () {
-            if ($(window).width() <= breakpoint) {
-                if (!accordionInitialized) {
-                    initializeAccordion();
-                }
-            } else {
-                resetAccordion();
-                accordionInitialized = false;
-            }
-        }, 200);
-    }
-
-    $(window).on('resize', handleResize);
+$(function() {
+    $('.accordeon-content').hide();
+    $('.accordeon-text').on('click', f_acc);
 });
 
-// $(document).ready(function () {
-// 	const breakpoint = 767; // Пороговое значение для медиазапроса
-// 	let accordionInitialized = false;
-
-// 	function initializeAccordion() {
-// 		$('.accordeon-item').each(function () {
-// 			const $accordeonItem = $(this);
-// 			const $accordeonText = $accordeonItem.find('.accordeon-text');
-// 			const $links = $accordeonItem.find('.links');
-// 			$links.hide();
-// 			$accordeonText.on('click', function () {
-// 				if ($(window).width() <= breakpoint) {
-// 					$links.slideToggle();
-// 					$accordeonItem.toggleClass('open');
-// 					$accordeonText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
-// 				}
-// 			});
-// 		});
-// 		accordionInitialized = true;
-// 	}
-
-// 	function resetAccordion() {
-// 		$('.footer-item').removeClass('open').find('.links').removeAttr('style');
-// 		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
-// 	}
-
-// 	$(window).on('load resize', function () {
-// 		if ($(window).width() <= breakpoint) {
-// 			if (!accordionInitialized) {
-// 				initializeAccordion();
-// 			}
-// 		} else {
-// 			resetAccordion();
-// 			accordionInitialized = false;
-// 		}
-// 	});
-// });
+function f_acc() {
+    $('.accordeon-content').slideUp(500);
+    $(this).toggleClass('open');
+    $(this).next('.accordeon-content').slideToggle(500);
+}
 
 
 // до/после меняем картинки
