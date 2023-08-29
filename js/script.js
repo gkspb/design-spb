@@ -153,23 +153,23 @@ let swiper5 = new Swiper(".mySwiper5", {
 });
 
 //Смена картинок в разделе "Выберите стиль вашего дизайна"
-let section = document.querySelector('.choise');
-swiper4.on('slideChangeTransitionEnd', function () {
-	let activeSlideIndex = swiper4.activeIndex;
-	let backgroundImageNames = [
-		'loft.png',
-		'minimalizm.png',
-		'loft.png',
-		'minimalizm.png'
-	];
-	if (activeSlideIndex < 0) {
-		activeSlideIndex = backgroundImageNames.length - 1;
-	}
-	let currentPath = window.location.href;
-	let currentFolder = currentPath.substring(0, currentPath.lastIndexOf('/'));
-	let activeBackgroundImage = `${currentFolder}/img/${backgroundImageNames[activeSlideIndex]}`;
-	section.style.backgroundImage = `url(${activeBackgroundImage})`;
-});
+// let section = document.querySelector('.choise');
+// swiper4.on('slideChangeTransitionEnd', function () {
+// 	let activeSlideIndex = swiper4.activeIndex;
+// 	let backgroundImageNames = [
+// 		'loft.png',
+// 		'minimalizm.png',
+// 		'loft.png',
+// 		'minimalizm.png'
+// 	];
+// 	if (activeSlideIndex < 0) {
+// 		activeSlideIndex = backgroundImageNames.length - 1;
+// 	}
+// 	let currentPath = window.location.href;
+// 	let currentFolder = currentPath.substring(0, currentPath.lastIndexOf('/'));
+// 	let activeBackgroundImage = `${currentFolder}/img/${backgroundImageNames[activeSlideIndex]}`;
+// 	section.style.backgroundImage = `url(${activeBackgroundImage})`;
+// });
 
 
 //проверка на горизонтальных экранах
@@ -243,60 +243,6 @@ if ($('body').hasClass('scrollify-page') && window.innerHeight > 400) {
 };
 
 
-// if ($('body').hasClass('scrollify-page')) {
-// 	// Настройка Scrollify
-// 	$.scrollify({
-// 		section: ".section",
-// 		interstitialSection: "",
-// 		easing: "easeOutExpo",
-// 		scrollSpeed: 1000,
-// 		offset: 0,
-// 		scrollbars: true,
-// 		standardScrollElements: "",
-// 		setHeights: true,
-// 		overflowScroll: true,
-// 		updateHash: true,
-// 		touchScroll: true,
-// 		updateHash: false,
-// 		after: function (index, sections) {
-// 			function updateStyles() {
-// 				let targetBlockClass = "target-block";
-// 				if (sections[index].hasClass(targetBlockClass)) {
-// 					$(".header").addClass("header_small-padding");
-// 					$(".header-wrapper").addClass("header_small-margin");
-// 					if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
-// 						$(".header-text").addClass("header_black");
-// 						$(".menu-item").addClass("menu-item_black");
-// 						$(".menu-burger").addClass("menu-burger_black");
-// 						$(".icon-white").addClass("none");
-// 						$(".icon-black").removeClass("none");
-// 					} else {
-// 						$(".header-text").removeClass("header_black");
-// 						$(".menu-item").removeClass("menu-item_black");
-// 						$(".menu-burger").removeClass("menu-burger_black");
-// 					}
-// 				} else {
-// 					$(".header-text").removeClass("header_black");
-// 					$(".icon-white").removeClass("none");
-// 					$(".icon-black").addClass("none");
-// 					$(".header").removeClass("header_small-padding");
-// 					$(".header-wrapper").removeClass("header_small-margin");
-// 					$(".menu-burger").removeClass("menu-burger_black");
-// 					$(".menu-item").removeClass("menu-item_black");
-// 				}
-// 			}
-// 			updateStyles();
-// 			$(window).on('scroll', function () {
-// 				updateStyles();
-// 			});
-// 			$('#menu-toggle').on('click', function () {
-// 				updateStyles();
-// 			});
-// 		},
-// 	});
-// };
-
-
 // Функция для получения текущего блока с использованием Scrollify
 function getCurrentSection() {
     let currentSection = null;
@@ -356,42 +302,86 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //аккордеон футер
 $(document).ready(function () {
-	const breakpoint = 767; // Пороговое значение для медиазапроса
-	let accordionInitialized = false;
+    const breakpoint = 767;
+    let accordionInitialized = false;
+    let resizeTimeout;
 
-	function initializeAccordion() {
-		$('.accordeon-item').each(function () {
-			const $accordeonItem = $(this);
-			const $accordeonText = $accordeonItem.find('.accordeon-text');
-			const $links = $accordeonItem.find('.links');
-			$links.hide();
-			$accordeonText.on('click', function () {
-				if ($(window).width() <= breakpoint) {
-					$links.slideToggle();
-					$accordeonItem.toggleClass('open');
-					$accordeonText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
-				}
-			});
-		});
-		accordionInitialized = true;
-	}
+    function initializeAccordion() {
+        $('.accordeon-item').each(function () {
+            const $accordeonItem = $(this);
+            const $accordeonText = $accordeonItem.find('.accordeon-text');
+            const $links = $accordeonItem.find('.links');
+            $links.hide();
+            $accordeonText.on('click', function () {
+                if ($(window).width() <= breakpoint) {
+                    $links.slideToggle();
+                    $accordeonItem.toggleClass('open');
+                    $accordeonText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
+                }
+            });
+        });
+        accordionInitialized = true;
+    }
 
-	function resetAccordion() {
-		$('.footer-item').removeClass('open').find('.links').removeAttr('style');
-		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
-	}
+    function resetAccordion() {
+        $('.footer-item').removeClass('open').find('.links').removeAttr('style');
+        $('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
+    }
 
-	$(window).on('load resize', function () {
-		if ($(window).width() <= breakpoint) {
-			if (!accordionInitialized) {
-				initializeAccordion();
-			}
-		} else {
-			resetAccordion();
-			accordionInitialized = false;
-		}
-	});
+    function handleResize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+            if ($(window).width() <= breakpoint) {
+                if (!accordionInitialized) {
+                    initializeAccordion();
+                }
+            } else {
+                resetAccordion();
+                accordionInitialized = false;
+            }
+        }, 200);
+    }
+
+    $(window).on('resize', handleResize);
 });
+
+// $(document).ready(function () {
+// 	const breakpoint = 767; // Пороговое значение для медиазапроса
+// 	let accordionInitialized = false;
+
+// 	function initializeAccordion() {
+// 		$('.accordeon-item').each(function () {
+// 			const $accordeonItem = $(this);
+// 			const $accordeonText = $accordeonItem.find('.accordeon-text');
+// 			const $links = $accordeonItem.find('.links');
+// 			$links.hide();
+// 			$accordeonText.on('click', function () {
+// 				if ($(window).width() <= breakpoint) {
+// 					$links.slideToggle();
+// 					$accordeonItem.toggleClass('open');
+// 					$accordeonText.find('i.fa').toggleClass('fa-chevron-down fa-minus');
+// 				}
+// 			});
+// 		});
+// 		accordionInitialized = true;
+// 	}
+
+// 	function resetAccordion() {
+// 		$('.footer-item').removeClass('open').find('.links').removeAttr('style');
+// 		$('.footer-text i.fa').removeClass('fa-minus').addClass('fa-chevron-down');
+// 	}
+
+// 	$(window).on('load resize', function () {
+// 		if ($(window).width() <= breakpoint) {
+// 			if (!accordionInitialized) {
+// 				initializeAccordion();
+// 			}
+// 		} else {
+// 			resetAccordion();
+// 			accordionInitialized = false;
+// 		}
+// 	});
+// });
 
 
 // до/после меняем картинки

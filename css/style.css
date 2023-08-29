@@ -3077,8 +3077,8 @@ body.disabled {
 }
 .prices-services-wrapper {
   display: flex;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 @media (max-width: 767px) {
   .prices-services-wrapper {
@@ -3091,7 +3091,7 @@ body.disabled {
   background: inherit;
   border-radius: 1rem;
   border: 1px solid #141414;
-  width: 33.3%;
+  width: 48%;
   padding: 9rem 7rem 2rem;
   display: flex;
   flex-direction: column;

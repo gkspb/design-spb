@@ -1639,7 +1639,8 @@
         }
         &-wrapper {
             display: flex;
-            column-gap: 2rem;
+            flex-wrap: wrap;
+            gap: 2rem;
             @media (max-width: 767px) {
                 flex-direction: column;
                 row-gap: 2rem;
@@ -1650,7 +1651,7 @@
             background: inherit;
             border-radius: 1rem;
             border: 1px solid $black;
-            width: 33.3%;
+            width: 48%;
             padding: 9rem 7rem 2rem;
             display: flex;
             flex-direction: column;

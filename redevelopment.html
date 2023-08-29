@@ -82,20 +82,38 @@
                         <button type="button" id="menu-toggle" class="menu-burger"><i class="menu-item"></i></button>
                     </div>
                     <ul class="mobile-nav_bottom mobile-nav_bottom-deactive">
-                        <li class="nav__item">
-                            <a href="about.html" class="nav__link">О компании</a>
+                        <li class="accordeon-item burger-item">
+                            <a href="portfolio.html" class="burger__title">Портфолио</a>
+                            <a href="prices.html" class="burger__title">Цены</a>
+                            <a href="contacts.html" class="burger__title">Контакты</a>
                         </li>
-                        <li class="nav__item">
-                            <a href="one-room.html" class="nav__link">Дизайн - проект</a>
+                        <li class="accordeon-item burger-item">
+                            <p href="styles.html" class="burger__title accordeon-text">О компании</p>
+                            <div class="links">
+                                <a href="partner.html" class="burger__link">Партнерам</a>
+                                <a href="blog.html" class="burger__link">Блог</a>
+                                <a href="reviews.html" class="burger__link">Отзывы</a>
+                                <a href="articles.html" class="burger__link">Статьи</a>
+                            </div>
                         </li>
-                        <li class="nav__item">
-                            <a href="blog.html" class="nav__link">Интерьер</a>
+                        <li class="accordeon-item burger-item">
+                            <p href="index.html" class="burger__title accordeon-text">Дизайн проект</p>
+                            <div class="links">
+                                <a href="apartaments.html" class="burger__link">Дизайн квартир</a>
+                                <a href="houses.html" class="burger__link">Дизайн домов</a>
+                                <a href="commercial-premisess.html" class="burger__link">Дизайн комм. <br> недвижимости</a>
+                            </div>
                         </li>
-                        <li class="nav__item">
-                            <a href="services.html" class="nav__link">Услуги</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="articles.html" class="nav__link">Статьи</a>
+                        <li class="accordeon-item burger-item">
+                            <p href="index.html" class="burger__title accordeon-text">Услуги</p>
+                            <div class="links">
+                                <a href="express.html" class="burger__link">Дизайн экспресс</a>
+                                <a href="technical.html" class="burger__link">Технический проект</a>
+                                <a href="comfort.html" class="burger__link">Дизайн комфорт</a>
+                                <a href="exclusive.html" class="burger__link">Дизайн эксклюзив</a>
+                                <a href="rendering-3d.html" class="burger__link">3D визуализация</a>
+                                <a href="architecture.html" class="burger__link">Архитектурный проект</a>
+                            </div>
                         </li>
                         <div class="header__contacts-mobile">
                             <div class="mobile-contacts">
@@ -184,7 +202,25 @@
                 <h3 class="prices-services__title">Услуги</h3>
                 <div class="prices-services-wrapper">
                     <div class="prices-services-item">
-                        <h4 class="prices-services-item__title prices-services-item-text_black">ЭКСПРЕСС</h4>
+                        <h4 class="prices-services-item__title prices-services-item-text_black">ЭСПРЕСС</h4>
+                        <p class="prices-per-metr prices-services-item-text_black">от 600 руб./м²</p>
+                        <div class="included-services">
+                            <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет услуг включает:</h5>
+                            <ul class="included-services-list">
+                                <li class="included-services__item prices-services-item-text_black">Планировки.</li>
+                                <li class="included-services__item prices-services-item-text_black">Расстановки мебели.</li>
+                                <li class="included-services__item prices-services-item-text_black">Привязки электрики.</li>
+                                <li class="included-services__item prices-services-item-text_black">Типа напольного покрытия.</li>
+                                <li class="included-services__item prices-services-item-text_black">Дизайна потолков.</li>
+                            </ul>
+                        </div>
+                        <div class="prices-services-buttons">
+                            <button class="prices-services-order prices-services-item-text_black">Заказать</button>
+                            <button class="prices-services-more prices-services-item-text_black">Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="prices-services-item">
+                        <h4 class="prices-services-item__title prices-services-item-text_black">ТЕХНИЧЕСКИЙ ПРОЕКТ</h4>
                         <p class="prices-per-metr prices-services-item-text_black">от 600 руб./м²</p>
                         <div class="included-services">
                             <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет услуг включает:</h5>
@@ -392,10 +428,11 @@
                 <div class="table-wrapper">
                     <table class="services-table">
                         <tr class="table-header">
-                            <th >Вид деятельности</th>
+                            <th>Вид деятельности</th>
                             <th>Экспресс</th>
+                            <th>Технический проект</th>
                             <th>Комфорт</th>
-                            <th >Эксклюзив</th>
+                            <th>Эксклюзив</th>
                         </tr>
                         <tr>
                             <td class="cell">
@@ -407,6 +444,11 @@
                                     </div>
                                 </div>
                             </td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
@@ -439,28 +481,7 @@
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
-                                        <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
-                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg></span></td>
-                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                        viewBox="0 0 28 28" fill="none">
-                                        <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
-                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg></span></td>
-                        </tr>
-                        <tr>
-                            <td class="cell">
-                                <div class="icon-container">
-                                    Три варианта планировки квартиры на выбор 
-                                    <div class="icon-container-question">
-                                        <img src="img/question.svg" alt="" class="icon-container-img">
-                                        <div class="tooltip">Текст подсказки</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                        viewBox="0 0 28 28" fill="none">
-                                        <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -477,7 +498,7 @@
                         <tr>
                             <td class="cell">
                                 <div class="icon-container">
-                                    План расстановки мебели и оборудования 
+                                    Три варианта планировки квартиры на выбор
                                     <div class="icon-container-question">
                                         <img src="img/question.svg" alt="" class="icon-container-img">
                                         <div class="tooltip">Текст подсказки</div>
@@ -487,6 +508,42 @@
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                        </tr>
+                        <tr>
+                            <td class="cell">
+                                <div class="icon-container">
+                                    План расстановки мебели и оборудования
+                                    <div class="icon-container-question">
+                                        <img src="img/question.svg" alt="" class="icon-container-img">
+                                        <div class="tooltip">Текст подсказки</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -517,6 +574,11 @@
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
@@ -539,6 +601,11 @@
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -567,6 +634,11 @@
                                         <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
                             <td>2 варианта</td>
                             <td>3 варианта</td>
                         </tr>
@@ -587,6 +659,11 @@
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
@@ -600,7 +677,7 @@
                             <td class="cell">
                                 <div class="icon-container">План декоративной отделки полов
                                     (плинтус, цоколь, поле, пилястр и т.д.)
-                                <div class="icon-container-question">
+                                    <div class="icon-container-question">
                                         <img src="img/question.svg" alt="" class="icon-container-img">
                                         <div class="tooltip">Текст подсказки</div>
                                     </div>
@@ -609,6 +686,11 @@
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -639,6 +721,11 @@
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
@@ -658,6 +745,11 @@
                                     </div>
                                 </div>
                             </td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
@@ -691,6 +783,11 @@
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
@@ -712,6 +809,11 @@
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -741,6 +843,11 @@
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
@@ -766,6 +873,11 @@
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
@@ -784,6 +896,11 @@
                                     </div>
                                 </div>
                             </td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
@@ -814,6 +931,11 @@
                                         <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
                             <td>1 выезд</td>
                             <td>2 выезда</td>
                         </tr>
@@ -826,6 +948,11 @@
                                     </div>
                                 </div>
                             </td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
@@ -850,6 +977,11 @@
                                     </svg></span></td>
                             <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
@@ -869,7 +1001,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td ><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
@@ -879,7 +1011,12 @@
                                         <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></td>
-                            <td ><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                        viewBox="0 0 28 28" fill="none">
+                                        <path d="M20.709 7.25L7.20898 20.75M7.20898 7.25L20.709 20.75" stroke="#AFAFAF"
+                                            stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span></td>
+                            <td><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                         viewBox="0 0 28 28" fill="none">
                                         <path d="M22.959 7.25L10.584 19.625L4.95898 14" stroke="#FF9900"
                                             stroke-width="3.32683" stroke-linecap="round" stroke-linejoin="round" />
@@ -890,13 +1027,15 @@
                 <div class="table-wrapper">
                     <table class="table-square">
                         <tr class="table-header">
-                            <th >Площадь</th>
+                            <th>Площадь</th>
                             <th>Экспресс</th>
+                            <th>Технический проект</th>
                             <th>Комфорт</th>
-                            <th >Эксклюзив</th>
+                            <th>Эксклюзив</th>
                         </tr>
                         <tr>
                             <td>От 100 до 150 м²</td>
+                            <td>600 руб/м²</td>
                             <td>600 руб/м²</td>
                             <td>1400 руб/м²</td>
                             <td>1900 руб/м²</td>
@@ -904,14 +1043,16 @@
                         <tr>
                             <td>От 50 до 100 м²</td>
                             <td>800 руб/м²</td>
+                            <td>800 руб/м²</td>
                             <td>1700 руб/м²</td>
                             <td>2200 руб/м²</td>
                         </tr>
                         <tr>
-                            <td >до 50 м²</td>
+                            <td>до 50 м²</td>
+                            <td>1100 руб/м²</td>
                             <td>1100 руб/м²</td>
                             <td>2200 руб/м²</td>
-                            <td >2900 руб/м²</td>
+                            <td>2900 руб/м²</td>
                         </tr>
                     </table>
                 </div>
@@ -1254,6 +1395,7 @@
                             <p href="index.html" class="footer__title accordeon-text">Услуги</p>
                             <div class="links">
                                 <a href="express.html" class="footer__link">Дизайн экспресс</a>
+                                <a href="technical.html" class="footer__link">Технический проект</a>
                                 <a href="comfort.html" class="footer__link">Дизайн комфорт</a>
                                 <a href="exclusive.html" class="footer__link">Дизайн эксклюзив</a>
                                 <a href="rendering-3d.html" class="footer__link">3D визуализация</a>
