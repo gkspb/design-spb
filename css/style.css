@@ -2635,7 +2635,6 @@ body.disabled {
 .table-square td,
 .services-table th {
   text-align: center;
-  border-bottom: 2px solid #141414;
 }
 
 .table-square th,
@@ -2669,9 +2668,6 @@ body.disabled {
 .table-square {
   border-radius: 1rem;
   width: 100%;
-}
-.table-header {
-  background: #FF9900;
 }
 .table-header th:first-child {
   text-align: left;
@@ -4826,10 +4822,6 @@ a {
     content: "-";
     transform: rotate(180deg);
   }
-}
-
-.table-border-tr, .table-border-bl, .table-border-tl, .table-border-br {
-  border-top-right-radius: 7px;
 }
 
 .footer {
