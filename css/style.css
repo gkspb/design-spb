@@ -4828,6 +4828,10 @@ a {
   }
 }
 
+.table-border-tr, .table-border-bl, .table-border-tl, .table-border-br {
+  border-top-right-radius: 7px;
+}
+
 .footer {
   background: #141414;
   color: #fff;
