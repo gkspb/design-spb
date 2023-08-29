@@ -35,12 +35,6 @@
             line-height: 140%;
         }
     }
-    &-item {
-        flex: 1 0;
-        display: flex;
-        flex-direction: column;
-        row-gap: 1.25rem;
-    }
     &__logo {
         color: $white;
         font-family: Montserrat Regular;
@@ -137,20 +131,3 @@
     }
 }
 
-.footer-text::after {
-    @media (max-width: 767px) {
-        content: "+";
-        display: inline-block;
-        margin-left: 0.5rem;
-        transition: 0.5s;
-        position: absolute;
-        right: 10%;
-    }
-}
-
-.open .footer-text::after {
-    @media (max-width: 767px) {
-        content: "-";
-        transform: rotate(180deg);
-    }
-}
