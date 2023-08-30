@@ -20,7 +20,7 @@
         justify-content: space-between;
         @media (max-width: 767px) {
             flex-direction: column;
-            row-gap: 3rem;
+            row-gap: 1.25rem;
             width: 100%;
             max-width: 35rem;
             border-radius: 0.4rem;
@@ -119,15 +119,3 @@
         }
     }
 }
-
-.links {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    &-mobile {
-        @media (min-width: 767px) {
-            display: none;
-        }
-    }
-}
-

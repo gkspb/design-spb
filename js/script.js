@@ -105,30 +105,6 @@ let swiper3 = new Swiper(".mySwiper3", {
 	}
 });
 
-let swiper4 = new Swiper(".mySwiper4", {
-	direction: "vertical",
-	slidesPerView: 3,
-	spaceBetween: 20,
-	slidesPerGroup: 1,
-	centeredSlides: true,
-	initialSlide: 2,
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-	autoplay: {
-		delay: 3000,
-		disableOnInteraction: false,
-	},
-	loop: true,
-	loopedSlides: 2,
-	on: {
-		click(event) {
-			swiper4.slideTo(this.clickedIndex);
-		},
-	},
-});
-
 let swiper5 = new Swiper(".mySwiper5", {
 	spaceBetween: 10,
 	slidesPerView: 4,
@@ -152,35 +128,13 @@ let swiper5 = new Swiper(".mySwiper5", {
 	}
 });
 
-//Смена картинок в разделе "Выберите стиль вашего дизайна"
-// let section = document.querySelector('.choise');
-// swiper4.on('slideChangeTransitionEnd', function () {
-// 	let activeSlideIndex = swiper4.activeIndex;
-// 	let backgroundImageNames = [
-// 		'loft.png',
-// 		'minimalizm.png',
-// 		'loft.png',
-// 		'minimalizm.png'
-// 	];
-// 	if (activeSlideIndex < 0) {
-// 		activeSlideIndex = backgroundImageNames.length - 1;
-// 	}
-// 	let currentPath = window.location.href;
-// 	let currentFolder = currentPath.substring(0, currentPath.lastIndexOf('/'));
-// 	let activeBackgroundImage = `${currentFolder}/img/${backgroundImageNames[activeSlideIndex]}`;
-// 	section.style.backgroundImage = `url(${activeBackgroundImage})`;
-// });
-
-
 //проверка на горизонтальных экранах
 if (window.innerHeight < 400) {
-    let headerElement = document.querySelector('header');
-    if (headerElement) {
-        headerElement.classList.add('substrate');
-    }
+	let headerElement = document.querySelector('header');
+	if (headerElement) {
+		headerElement.classList.add('substrate');
+	}
 }
-
-
 
 
 if ($('body').hasClass('scrollify-page') && window.innerHeight > 400) {
@@ -245,31 +199,21 @@ if ($('body').hasClass('scrollify-page') && window.innerHeight > 400) {
 
 // Функция для получения текущего блока с использованием Scrollify
 function getCurrentSection() {
-    let currentSection = null;
-    
-    // Получаем текущий активный блок Scrollify
-    const activeIndex = $.scrollify.current().index();
-    
-    // Предположим, что у вас есть массив секций, которые вы хотите отслеживать
-    // Замените этот массив на фактический список секций на вашем сайте
-    const sections = [$("#1"), $("#2"), $("#3"), $("#4"), $("#5"), $("#6"), $("#7"), $("#8"), $("#9"), $("#10"), $("#11")];
-    
-    // Проверяем, в каком блоке находится активный индекс Scrollify
-    if (activeIndex >= 0 && activeIndex < sections.length) {
-        currentSection = sections[activeIndex];
-    }
-    
-    return currentSection;
+	let currentSection = null;
+	const activeIndex = $.scrollify.current().index();
+	const sections = [$("#1"), $("#2"), $("#3"), $("#4"), $("#5"), $("#6"), $("#7"), $("#8"), $("#9"), $("#10"), $("#11")];
+	if (activeIndex >= 0 && activeIndex < sections.length) {
+		currentSection = sections[activeIndex];
+	}
+	return currentSection;
 }
-
 $(document).on('click', '#menu-toggle', function () {
-    $(this).toggleClass('menu-burger--is-active');
-    
-    // Получаем текущий блок и вызываем функцию обновления стилей
-    let currentSection = getCurrentSection(); // Здесь реализуйте получение текущего блока
-    updateStyles(currentSection);
+	$(this).toggleClass('menu-burger--is-active');
+	let currentSection = getCurrentSection();
+	updateStyles(currentSection);
 });
 
+//бургер
 document.addEventListener('DOMContentLoaded', function () {
     let btnBurger = document.querySelector('.menu-burger');
     if (btnBurger) {
@@ -281,36 +225,42 @@ document.addEventListener('DOMContentLoaded', function () {
             mobileMenu.classList.toggle('mobile-nav_bottom-deactive');
             mobileNav.classList.toggle('mobile-nav-active');
             
-            // Получаем текущий блок и вызываем функцию обновления стилей
-            let currentSection = getCurrentSection(); // Здесь реализуйте получение текущего блока
-            updateStyles(currentSection);
-            
             if (mobileMenu.classList.contains('mobile-nav_bottom-active')) {
                 $('.main').addClass('main-opacity');
                 $('.header').addClass('header-mobile');
                 $('.nav-item').removeClass('header_black');
+				$('.mobile-nav_bottom-wrapper').addClass('mobile-nav_bottom-wrapper-100')
                 document.body.style.overflow = "hidden";
+                mobileMenu.style.overflow = "auto"; // Allow scrolling in open state
             } else {
                 $('.main').removeClass('main-opacity');
                 $('.header').removeClass('header-mobile');
+				$('.mobile-nav_bottom-wrapper').removeClass('mobile-nav_bottom-wrapper-100')
                 document.body.style.overflow = "auto";
+                mobileMenu.style.overflow = "hidden"; // Reset overflow to prevent scrolling in closed state
             }
         });
     }
 });
 
 
+
 //аккордеон футер
-$(function() {
-    $('.accordeon-content').hide();
-    $('.accordeon-text').on('click', f_acc);
+$(document).ready(function () {
+	$('.accordeon-text').click(function () {
+		var item = $(this).closest('.accordeon-item');
+		var content = item.find('.accordeon-content');
+		var isOpen = item.hasClass('open');
+		$('.accordeon-item').removeClass('open');
+		$('.accordeon-content').slideUp(500);
+		if (!isOpen) {
+			item.addClass('open');
+			content.slideDown(500);
+		}
+	});
 });
 
-function f_acc() {
-    $('.accordeon-content').slideUp(500);
-    $(this).toggleClass('open');
-    $(this).next('.accordeon-content').slideToggle(500);
-}
+
 
 
 // до/после меняем картинки
@@ -319,35 +269,34 @@ const afterButton = document.querySelector('.difference__after');
 const imgElement = document.querySelector('.difference__img');
 const beforeImagePath = 'img/before.png';
 const afterImagePath = 'img/after.png';
-
 if (beforeButton && afterButton && imgElement) {
-    beforeButton.addEventListener('click', () => {
-        imgElement.style.opacity = '0';
-        setTimeout(() => {
-            imgElement.src = beforeImagePath;
-            imgElement.style.opacity = '1';
-        }, 300);
-        beforeButton.classList.add('btn-active');
-        afterButton.classList.remove('btn-active');
-    });
-
-    afterButton.addEventListener('click', () => {
-        imgElement.style.opacity = '0';
-        setTimeout(() => {
-            imgElement.src = afterImagePath;
-            imgElement.style.opacity = '1';
-        }, 300);
-        afterButton.classList.add('btn-active');
-        beforeButton.classList.remove('btn-active');
-    });
+	beforeButton.addEventListener('click', () => {
+		imgElement.style.opacity = '0';
+		setTimeout(() => {
+			imgElement.src = beforeImagePath;
+			imgElement.style.opacity = '1';
+		}, 300);
+		beforeButton.classList.add('btn-active');
+		afterButton.classList.remove('btn-active');
+	});
+	afterButton.addEventListener('click', () => {
+		imgElement.style.opacity = '0';
+		setTimeout(() => {
+			imgElement.src = afterImagePath;
+			imgElement.style.opacity = '1';
+		}, 300);
+		afterButton.classList.add('btn-active');
+		beforeButton.classList.remove('btn-active');
+	});
 }
 
+//убрать блюр
 function removeBlur(element) {
 	element.removeEventListener("mouseover", removeBlur);
 	var blurElement = element.querySelector(".item-blur");
 	if (blurElement) {
 		blurElement.style.opacity = "0";
-		setTimeout(function() {
+		setTimeout(function () {
 			blurElement.remove();
 		}, 1000);
 	}

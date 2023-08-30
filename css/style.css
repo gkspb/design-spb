@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -730,19 +731,31 @@ body.disabled {
 .mobile-nav_bottom {
   padding: 2rem 0;
 }
+.mobile-nav_bottom-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 .mobile-nav_bottom-active {
   position: absolute;
   background: #141414;
   text-align: center;
   display: flex !important;
   flex-direction: column;
-  row-gap: 2.5rem;
+  row-gap: 1rem;
+  padding-bottom: 10rem;
   left: -6%;
-  top: 90%;
+  top: 0;
   width: 112%;
+  height: 100%;
+  overflow: auto;
 }
 .mobile-nav_bottom-deactive {
   display: none;
+}
+
+.mobile-nav_bottom-wrapper-100 {
+  height: 100vh;
 }
 
 .menu-burger {
@@ -1053,6 +1066,12 @@ body.disabled {
   background: #fff;
   position: absolute;
   left: -5%;
+}
+@media (max-width: 767px) {
+  .section-vertical-line {
+    left: -3%;
+    height: 15rem;
+  }
 }
 .section__text {
   color: #fff;
@@ -4801,10 +4820,9 @@ a {
 }
 
 .accordeon-item {
-  flex: 1 0;
   display: flex;
   flex-direction: column;
-  row-gap: 1.25rem;
+  row-gap: 1rem;
 }
 @media (max-width: 767px) {
   .accordeon-text::after {
@@ -4824,8 +4842,22 @@ a {
   }
 }
 
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
   z-index: 8;
+}
+
+.accordeon-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  overflow: hidden; /* Скрыть содержимое, которое выходит за пределы блока */
+  max-height: 0; /* Установить нулевую высоту по умолчанию */
+  transition: max-height 0.5s ease; /* Анимация изменения высоты */
+}
+
+.accordeon-item.open .accordeon-content {
+  max-height: 500px; /* Подставьте подходящее значение */
 }
 
 .footer {
@@ -4853,7 +4885,7 @@ a {
 @media (max-width: 767px) {
   .footer-wrapper {
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 1.25rem;
     width: 100%;
     max-width: 35rem;
     border-radius: 0.4rem;
@@ -5030,15 +5062,4 @@ a {
 .footer__social-logo {
   width: 2.67rem;
   height: 2.67rem;
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-}
-@media (min-width: 767px) {
-  .links-mobile {
-    display: none;
-  }
 }/*# sourceMappingURL=style.css.map */
