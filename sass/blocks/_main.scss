@@ -2994,11 +2994,13 @@ a {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
-    overflow: hidden; /* Скрыть содержимое, которое выходит за пределы блока */
-    max-height: 0; /* Установить нулевую высоту по умолчанию */
-    transition: max-height 0.5s ease; /* Анимация изменения высоты */
+    overflow: hidden;
+    transition: max-height 0.5s ease; 
+    @media(max-width: 767px) {
+        max-height: 0; 
+    }
 }
 
 .accordeon-item.open .accordeon-content {
-    max-height: 500px; /* Подставьте подходящее значение */
+    max-height: 1000px; 
 }
