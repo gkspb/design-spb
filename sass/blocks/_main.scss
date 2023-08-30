@@ -2976,6 +2976,13 @@ a {
             right: 10%;
         }
     }
+    &-content{
+        &-mobile{
+            @media(min-width: 767px) {
+                display: none;
+            }
+        }
+    }
 }
 
 .open .accordeon-text::after {

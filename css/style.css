@@ -4833,6 +4833,11 @@ a {
     right: 10%;
   }
 }
+@media (min-width: 767px) {
+  .accordeon-content-mobile {
+    display: none;
+  }
+}
 
 @media (max-width: 767px) {
   .open .accordeon-text::after {
