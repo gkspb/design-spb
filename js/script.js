@@ -245,20 +245,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//аккордеон футер
+//аккордеон футер/шапка
 $(document).ready(function () {
-	$('.accordeon-text').click(function () {
-		var item = $(this).closest('.accordeon-item');
-		var content = item.find('.accordeon-content');
-		var isOpen = item.hasClass('open');
-		$('.accordeon-item').removeClass('open');
-		$('.accordeon-content').slideUp(500);
-		if (!isOpen) {
-			item.addClass('open');
-			content.slideDown(500);
-		}
-	});
+    function handleAccordion() {
+        var screenWidth = window.innerWidth;
+        if (screenWidth < 767) {
+            $('.accordeon-text').click(function () {
+                var item = $(this).closest('.accordeon-item');
+                var content = item.find('.accordeon-content');
+                var isOpen = item.hasClass('open');
+                $('.accordeon-item').removeClass('open');
+                $('.accordeon-content').slideUp(500);
+                if (!isOpen) {
+                    item.addClass('open');
+                    content.slideDown(500);
+                }
+            });
+        } else {
+            $('.accordeon-text').off('click');
+            $('.accordeon-content').show(); 
+        }
+    }
+    handleAccordion(); 
+    $(window).resize(handleAccordion); 
 });
+
 
 
 
