@@ -1386,6 +1386,9 @@ body.disabled {
   padding-left: 3.3rem;
   height: 5rem;
 }
+.calculation__link {
+  flex: 1 1 33%;
+}
 .calculation__input {
   border: 1px solid #afafaf;
   color: #afafaf;
@@ -1439,6 +1442,10 @@ body.disabled {
   .calculation__button {
     padding: 1rem;
   }
+}
+
+.calculation__link .calculation__item {
+  width: 100%;
 }
 
 .news__title {
@@ -2232,7 +2239,7 @@ body.disabled {
 }
 .map-item {
   display: flex;
-  margin-bottom: 4.18rem;
+  margin-bottom: 2rem;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
 }
@@ -2243,6 +2250,9 @@ body.disabled {
   display: flex;
   row-gap: 2rem;
   flex-direction: column;
+}
+.map-tel-item {
+  align-self: center;
 }
 
 .mySwiper4 .swiper-slide-active {
@@ -2893,6 +2903,15 @@ body.disabled {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.prices-consultation__link {
+  margin: 0 auto;
+  width: 40%;
+}
+@media (max-width: 767px) {
+  .prices-consultation__link {
+    width: 80%;
+  }
+}
 .prices-consultation-form {
   border-radius: 1rem;
   border: 1px solid #fff;
@@ -3148,6 +3167,10 @@ body.disabled {
   -moz-column-gap: 4rem;
        column-gap: 4rem;
   justify-content: center;
+}
+
+.prices-consultation__link .prices-consultation__item {
+  width: 100%;
 }
 
 .prices-services-item:hover {
@@ -3997,27 +4020,25 @@ body.disabled {
   margin: 0 auto;
   background: #141414;
   border: 2px solid #141414;
-}
-@media (max-width: 767px) {
-  .error-404__button {
-    width: auto;
-    padding: 2rem 1rem;
-  }
-}
-.error-404__text {
   color: #fff;
   font-family: Montserrat Medium;
   font-weight: 500;
   line-height: 140%;
 }
 @media (min-width: 76.7rem) {
-  .error-404__text {
+  .error-404__button {
     font-size: calc(1.6rem + 0.4 * (100vw / 144));
   }
 }
 @media (max-width: 76.7rem) {
-  .error-404__text {
+  .error-404__button {
     font-size: calc(1.6rem + 0.68 * ((100vw - 37.5rem) / 144));
+  }
+}
+@media (max-width: 767px) {
+  .error-404__button {
+    width: auto;
+    padding: 2rem 1rem;
   }
 }
 
