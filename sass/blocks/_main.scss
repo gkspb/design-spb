@@ -26,6 +26,9 @@
     position: relative;
     &-adress{
         padding: 1rem 1.67rem;
+        @media(max-width: 1023px) {
+            padding: 2rem 1.67rem;
+        }
     }
     &-container {
         @media (max-width: 767px) {
@@ -969,7 +972,6 @@
         display: flex;
         margin-bottom: 2rem;
         column-gap: 2rem;
-        align-items: center;
     }
     &-item:last-child {
         margin-bottom: 0;
@@ -978,6 +980,10 @@
         display: flex;
         row-gap: 2rem;
         flex-direction: column;
+        font-family: Montserrat Medium;
+        @include adaptiv-font(2, 1.6);
+        font-weight: 500;
+        line-height: 2.5rem;
     }
     &-tel {
         &-item {
@@ -987,6 +993,10 @@
     &-wrapper{
         display: flex;
         justify-content: space-between;
+        @media(max-width: 1023px) {
+            flex-direction: column;
+            row-gap: 2rem;
+        }
     }
 }
 
@@ -999,8 +1009,9 @@ iframe{
 }
 
 .tabs {
-    width: 30%;
-    z-index: 9;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
     background: $white;
     border-radius: 1rem;
     border: 1px solid $black;
@@ -1019,6 +1030,9 @@ iframe{
         &_second {
             border-radius: 0 1rem 0 0;
         }
+    }
+    label{
+        width: 49.8%;
     }
 }
 
@@ -1061,9 +1075,6 @@ iframe{
         color 0.15s ease-in-out,
         background-color 0.15s ease-in-out;
     cursor: pointer;
-    position: relative;
-    top: 1px;
-    width: 49%;
     text-align: center;
     padding: 1.8rem 0;
     color: $white;
@@ -3070,7 +3081,6 @@ a {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: transparent url("./img/arrows.png") no-repeat center;
     border: 2px solid #fff;
     background-size: 90%;
 }
