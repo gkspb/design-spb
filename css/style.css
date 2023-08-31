@@ -3504,7 +3504,7 @@ iframe {
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;
-  transition: max-height 0.35s, opacity 0.35s, transform 0.35s;
+  transition: max-height 0.5s, opacity 0.5s, transform 0.5s;
 }
 
 .tab-content p {
@@ -3541,13 +3541,13 @@ iframe {
   width: 3em;
   height: 1em;
   text-align: center;
-  transition: transform 0.35s;
+  transition: transform 0.5s;
   content: "+";
 }
 
 .tab input[type=checkbox]:checked + label::after {
   transform: rotate(180deg);
-  transition: transform 0.35s, content 0.35s;
+  transition: transform 0.5s, content 0.5s;
   content: "-";
 }
 
@@ -4828,7 +4828,7 @@ a {
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;
-  transition: max-height 0.35s, opacity 0.35s, transform 0.35s;
+  transition: max-height 0.5s, opacity 0.5s, transform 0.5s;
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
@@ -4848,13 +4848,13 @@ a {
   width: 3em;
   height: 1em;
   text-align: center;
-  transition: transform 0.35s;
+  transition: transform 0.5s;
   content: "+";
 }
 
 .dropdown-item input[type=checkbox]:checked + label::after {
   transform: rotate(180deg);
-  transition: transform 0.35s, content 0.35s;
+  transition: transform 0.5s, content 0.5s;
   content: "-";
 }
 
