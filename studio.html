@@ -184,7 +184,14 @@
         <section class="section section-one-room" id="1">
             <div class="section-container">
                 <div class="section-content-wrapper">
-                    <div class="section-vertical-line"></div>
+                    <div class="section-vertical-line">
+                        <div class="breadcrumbs" id="breadcrumbs">
+                            <a href="/">Главная</a> <span>/</span>
+                            <a href="/раздел-1/">Раздел 1</a> <span>/</span>
+                            <a href="/раздел-1/подраздел-1/">Подраздел 1</a> <span>/</span>
+                            Текущая страница
+                        </div>
+                    </div>
                     <div class="section-content">
                         <h1 class="section__title">Дизайны интерьера студии</h1>
                         <p class="section__subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
@@ -220,7 +227,7 @@
                 <div class="prices-services-wrapper">
                     <div class="prices-services-item">
                         <h4 class="prices-services-item__title prices-services-item-text_black">ЭСПРЕСС</h4>
-                        <p class="prices-per-metr prices-services-item-text_black">от 600 руб./м²</p>
+                        <p class="prices-per-metr prices-services-item-text_black">от 1100 руб./м²</p>
                         <div class="included-services">
                             <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет
                                 услуг включает:</h5>
@@ -245,7 +252,7 @@
                     </div>
                     <div class="prices-services-item">
                         <h4 class="prices-services-item__title prices-services-item-text_black">ТЕХНИЧЕСКИЙ ПРОЕКТ</h4>
-                        <p class="prices-per-metr prices-services-item-text_black">от 600 руб./м²</p>
+                        <p class="prices-per-metr prices-services-item-text_black">от 1600 руб./м²</p>
                         <div class="included-services">
                             <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет
                                 услуг включает:</h5>
@@ -270,7 +277,7 @@
                     </div>
                     <div class="prices-services-item">
                         <h4 class="prices-services-item__title prices-services-item-text_black">КОМФОРТ</h4>
-                        <p class="prices-per-metr prices-services-item-text_black">от 600 руб./м²</p>
+                        <p class="prices-per-metr prices-services-item-text_black">от 2500 руб./м²</p>
                         <div class="included-services">
                             <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет
                                 услуг включает:</h5>
@@ -292,7 +299,7 @@
                     </div>
                     <div class="prices-services-item">
                         <h4 class="prices-services-item__title prices-services-item-text_black">ЭКСКЛЮЗИВ</h4>
-                        <p class="prices-per-metr prices-services-item-text_black">от 1900 руб./м²</p>
+                        <p class="prices-per-metr prices-services-item-text_black">от 3000 руб./м²</p>
                         <div class="included-services">
                             <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет
                                 услуг включает:</h5>
@@ -425,24 +432,15 @@
 
         <section class="section difference" id="6">
             <div class="container">
-                <div class="difference-wrapper">
-                    <div class="difference-content">
-                        <div>
-                            <h4 class="difference__title">Ощути разницу</h4>
-                            <p class="difference__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A
-                                ad
-                                dolores explicabo quae cum quia. Ad dolores iusto aliquid nam unde, ipsa error natus sit
-                                quia, pariatur dolor ea repellendus.</p>
-                        </div>
-                        <div class="difference-buttons">
-                            <button class="btn difference__before">До</button>
-                            <button class="btn difference__after btn-active">После</button>
-                        </div>
-                    </div>
-                    <div class="difference-img-wrapper">
-                        <img src="img/after.png" alt="фото до" class="difference__img">
-                    </div>
+                <h4 class="difference__title">Ощути разницу</h4>
+                <div id="image-comparison">
+                    <img src="img/after.png" alt="фото до">
+                    <img src="img/before.png" alt="фото до">
                 </div>
+                <p class="difference__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A
+                    ad
+                    dolores explicabo quae cum quia. Ad dolores iusto aliquid nam unde, ipsa error natus sit
+                    quia, pariatur dolor ea repellendus.</p>
             </div>
         </section>
 
@@ -1076,29 +1074,29 @@
                             <th>Эксклюзив</th>
                         </tr>
                         <tr>
-                            <td>От 100 до 150 м²</td>
-                            <td>600 руб/м²</td>
-                            <td>600 руб/м²</td>
-                            <td>1400 руб/м²</td>
-                            <td>1900 руб/м²</td>
+                            <td>От 100 м²</td>
+                            <td>определяется сложностью ДП</td>
+                            <td>определяется сложностью ДП</td>
+                            <td>определяется сложностью ДП</td>
+                            <td>определяется сложностью ДП</td>
                         </tr>
                         <tr>
-                            <td>От 50 до 100 м²</td>
-                            <td>800 руб/м²</td>
-                            <td>800 руб/м²</td>
-                            <td>1700 руб/м²</td>
-                            <td>2200 руб/м²</td>
+                            <td>От 30 до 100 м²</td>
+                            <td>1100 руб/м²</td>
+                            <td>1600 руб/м²</td>
+                            <td>2500 руб/м²</td>
+                            <td>3000 руб/м²</td>
                         </tr>
                         <tr>
-                            <td>до 50 м²</td>
-                            <td>1100 руб/м²</td>
-                            <td>1100 руб/м²</td>
-                            <td>2200 руб/м²</td>
-                            <td>2900 руб/м²</td>
+                            <td>до 30 м²</td>
+                            <td>1100 руб/м² + 25%</td>
+                            <td>1600 руб/м² + 25%</td>
+                            <td>2500 руб/м² + 25%</td>
+                            <td>3000 руб/м² + 25%</td>
                         </tr>
                     </table>
                 </div>
-                <button class="btn btn_black prices-table-button">Заказать</button>
+                <a href="#"><button class="btn btn_black prices-table-button">Заказать</button></a>
             </div>
         </section>
 
