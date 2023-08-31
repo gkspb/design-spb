@@ -20,7 +20,6 @@
                     <li class="nav__item">
                         <a href="o-kompanii.html" class="nav__link header-text">О компании</a>
                         <ul>
-                            
                             <li><a href="blog.html">Блог</a></li>
                             <li><a href="reviews.html">Отзывы</a></li>
                             <li><a href="articles.html">Статьи</a></li>
@@ -44,7 +43,7 @@
                         <a href="services.html" class="nav__link header-text">Услуги</a>
                         <ul>
                             <li><a href="express.html">Дизайн Экспресс</a></li>
-                            <li><a href="express.html">Технический проект</a></li>
+                            <li><a href="technical.html">Технический проект</a></li>
                             <li><a href="comfort.html">Дизайн Комфорт</a></li>
                             <li><a href="exclusive.html">Дизайн Эксклюзив</a></li>
                             <li><a href="rendering-3d.html">3d визуализация</a></li>
@@ -64,7 +63,7 @@
                         <a href="index.html" class="header-text header__title nav-item nav-logo">Дизайн спб</a>
                         <div class="header__contacts-tablet">
                             <div class="img-wrapper">
-                                <a href="project-1.html" class="header__link">
+                                <a href="#" class="header__link">
                                     <img class="telegram header__social-logo icon-white" src="img/telegram.svg"
                                         alt="telegram">
                                     <img class="telegram header__social-logo icon-black none"
@@ -92,27 +91,35 @@
                                 <a href="prices.html" class="burger__title">Цены</a>
                                 <a href="contacts.html" class="burger__title">Контакты</a>
                             </li>
-                            <li class="accordeon-item burger-item">
-                                <p href="styles.html" class="burger__title accordeon-text">О компании</p>
-                                <div class="links accordeon-content">
-                                    
+                            <li class="dropdown-item burger-item dropdown-item_first">
+                                <input id="dropdown-item-1" type="checkbox" name="dropdown-items"
+                                    class="dropdown-item-toogle">
+                                <label for="dropdown-item-1">О компании</label>
+                                <div class="dropdown-item-content">
                                     <a href="blog.html" class="burger__link">Блог</a>
                                     <a href="reviews.html" class="burger__link">Отзывы</a>
                                     <a href="articles.html" class="burger__link">Статьи</a>
                                 </div>
                             </li>
-                            <li class="accordeon-item burger-item">
-                                <p href="index.html" class="burger__title accordeon-text">Дизайн проект</p>
-                                <div class="links accordeon-content">
+
+                            <li class="dropdown-item burger-item dropdown-item_second">
+                                <input id="dropdown-item-2" type="checkbox" name="dropdown-items"
+                                    class="dropdown-item-toogle">
+                                <label for="dropdown-item-2">Дизайн проект</label>
+                                <div class="dropdown-item-content">
                                     <a href="apartaments.html" class="burger__link">Дизайн квартир</a>
                                     <a href="houses.html" class="burger__link">Дизайн домов</a>
                                     <a href="commercial-premisess.html" class="burger__link">Дизайн комм. <br>
                                         недвижимости</a>
                                 </div>
                             </li>
-                            <li class="accordeon-item burger-item">
-                                <p href="index.html" class="burger__title accordeon-text">Услуги</p>
-                                <div class="links accordeon-content">
+
+
+                            <li class="dropdown-item burger-item dropdown-item_third">
+                                <input id="dropdown-item-3" type="checkbox" name="dropdown-items"
+                                    class="dropdown-item-toogle">
+                                <label for="dropdown-item-3">Услуги</label>
+                                <div class="dropdown-item-content">
                                     <a href="express.html" class="burger__link">Дизайн экспресс</a>
                                     <a href="technical.html" class="burger__link">Технический проект</a>
                                     <a href="comfort.html" class="burger__link">Дизайн комфорт</a>
@@ -195,7 +202,7 @@
                         <div class="item-blur"></div>
                     </div>
                     <div class="services-item services-item_second" onmouseover="removeBlur(this)">
-                        <p class="services__text">Технический</p>
+                        <p class="services__text">Технический проект</p>
                         <a href="development.html" class="details">Подробнее</a>
                         <div class="item-blur"></div>
                     </div>
@@ -312,32 +319,37 @@
                             <a href="portfolio.html" class="footer__title">Портфолио</a>
                             <a href="contacts.html" class="footer__title">Контакты</a>
                             <a href="prices.html" class="footer__title">Цены</a>
-                            <div class="links accordeon-content links accordeon-content-desktop">
+                            <div class="links accordeon-content links footer-contacts-desktop">
                                 <a href="#" class="footer__policy">Политика конфиденциальности</a>
                                 <p class="footer__rights">Copyright ©2020-2022 <br> Все права защищены</p>
                             </div>
                         </div>
-                        <div class="footer-interior accordeon-item footer-item">
-                            <p href="styles.html" class="footer__title accordeon-text">О компании</p>
-                            <div class="links accordeon-content">
-                                
+                        <div class="footer-interior dropdown-item accordeon-item footer-item">
+                            <input id="dropdown-item-4" type="checkbox" name="dropdown-items"
+                                class="dropdown-item-toogle">
+                            <label for="dropdown-item-4">О компании</label>
+                            <div class="links accordeon-content dropdown-item-content">
                                 <a href="blog.html" class="footer__link">Блог</a>
                                 <a href="reviews.html" class="footer__link">Отзывы</a>
                                 <a href="articles.html" class="footer__link">Статьи</a>
                             </div>
                         </div>
-                        <div class="footer-design accordeon-item footer-item">
-                            <p href="index.html" class="footer__title accordeon-text">Дизайн проект</p>
-                            <div class="links accordeon-content">
+                        <div class="footer-design dropdown-item accordeon-item footer-item">
+                            <input id="dropdown-item-5" type="checkbox" name="dropdown-items"
+                                class="dropdown-item-toogle">
+                            <label for="dropdown-item-5">Дизайн проект</label>
+                            <div class="links accordeon-content dropdown-item-content">
                                 <a href="apartaments.html" class="footer__link">Дизайн квартир</a>
                                 <a href="houses.html" class="footer__link">Дизайн домов</a>
                                 <a href="commercial-premisess.html" class="footer__link">Дизайн комм. <br>
                                     недвижимости</a>
                             </div>
                         </div>
-                        <div class="footer-services accordeon-item footer-item">
-                            <p href="index.html" class="footer__title accordeon-text">Услуги</p>
-                            <div class="links accordeon-content">
+                        <div class="footer-services dropdown-item accordeon-item footer-item">
+                            <input id="dropdown-item-6" type="checkbox" name="dropdown-items"
+                                class="dropdown-item-toogle">
+                            <label for="dropdown-item-6">Услуги</label>
+                            <div class="links accordeon-content dropdown-item-content">
                                 <a href="express.html" class="footer__link">Дизайн экспресс</a>
                                 <a href="technical.html" class="footer__link">Технический проект</a>
                                 <a href="comfort.html" class="footer__link">Дизайн комфорт</a>
@@ -359,7 +371,7 @@
                                 <a href="#"><img src="img/telegram.svg" alt="telegram"
                                         class="telegram footer__social-logo"></a>
                             </div>
-                            <div class="links accordeon-content-mobile">
+                            <div class="links footer-contacts-mobile">
                                 <a href="#" class="footer__policy">Политика конфиденциальности</a>
                                 <p class="footer__rights">Copyright ©2020-2022 <br> Все права защищены</p>
                             </div>

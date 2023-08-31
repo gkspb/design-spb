@@ -151,6 +151,7 @@ if ($('body').hasClass('scrollify-page') && window.innerHeight > 400) {
 		overflowScroll: true,
 		updateHash: true,
 		touchScroll: true,
+		touchmove: true,
 		after: function (index, sections) {
 			updateStyles(sections[index]);
 		},
@@ -243,37 +244,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
-
-//аккордеон футер/шапка
-$(document).ready(function () {
-    function handleAccordion() {
-        var screenWidth = window.innerWidth;
-        if (screenWidth < 767) {
-            $('.accordeon-text').click(function () {
-                var item = $(this).closest('.accordeon-item');
-                var content = item.find('.accordeon-content');
-                var isOpen = item.hasClass('open');
-                $('.accordeon-item').removeClass('open');
-                $('.accordeon-content').slideUp(500);
-                if (!isOpen) {
-                    item.addClass('open');
-                    content.slideDown(500);
-                }
-            });
-        } else {
-            $('.accordeon-text').off('click');
-            $('.accordeon-content').show(); 
-        }
-    }
-    handleAccordion(); 
-    $(window).resize(handleAccordion); 
-});
-
-
-
-
-
 // до/после меняем картинки
 const beforeButton = document.querySelector('.difference__before');
 const afterButton = document.querySelector('.difference__after');
@@ -313,3 +283,32 @@ function removeBlur(element) {
 	}
 }
 
+
+// Вопросы(закрываем при открытии другого)
+const tabCheckboxes = document.querySelectorAll('.tab input[type="checkbox"]');
+tabCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            // Закрываем все остальные вкладки
+            tabCheckboxes.forEach(otherCheckbox => {
+                if (otherCheckbox !== this) {
+                    otherCheckbox.checked = false;
+                }
+            });
+        }
+    });
+});
+
+const burgerItemCheckboxes = document.querySelectorAll('.dropdown-item input[type="checkbox"]');
+burgerItemCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            // Закрываем все остальные вкладки
+            burgerItemCheckboxes.forEach(otherCheckbox => {
+                if (otherCheckbox !== this) {
+                    otherCheckbox.checked = false;
+                }
+            });
+        }
+    });
+});

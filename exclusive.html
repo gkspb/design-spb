@@ -20,7 +20,6 @@
                     <li class="nav__item">
                         <a href="o-kompanii.html" class="nav__link header-text">О компании</a>
                         <ul>
-                            
                             <li><a href="blog.html">Блог</a></li>
                             <li><a href="reviews.html">Отзывы</a></li>
                             <li><a href="articles.html">Статьи</a></li>
@@ -44,7 +43,7 @@
                         <a href="services.html" class="nav__link header-text">Услуги</a>
                         <ul>
                             <li><a href="express.html">Дизайн Экспресс</a></li>
-                            <li><a href="express.html">Технический проект</a></li>
+                            <li><a href="technical.html">Технический проект</a></li>
                             <li><a href="comfort.html">Дизайн Комфорт</a></li>
                             <li><a href="exclusive.html">Дизайн Эксклюзив</a></li>
                             <li><a href="rendering-3d.html">3d визуализация</a></li>
@@ -64,7 +63,7 @@
                         <a href="index.html" class="header-text header__title nav-item nav-logo">Дизайн спб</a>
                         <div class="header__contacts-tablet">
                             <div class="img-wrapper">
-                                <a href="project-1.html" class="header__link">
+                                <a href="#" class="header__link">
                                     <img class="telegram header__social-logo icon-white" src="img/telegram.svg"
                                         alt="telegram">
                                     <img class="telegram header__social-logo icon-black none"
@@ -92,27 +91,35 @@
                                 <a href="prices.html" class="burger__title">Цены</a>
                                 <a href="contacts.html" class="burger__title">Контакты</a>
                             </li>
-                            <li class="accordeon-item burger-item">
-                                <p href="styles.html" class="burger__title accordeon-text">О компании</p>
-                                <div class="links accordeon-content">
-                                    
+                            <li class="dropdown-item burger-item dropdown-item_first">
+                                <input id="dropdown-item-1" type="checkbox" name="dropdown-items"
+                                    class="dropdown-item-toogle">
+                                <label for="dropdown-item-1">О компании</label>
+                                <div class="dropdown-item-content">
                                     <a href="blog.html" class="burger__link">Блог</a>
                                     <a href="reviews.html" class="burger__link">Отзывы</a>
                                     <a href="articles.html" class="burger__link">Статьи</a>
                                 </div>
                             </li>
-                            <li class="accordeon-item burger-item">
-                                <p href="index.html" class="burger__title accordeon-text">Дизайн проект</p>
-                                <div class="links accordeon-content">
+
+                            <li class="dropdown-item burger-item dropdown-item_second">
+                                <input id="dropdown-item-2" type="checkbox" name="dropdown-items"
+                                    class="dropdown-item-toogle">
+                                <label for="dropdown-item-2">Дизайн проект</label>
+                                <div class="dropdown-item-content">
                                     <a href="apartaments.html" class="burger__link">Дизайн квартир</a>
                                     <a href="houses.html" class="burger__link">Дизайн домов</a>
                                     <a href="commercial-premisess.html" class="burger__link">Дизайн комм. <br>
                                         недвижимости</a>
                                 </div>
                             </li>
-                            <li class="accordeon-item burger-item">
-                                <p href="index.html" class="burger__title accordeon-text">Услуги</p>
-                                <div class="links accordeon-content">
+
+
+                            <li class="dropdown-item burger-item dropdown-item_third">
+                                <input id="dropdown-item-3" type="checkbox" name="dropdown-items"
+                                    class="dropdown-item-toogle">
+                                <label for="dropdown-item-3">Услуги</label>
+                                <div class="dropdown-item-content">
                                     <a href="express.html" class="burger__link">Дизайн экспресс</a>
                                     <a href="technical.html" class="burger__link">Технический проект</a>
                                     <a href="comfort.html" class="burger__link">Дизайн комфорт</a>
@@ -207,257 +214,7 @@
             </div>
         </section>
 
-        <section class="section prices-services target-block" id="3">
-            <div class="container">
-                <h3 class="prices-services__title">Услуги</h3>
-                <div class="prices-services-wrapper">
-                    <div class="prices-services-item">
-                        <h4 class="prices-services-item__title prices-services-item-text_black">ЭСПРЕСС</h4>
-                        <p class="prices-per-metr prices-services-item-text_black">от 600 руб./м²</p>
-                        <div class="included-services">
-                            <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет
-                                услуг включает:</h5>
-                            <ul class="included-services-list">
-                                <li class="included-services__item prices-services-item-text_black">Планировки.</li>
-                                <li class="included-services__item prices-services-item-text_black">Расстановки мебели.
-                                </li>
-                                <li class="included-services__item prices-services-item-text_black">Привязки электрики.
-                                </li>
-                                <li class="included-services__item prices-services-item-text_black">Типа напольного
-                                    покрытия.</li>
-                                <li class="included-services__item prices-services-item-text_black">Дизайна потолков.
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="prices-services-buttons">
-                            <a href="express.html"><button
-                                    class="prices-services-order prices-services-item-text_black">Заказать</button></a>
-                            <a href="express.html"><button
-                                    class="prices-services-more prices-services-item-text_black">Подробнее</button></a>
-                        </div>
-                    </div>
-                    <div class="prices-services-item">
-                        <h4 class="prices-services-item__title prices-services-item-text_black">ТЕХНИЧЕСКИЙ ПРОЕКТ</h4>
-                        <p class="prices-per-metr prices-services-item-text_black">от 600 руб./м²</p>
-                        <div class="included-services">
-                            <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет
-                                услуг включает:</h5>
-                            <ul class="included-services-list">
-                                <li class="included-services__item prices-services-item-text_black">Планировки.</li>
-                                <li class="included-services__item prices-services-item-text_black">Расстановки мебели.
-                                </li>
-                                <li class="included-services__item prices-services-item-text_black">Привязки электрики.
-                                </li>
-                                <li class="included-services__item prices-services-item-text_black">Типа напольного
-                                    покрытия.</li>
-                                <li class="included-services__item prices-services-item-text_black">Дизайна потолков.
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="prices-services-buttons">
-                            <a href="technical.html"><button
-                                    class="prices-services-order prices-services-item-text_black">Заказать</button></a>
-                            <a href="technical.html"><button
-                                    class="prices-services-more prices-services-item-text_black">Подробнее</button></a>
-                        </div>
-                    </div>
-                    <div class="prices-services-item">
-                        <h4 class="prices-services-item__title prices-services-item-text_black">КОМФОРТ</h4>
-                        <p class="prices-per-metr prices-services-item-text_black">от 600 руб./м²</p>
-                        <div class="included-services">
-                            <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет
-                                услуг включает:</h5>
-                            <ul class="included-services-list">
-                                <li class="included-services__item prices-services-item-text_black">Подробный комплект
-                                    рабочих чертежей для стройки.</li>
-                                <li class="included-services__item prices-services-item-text_black">Ведомость отделки.
-                                </li>
-                                <li class="included-services__item prices-services-item-text_black">3D-визуализации с
-                                    наглядным и детальным представлением будущего интерьера. </li>
-                            </ul>
-                        </div>
-                        <div class="prices-services-buttons">
-                            <a href="comfort.html"><button
-                                    class="prices-services-order prices-services-item-text_black">Заказать</button></a>
-                            <a href="comfort.html"><button
-                                    class="prices-services-more prices-services-item-text_black">Подробнее</button></a>
-                        </div>
-                    </div>
-                    <div class="prices-services-item">
-                        <h4 class="prices-services-item__title prices-services-item-text_black">ЭКСКЛЮЗИВ</h4>
-                        <p class="prices-per-metr prices-services-item-text_black">от 1900 руб./м²</p>
-                        <div class="included-services">
-                            <h5 class="included-services__title prices-services-item-text_black">Предлагаемый пакет
-                                услуг включает:</h5>
-                            <ul class="included-services-list">
-                                <li class="included-services__item prices-services-item-text_black">Планировка.</li>
-                                <li class="included-services__item prices-services-item-text_black">Расстановка мебели.
-                                </li>
-                                <li class="included-services__item prices-services-item-text_black">Подбор материалов.
-                                </li>
-                                <li class="included-services__item prices-services-item-text_black">Разработка
-                                    дизайн-концепции. </li>
-                                <li class="included-services__item prices-services-item-text_black">Внесение изменений и
-                                    одобрение.</li>
-                            </ul>
-                        </div>
-                        <div class="prices-services-buttons">
-                            <a href="exclusive.html"><button
-                                    class="prices-services-order prices-services-item-text_black">Заказать</button></a>
-                            <a href="exclusive.html"><button
-                                    class="prices-services-more prices-services-item-text_black">Подробнее</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-swiper1" id="4">
-            <div class="swiper-background">
-                <div class="swiper mySwiper2">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="img/portfolio-1.png" class="mySwiper2__img" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="img/portfolio-2.png" class="mySwiper2__img" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="img/portfolio-1.png" class="mySwiper2__img" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="img/portfolio-2.png" class="mySwiper2__img" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="section-swiper-wrapper">
-                    <h1 class="swiper__title mySwiper2__title">Портфолио стильных и продуманных интерьеров</h1>
-                    <div thumbsSlider="" class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <h5 class="swiper1__text">Дизайн проект квартиры 64 м²</h5>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5 class="swiper1__text">Дизайн проект квартиры 100 м²</h5>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5 class="swiper1__text">Дизайн интерьера дома 640 м²</h5>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5 class="swiper1__text">Дизайн интерьера коттеджа 300 м²</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="portfolio.html"><button class="btn btn_black swiper1__button">Смотреть все
-                            портфолио</button></a>
-                </div>
-            </div>
-        </section>
-        <section class="section section-swiper5 target-block" id="5">
-            <div class="container">
-                <div class="section-swiper-wrapper">
-                    <div class="section-swiper5-content">
-                        <h1 class="swiper__title mySwiper5__title">Как мы работаем?</h1>
-                        <p class="swiper__subtitle mySwiper5__subtitle">Каждый из этапов работы будет выполняться строго
-                            по
-                            плану, а их количество будет зависеть от выбранного вами пакета услуг. Вы всегда будете
-                            оповещены о любых изменениях в проекте.</p>
-                    </div>
-                    <div class="swiper mySwiper5">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <span class="swiper-slide-num">01</span>
-                                <h4 class="mySwiper5-slide__title">Знакомство <br>
-                                    с дизайнером</h4>
-                                <p class="mySwiper5-slide__subtitle">Мы проведем с Вами предварительную беседу для
-                                    выяснения личных предпочтений в интерьере жилья, а также уточним его технические
-                                    особенности. Вам озвучат предварительную стоимость разработки проекта с учетом Ваших
-                                    задач.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <span class="swiper-slide-num">02</span>
-                                <h4 class="mySwiper5-slide__title">Начальный этап</h4>
-                                <p class="mySwiper5-slide__subtitle">Дизайнер сделает детальное описание Ваших пожеланий
-                                    и озвучит свои предложения, после чего подписывается договор Следующий шаг –
-                                    обмерные работы с фотофиксацией помещения, и зарисовкой отдельных конструктивных
-                                    узлов объекта.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <span class="swiper-slide-num">03</span>
-                                <h4 class="mySwiper5-slide__title">Создание визуализации</h4>
-                                <p class="mySwiper5-slide__subtitle">После согласования планировки дизайнер создает
-                                    фотореалистичную визуализацию – трехмерное изображение помещений с мебелью и
-                                    материалами, подобранными с учетом пожеланий заказчиков и планируемых затрат.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <span class="swiper-slide-num">04</span>
-                                <h4 class="mySwiper5-slide__title">Выдача чертежей</h4>
-                                <p class="mySwiper5-slide__subtitle">На заключительном этапе уточняется планировка и
-                                    выпускаются строительные чертежи с развертками. Наличие этих данных облегчит
-                                    заказчику контроль за строительными работами.</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <span class="swiper-slide-num">05</span>
-                                <h4 class="mySwiper5-slide__title">Сдача проекта</h4>
-                                <p class="mySwiper5-slide__subtitle">Вам передается сброшюрованный альбом дизайн-проекта
-                                    интерьера, включающий в себя планы и визуализации. На этапе строительных работ Вы
-                                    можете обращаться за консультациями и выездами к дизайнеру с учетом типа Вашего
-                                    дизайн-проекта.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-button-prev">
-                    </div>
-                    <div class="swiper-button-next"></div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="section difference" id="6">
-            <div class="container">
-                <div class="difference-wrapper">
-                    <div class="difference-content">
-                        <div>
-                            <h4 class="difference__title">Ощути разницу</h4>
-                            <p class="difference__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A
-                                ad
-                                dolores explicabo quae cum quia. Ad dolores iusto aliquid nam unde, ipsa error natus sit
-                                quia, pariatur dolor ea repellendus.</p>
-                        </div>
-                        <div class="difference-buttons">
-                            <button class="btn difference__before">До</button>
-                            <button class="btn difference__after btn-active">После</button>
-                        </div>
-                    </div>
-                    <div class="difference-img-wrapper">
-                        <img src="img/after.png" alt="фото до" class="difference__img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section prices-consultation target-block" id="7">
-            <div class="container">
-                <div class="prices-consultation-wrapper">
-                    <h3 class="prices-consultation__title">Рассчитайте стоимость дизайн-проекта</h3>
-                    <form class="prices-consultation-form">
-                        <input type="text" class="prices-consultation__input prices-consultation__item"
-                            placeholder="Ваше имя">
-                        <input class="prices-consultation__input tel prices-consultation__item"
-                            placeholder="Ваш телефон" type="tel" name="tel">
-                        <a href="#" class="prices-consultation__link"><input type="submit"
-                                class="btn btn_yellow prices-consultation__button prices-consultation__item"
-                                value="Получить консультацию"></a>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="section prices-table target-block" id="8">
+        <section class="section prices-table target-block" id="3">
             <div class="container">
                 <h3 class="prices-table__title">Стоимость разработки дизайн-проекта</h3>
                 <div class="table-wrapper">
@@ -751,7 +508,7 @@
                                     </svg></span></td>
                         </tr>
                         <tr>
-                            <td class="cell table-border-bl">
+                            <td class="cell">
                                 <div class="icon-container">Цветной сброшюрованный альбом
                                     в печатном виде (формат А3)
                                     <div class="icon-container-question">
@@ -792,8 +549,151 @@
             </div>
         </section>
 
+        <section class="section section-swiper1" id="4">
+            <div class="swiper-background">
+                <div class="swiper mySwiper2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/portfolio-1.png" class="mySwiper2__img" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/portfolio-2.png" class="mySwiper2__img" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/portfolio-1.png" class="mySwiper2__img" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/portfolio-2.png" class="mySwiper2__img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="section-swiper-wrapper">
+                    <h1 class="swiper__title mySwiper2__title">Портфолио стильных и продуманных интерьеров</h1>
+                    <div thumbsSlider="" class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <h5 class="swiper1__text">Дизайн проект квартиры 64 м²</h5>
+                            </div>
+                            <div class="swiper-slide">
+                                <h5 class="swiper1__text">Дизайн проект квартиры 100 м²</h5>
+                            </div>
+                            <div class="swiper-slide">
+                                <h5 class="swiper1__text">Дизайн интерьера дома 640 м²</h5>
+                            </div>
+                            <div class="swiper-slide">
+                                <h5 class="swiper1__text">Дизайн интерьера коттеджа 300 м²</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="portfolio.html"><button class="btn btn_black swiper1__button">Смотреть все
+                            портфолио</button></a>
+                </div>
+            </div>
+        </section>
+        <section class="section section-swiper5 target-block" id="5">
+            <div class="container">
+                <div class="section-swiper-wrapper">
+                    <div class="section-swiper5-content">
+                        <h1 class="swiper__title mySwiper5__title">Как мы работаем?</h1>
+                        <p class="swiper__subtitle mySwiper5__subtitle">Каждый из этапов работы будет выполняться строго
+                            по
+                            плану, а их количество будет зависеть от выбранного вами пакета услуг. Вы всегда будете
+                            оповещены о любых изменениях в проекте.</p>
+                    </div>
+                    <div class="swiper mySwiper5">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <span class="swiper-slide-num">01</span>
+                                <h4 class="mySwiper5-slide__title">Знакомство <br>
+                                    с дизайнером</h4>
+                                <p class="mySwiper5-slide__subtitle">Мы проведем с Вами предварительную беседу для
+                                    выяснения личных предпочтений в интерьере жилья, а также уточним его технические
+                                    особенности. Вам озвучат предварительную стоимость разработки проекта с учетом Ваших
+                                    задач.</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <span class="swiper-slide-num">02</span>
+                                <h4 class="mySwiper5-slide__title">Начальный этап</h4>
+                                <p class="mySwiper5-slide__subtitle">Дизайнер сделает детальное описание Ваших пожеланий
+                                    и озвучит свои предложения, после чего подписывается договор Следующий шаг –
+                                    обмерные работы с фотофиксацией помещения, и зарисовкой отдельных конструктивных
+                                    узлов объекта.</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <span class="swiper-slide-num">03</span>
+                                <h4 class="mySwiper5-slide__title">Создание визуализации</h4>
+                                <p class="mySwiper5-slide__subtitle">После согласования планировки дизайнер создает
+                                    фотореалистичную визуализацию – трехмерное изображение помещений с мебелью и
+                                    материалами, подобранными с учетом пожеланий заказчиков и планируемых затрат.</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <span class="swiper-slide-num">04</span>
+                                <h4 class="mySwiper5-slide__title">Выдача чертежей</h4>
+                                <p class="mySwiper5-slide__subtitle">На заключительном этапе уточняется планировка и
+                                    выпускаются строительные чертежи с развертками. Наличие этих данных облегчит
+                                    заказчику контроль за строительными работами.</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <span class="swiper-slide-num">05</span>
+                                <h4 class="mySwiper5-slide__title">Сдача проекта</h4>
+                                <p class="mySwiper5-slide__subtitle">Вам передается сброшюрованный альбом дизайн-проекта
+                                    интерьера, включающий в себя планы и визуализации. На этапе строительных работ Вы
+                                    можете обращаться за консультациями и выездами к дизайнеру с учетом типа Вашего
+                                    дизайн-проекта.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev">
+                    </div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
 
-        <section class="section section-swiper2 target-block" id="9">
+
+        <section class="section difference" id="6">
+            <div class="container">
+                <div class="difference-wrapper">
+                    <div class="difference-content">
+                        <div>
+                            <h4 class="difference__title">Ощути разницу</h4>
+                            <p class="difference__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A
+                                ad
+                                dolores explicabo quae cum quia. Ad dolores iusto aliquid nam unde, ipsa error natus sit
+                                quia, pariatur dolor ea repellendus.</p>
+                        </div>
+                        <div class="difference-buttons">
+                            <button class="btn difference__before">До</button>
+                            <button class="btn difference__after btn-active">После</button>
+                        </div>
+                    </div>
+                    <div class="difference-img-wrapper">
+                        <img src="img/after.png" alt="фото до" class="difference__img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section prices-consultation target-block" id="7">
+            <div class="container">
+                <div class="prices-consultation-wrapper">
+                    <h3 class="prices-consultation__title">Рассчитайте стоимость дизайн-проекта</h3>
+                    <form class="prices-consultation-form">
+                        <input type="text" class="prices-consultation__input prices-consultation__item"
+                            placeholder="Ваше имя">
+                        <input class="prices-consultation__input tel prices-consultation__item"
+                            placeholder="Ваш телефон" type="tel" name="tel">
+                        <a href="#" class="prices-consultation__link"><input type="submit"
+                                class="btn btn_yellow prices-consultation__button prices-consultation__item"
+                                value="Получить консультацию"></a>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-swiper2 target-block" id="8">
             <div class="container">
                 <div class="section-swiper-wrapper">
                     <h1 class="swiper__title mySwiper3__title">О нас говорят</h1>
@@ -899,7 +799,7 @@
         </section>
 
 
-        <section class="section all-articles target-block" id="10">
+        <section class="section all-articles target-block" id="9">
             <div class="container">
                 <div class="all-articles-wrapper">
                     <h2 class="all-articles__title">Статьи</h2>
@@ -956,7 +856,7 @@
                 </div>
             </div>
         </section>
-        <section class="section article article_second" id="3">
+        <section class="section article article_second" id="10">
             <div class="container">
                 <div class="article-wrapper">
                     <h3 class="article__title">Еще описание услуги</h3>
@@ -996,8 +896,8 @@
                 <div class="half">
                     <h2 class="half__title">Остались вопросы?</h2>
                     <div class="tab tab_first">
-                        <input id="tab-one" type="checkbox" name="tabs" class="tab-toogle">
-                        <label for="tab-one">1. Вопрос</label>
+                        <input id="tab-1" type="checkbox" name="tabs" class="tab-toogle">
+                        <label for="tab-1">1. Вопрос</label>
                         <div class="tab-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar, ipsum ac
                                 fermentum fringilla, felis mi luctus quam, non sodales est libero vitae purus.
@@ -1006,8 +906,8 @@
                         </div>
                     </div>
                     <div class="tab">
-                        <input id="tab-two" type="checkbox" name="tabs" class="tab-toogle">
-                        <label for="tab-two">2. Вопрос</label>
+                        <input id="tab-2" type="checkbox" name="tabs" class="tab-toogle">
+                        <label for="tab-2">2. Вопрос</label>
                         <div class="tab-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar, ipsum ac
                                 fermentum fringilla, felis mi luctus quam, non sodales est libero vitae purus.
@@ -1016,8 +916,8 @@
                         </div>
                     </div>
                     <div class="tab">
-                        <input id="tab-three" type="checkbox" name="tabs" class="tab-toogle">
-                        <label for="tab-three">3. Вопрос</label>
+                        <input id="tab-3" type="checkbox" name="tabs" class="tab-toogle">
+                        <label for="tab-3">3. Вопрос</label>
                         <div class="tab-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar, ipsum ac
                                 fermentum fringilla, felis mi luctus quam, non sodales est libero vitae purus.
@@ -1026,8 +926,8 @@
                         </div>
                     </div>
                     <div class="tab">
-                        <input id="tab-four" type="checkbox" name="tabs" class="tab-toogle">
-                        <label for="tab-four">4. Вопрос</label>
+                        <input id="tab-4" type="checkbox" name="tabs" class="tab-toogle">
+                        <label for="tab-4">4. Вопрос</label>
                         <div class="tab-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar, ipsum ac
                                 fermentum fringilla, felis mi luctus quam, non sodales est libero vitae purus.
@@ -1036,8 +936,8 @@
                         </div>
                     </div>
                     <div class="tab">
-                        <input id="tab-five" type="checkbox" name="tabs" class="tab-toogle">
-                        <label for="tab-five"> 5. Вопрос</label>
+                        <input id="tab-5" type="checkbox" name="tabs" class="tab-toogle">
+                        <label for="tab-5"> 5. Вопрос</label>
                         <div class="tab-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar, ipsum ac
                                 fermentum fringilla, felis mi luctus quam, non sodales est libero vitae purus.
@@ -1075,32 +975,37 @@
                             <a href="portfolio.html" class="footer__title">Портфолио</a>
                             <a href="contacts.html" class="footer__title">Контакты</a>
                             <a href="prices.html" class="footer__title">Цены</a>
-                            <div class="links accordeon-content links accordeon-content-desktop">
+                            <div class="links accordeon-content links footer-contacts-desktop">
                                 <a href="#" class="footer__policy">Политика конфиденциальности</a>
                                 <p class="footer__rights">Copyright ©2020-2022 <br> Все права защищены</p>
                             </div>
                         </div>
-                        <div class="footer-interior accordeon-item footer-item">
-                            <p href="styles.html" class="footer__title accordeon-text">О компании</p>
-                            <div class="links accordeon-content">
-                                
+                        <div class="footer-interior dropdown-item accordeon-item footer-item">
+                            <input id="dropdown-item-4" type="checkbox" name="dropdown-items"
+                                class="dropdown-item-toogle">
+                            <label for="dropdown-item-4">О компании</label>
+                            <div class="links accordeon-content dropdown-item-content">
                                 <a href="blog.html" class="footer__link">Блог</a>
                                 <a href="reviews.html" class="footer__link">Отзывы</a>
                                 <a href="articles.html" class="footer__link">Статьи</a>
                             </div>
                         </div>
-                        <div class="footer-design accordeon-item footer-item">
-                            <p href="index.html" class="footer__title accordeon-text">Дизайн проект</p>
-                            <div class="links accordeon-content">
+                        <div class="footer-design dropdown-item accordeon-item footer-item">
+                            <input id="dropdown-item-5" type="checkbox" name="dropdown-items"
+                                class="dropdown-item-toogle">
+                            <label for="dropdown-item-5">Дизайн проект</label>
+                            <div class="links accordeon-content dropdown-item-content">
                                 <a href="apartaments.html" class="footer__link">Дизайн квартир</a>
                                 <a href="houses.html" class="footer__link">Дизайн домов</a>
                                 <a href="commercial-premisess.html" class="footer__link">Дизайн комм. <br>
                                     недвижимости</a>
                             </div>
                         </div>
-                        <div class="footer-services accordeon-item footer-item">
-                            <p href="index.html" class="footer__title accordeon-text">Услуги</p>
-                            <div class="links accordeon-content">
+                        <div class="footer-services dropdown-item accordeon-item footer-item">
+                            <input id="dropdown-item-6" type="checkbox" name="dropdown-items"
+                                class="dropdown-item-toogle">
+                            <label for="dropdown-item-6">Услуги</label>
+                            <div class="links accordeon-content dropdown-item-content">
                                 <a href="express.html" class="footer__link">Дизайн экспресс</a>
                                 <a href="technical.html" class="footer__link">Технический проект</a>
                                 <a href="comfort.html" class="footer__link">Дизайн комфорт</a>
@@ -1122,7 +1027,7 @@
                                 <a href="#"><img src="img/telegram.svg" alt="telegram"
                                         class="telegram footer__social-logo"></a>
                             </div>
-                            <div class="links accordeon-content-mobile">
+                            <div class="links footer-contacts-mobile">
                                 <a href="#" class="footer__policy">Политика конфиденциальности</a>
                                 <p class="footer__rights">Copyright ©2020-2022 <br> Все права защищены</p>
                             </div>

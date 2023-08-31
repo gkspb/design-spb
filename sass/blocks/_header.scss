@@ -59,6 +59,7 @@
                 flex-direction: column;
                 row-gap: 2rem;
                 order: 3;
+                padding-top: 3rem;
             }
         }
         &-tablet {
@@ -137,6 +138,9 @@
         text-align: left;
         width: 80%;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
         &:first-child {
             @media (max-width: 1023px) {
                 order: 1;
@@ -199,7 +203,7 @@
         position: relative;
     }
     &_bottom {
-        padding: 2rem 0;
+        padding: 3rem 0;
         &-wrapper {
             overflow: hidden;
             position: relative;
@@ -211,7 +215,6 @@
             text-align: center;
             display: flex !important;
             flex-direction: column;
-            row-gap: 1rem;
             padding-bottom: 10rem;
             left: -6%;
             top: 0;
@@ -324,4 +327,8 @@
     &_white {
         background: $white;
     }
+}
+
+.header .dropdown-item input:checked ~ .dropdown-item-content {
+    padding-bottom: 1.5rem;
 }
