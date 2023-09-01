@@ -1067,13 +1067,13 @@ body.disabled {
 }
 @media (max-width: 500px) {
   .section-btn {
-    width: 100%;
+    width: 30rem;
   }
 }
 @media (max-height: 400px) {
   .section-btn {
     padding: 0.2rem;
-    width: 40%;
+    width: 20rem;
   }
 }
 .section-content-wrapper {
@@ -1532,7 +1532,7 @@ body.disabled {
   background: #141414;
   width: 21.5rem;
   border-radius: 1rem;
-  padding: 1.67rem 0;
+  padding: 1.67rem 1rem;
 }
 @media (min-width: 76.7rem) {
   .news__button {
@@ -1929,11 +1929,6 @@ body.disabled {
 @media (max-width: 76.7rem) {
   .swiper1__button {
     font-size: calc(1.2rem + 0.799 * ((100vw - 37.5rem) / 144));
-  }
-}
-@media (max-width: 500px) {
-  .swiper1__button {
-    width: 100%;
   }
 }
 
