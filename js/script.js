@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		function mask(event) {
 			event.keyCode && (keyCode = event.keyCode);
 			let pos = this.selectionStart;
-			if (pos < 3) event.preventDefault();
+			if (pos < 3 && event.cancelable) event.preventDefault();
 			let matrix = "+7 (___) ___-__-__",
 				i = 0,
 				def = matrix.replace(/\D/g, ""),
@@ -39,9 +39,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
 //анимация скролла по якорям
 $(document).ready(function () {
-	$(".nav__link").on('click', function (event) {
+	$(".scroll-button").on('click', function (event) {
 		if (this.hash !== "") {
-			event.preventDefault();
+			if (event.cancelable) event.preventDefault();;
 			let hash = this.hash;
 			$('html, body').animate({
 				scrollTop: $(hash).offset().top
@@ -129,83 +129,88 @@ if (window.innerHeight < 400) {
 	}
 }
 
-
-if ($('body').hasClass('scrollify-page') && window.innerHeight > 400) {
-	// Настройка Scrollify
-	$.scrollify({
-		section: ".section",
-		interstitialSection: "",
-		easing: "easeOutExpo",
-		scrollSpeed: 1000,
-		offset: 0,
-		scrollbars: true,
-		standardScrollElements: "",
-		setHeights: true,
-		overflowScroll: true,
-		updateHash: true,
-		touchScroll: true,
-		touchmove: true,
-		after: function (index, sections) {
-			updateStyles(sections[index]);
-		},
-	});
-
-	// Функция обновления стилей
-	function updateStyles(currentSection) {
-		let targetBlockClass = "target-block";
-		if (currentSection.hasClass(targetBlockClass)) {
-			$(".header").addClass("substrate_white");
-			if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
-				$(".header-text").addClass("header_black");
-				$(".menu-item").addClass("menu-item_black");
-				$(".menu-burger").addClass("menu-burger_black");
-				$(".icon-white").addClass("none");
-				$(".icon-black").removeClass("none");
-			} else {
-				$(".header-text").removeClass("header_black");
-				$(".menu-item").removeClass("menu-item_black");
-				$(".menu-burger").removeClass("menu-burger_black");
-			}
-		} else {
-			$(".header-text").removeClass("header_black");
-			$(".icon-white").removeClass("none");
-			$(".icon-black").addClass("none");
-			$(".header").removeClass("substrate_white");
-			$(".menu-burger").removeClass("menu-burger_black");
-			$(".menu-item").removeClass("menu-item_black");
-		}
-	}
-
-	// Вызов функции обновления стилей при скролле и при загрузке страницы
-	$(document).ready(function () {
-		let currentIndex = $.scrollify.currentIndex();
-		let currentSection = $(".section").eq(currentIndex);
-		updateStyles(currentSection);
-
-		$(window).on('scroll', function () {
-			let currentIndex = $.scrollify.currentIndex();
-			let currentSection = $(".section").eq(currentIndex);
-			updateStyles(currentSection);
-		});
-	});
-};
-
+// Функция обновления стилей
+function updateStyles(currentSection) {
+    let targetBlockClass = "target-block";
+    if (currentSection && currentSection.hasClass(targetBlockClass)) {
+        $(".header").addClass("substrate_white");
+        if ($('.mobile-nav_bottom').hasClass('mobile-nav_bottom-deactive')) {
+            $(".header-text").addClass("header_black");
+            $(".menu-item").addClass("menu-item_black");
+            $(".menu-burger").addClass("menu-burger_black");
+            $(".icon-white").addClass("none");
+            $(".icon-black").removeClass("none");
+        } else {
+            $(".header-text").removeClass("header_black");
+            $(".menu-item").removeClass("menu-item_black");
+            $(".menu-burger").removeClass("menu-burger_black");
+        }
+    } else {
+        $(".header-text").removeClass("header_black");
+        $(".icon-white").removeClass("none");
+        $(".icon-black").addClass("none");
+        $(".header").removeClass("substrate_white");
+        $(".menu-burger").removeClass("menu-burger_black");
+        $(".menu-item").removeClass("menu-item_black");
+    }
+}
 
 // Функция для получения текущего блока с использованием Scrollify
 function getCurrentSection() {
-	let currentSection = null;
-	const activeIndex = $.scrollify.current().index();
-	const sections = [$("#1"), $("#2"), $("#3"), $("#4"), $("#5"), $("#6"), $("#7"), $("#8"), $("#9"), $("#10"), $("#11")];
-	if (activeIndex >= 0 && activeIndex < sections.length) {
-		currentSection = sections[activeIndex];
-	}
-	return currentSection;
+    let currentSection = null;
+    const scrollifyCurrent = $.scrollify.current();
+    if (scrollifyCurrent) {
+        const activeIndex = scrollifyCurrent.index();
+        const sections = [$("#1"), $("#2"), $("#3"), $("#4"), $("#5"), $("#6"), $("#7"), $("#8"), $("#9"), $("#10"), $("#11")];
+        if (activeIndex >= 0 && activeIndex < sections.length) {
+            currentSection = sections[activeIndex];
+        }
+    }
+    return currentSection;
 }
-$(document).on('click', '#menu-toggle', function () {
-	$(this).toggleClass('menu-burger--is-active');
-	let currentSection = getCurrentSection();
-	updateStyles(currentSection);
+
+// Вызов функции обновления стилей при скролле и при загрузке страницы
+$(document).ready(function () {
+    let currentIndex = $.scrollify.currentIndex();
+    let currentSection = $(".section").eq(currentIndex);
+    updateStyles(currentSection);
+
+    $(window).on('scroll', function () {
+        let currentIndex = $.scrollify.currentIndex();
+        let currentSection = $(".section").eq(currentIndex);
+        updateStyles(currentSection);
+    });
 });
+
+// Обработчик клика
+$(document).on('click', '#menu-toggle', function () {
+    $(this).toggleClass('menu-burger--is-active');
+    let currentSection = getCurrentSection();
+    updateStyles(currentSection);
+});
+
+if ($('body').hasClass('scrollify-page') && window.innerHeight > 400) {
+    // Настройка Scrollify
+    $.scrollify({
+        section: ".section",
+		updateHash: false,
+        interstitialSection: "",
+        easing: "easeOutExpo",
+        scrollSpeed: 1000,
+        offset: 0,
+        scrollbars: true,
+        standardScrollElements: "",
+        setHeights: true,
+        overflowScroll: true,
+        touchScroll: true,
+        touchmove: true,
+        after: function (index, sections) {
+            updateStyles(sections[index]);
+        },
+    });
+}
+
+
 
 //бургер
 document.addEventListener('DOMContentLoaded', function () {
@@ -334,7 +339,7 @@ function imageComparison(selector) {
 
     slider.on("dragstart", () => false)
         .on("mousedown touchstart", function(e) {
-            e.preventDefault(); // Отменить стандартное событие
+            if (e.cancelable) e.preventDefault(); // Отменить стандартное событие
             let isTouch = e.type === "touchstart";
             let slider = $(this);
             let doc = $(document).on(isTouch ? "touchmove" : "mousemove", function(e) {

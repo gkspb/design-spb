@@ -1219,7 +1219,6 @@ iframe {
         vertical-align: top;
         max-width: 100%;
         overflow-x: auto;
-        white-space: nowrap;
     }
 }
 
@@ -1235,7 +1234,6 @@ iframe {
 .services-table td {
     overflow: hidden;
     color: $black;
-    white-space: nowrap;
     font-family: Montserrat Medium;
     @include adaptiv-font(1.34, 1.2);
     font-weight: 500;
@@ -1339,6 +1337,7 @@ iframe {
         line-height: 3.25rem;
         z-index: 9;
         position: relative;
+        text-align: center;
     }
 }
 
@@ -2012,18 +2011,8 @@ iframe {
 
 .difference {
     text-align: center;
-    padding: 10rem 0;
     position: relative;
     height: auto;
-    @media (max-width: 1023px) {
-        padding: 4.18rem 2rem;
-        display: block;
-        padding-top: 8rem;
-    }
-    @media (max-width: 767px) {
-        padding-bottom: 6rem;
-        padding-top: 2rem;
-    }
     &-content {
         height: 80vh;
         max-width: 30%;
@@ -2068,13 +2057,9 @@ iframe {
     &__subtitle {
         color: $black;
         font-family: Montserrat Regular;
-        @include adaptiv-font(2.4, 2);
+        @include adaptiv-font(2, 1.6);
         font-weight: 400;
         line-height: 130%;
-        margin-bottom: 5rem;
-        @media (max-height: 400px) {
-            display: none;
-        }
     }
     &-buttons {
         display: flex;
@@ -2133,24 +2118,26 @@ iframe {
     margin-left: 1rem;
     display: none;
     position: absolute;
-    top: -0.5rem;
+    top: -100%;
     left: 115%;
     background-color: $white;
     padding: 5px;
     border: 1px solid $black;
     border-radius: 4px;
     color: $black;
-    z-index: 99999;
+    z-index: 9;
+    white-space: normal;
+    width: 20vh;
+    height: auto;
+    overflow: auto;
 }
 
-.icon-container {
-    position: relative;
-    display: inline;
-}
 
 .icon-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
 .icon-container-question {
@@ -2239,6 +2226,7 @@ iframe {
             @include adaptiv-font(2.67, 1.8);
             font-weight: 500;
             line-height: 3.2rem;
+            margin-bottom: 1rem;
         }
         &__subtitle {
             color: $white;
@@ -2402,86 +2390,6 @@ iframe {
 
 .scrollify-page .section_bottom {
     height: 100vh;
-}
-
-.styles {
-    &-about {
-        height: auto;
-        &-wrapper {
-            text-align: center;
-        }
-    }
-    &-img {
-        background: $colorPricesConsultation;
-        filter: blur(5px);
-        transition: 1s;
-    }
-    &-list {
-        height: auto;
-        &-wrapper {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-    }
-    &__text {
-        color: $white;
-        font-family: Montserrat Medium;
-        @include adaptiv-font(2.67, 1.8);
-        font-weight: 500;
-        line-height: 3.25rem;
-        z-index: 9;
-        position: relative;
-    }
-}
-
-.styles-item {
-    width: 32%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 33rem;
-    border-radius: 1rem;
-    @media (max-width: 1023px) {
-        width: 48%;
-    }
-    @media (max-width: 767px) {
-        width: 47%;
-        height: 40vh;
-    }
-    @media (max-width: 550px) {
-        width: 100%;
-        height: 60vh;
-    }
-    &_first {
-        background: url("../img/styles-1.png");
-    }
-    &_second {
-        background: url("../img/styles-2.png");
-    }
-    &_third {
-        background: url("../img/styles-3.png");
-    }
-    &_fourth {
-        background: url("../img/styles-4.png");
-    }
-    &_fifth {
-        background: url("../img/styles-5.png");
-    }
-    &_sixth {
-        background: url("../img/styles-6.png");
-    }
-}
-
-.styles-item:hover .details {
-    opacity: 1;
-    transition: 1s;
-}
-
-.styles-item {
-    background-size: cover;
 }
 
 .project-item {
