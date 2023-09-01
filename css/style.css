@@ -3380,6 +3380,12 @@ iframe {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 767px) {
+  .design-project-img-wrapper::before {
+    top: 4%;
+    right: -4%;
+  }
+}
 
 .blog .section {
   height: auto;
@@ -3680,8 +3686,16 @@ iframe {
   width: 100%;
 }
 
-.difference img {
-  width: 100%;
+@media (max-width: 1190px) {
+  .image-comparison img:first-child {
+    height: 100%;
+  }
+}
+
+@media (max-width: 1190px) {
+  .image-comparison img:nth-child(2) {
+    max-width: 100% !important;
+  }
 }
 
 .difference .btn {
@@ -4902,6 +4916,11 @@ a {
   position: absolute;
   width: 50%;
   overflow: hidden;
+}
+@media (max-width: 1190px) {
+  .image-comparison__before {
+    height: 100%;
+  }
 }
 
 .image-comparison__image {
