@@ -2186,6 +2186,11 @@ body.disabled {
   width: 14.38rem;
   background: #141414;
 }
+.map-btn:hover {
+  background: #fff;
+  border: 2px solid #141414;
+  color: #141414;
+}
 .map-link {
   position: absolute;
   z-index: 9;

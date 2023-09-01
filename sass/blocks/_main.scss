@@ -970,6 +970,11 @@
         padding: 0.92rem 0;
         width: 14.38rem;
         background: $black;
+        &:hover{
+            background: $white;
+            border: 2px solid $black;
+            color: $black;
+        }
     }
     &-link{
         position: absolute;
