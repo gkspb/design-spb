@@ -316,11 +316,12 @@ burgerItemCheckboxes.forEach(checkbox => {
 // }
 // document.getElementById('breadcrumbs').innerHTML = breadcrumbsHTML;
 
+//блок до после
 function imageComparison(selector) {
     let comparison = $(selector)
         .addClass("image-comparison")
         .prepend('<div class="image-comparison__before"></div>')
-        .append('<button class="image-comparison__slider"></button>');
+        .append('<button class="image-comparison__slider"></button');
     let images = comparison
         .find("img")
         .addClass("image-comparison__image")
@@ -328,20 +329,26 @@ function imageComparison(selector) {
     let before = comparison
         .find(".image-comparison__before")
         .append(images.eq(0));
-    comparison
-        .find(".image-comparison__slider")
-        .on("dragstart", () => false) 
-        .on("mousedown", function(e) {
+    let slider = comparison
+        .find(".image-comparison__slider");
+
+    slider.on("dragstart", () => false)
+        .on("mousedown touchstart", function(e) {
+            e.preventDefault(); // Отменить стандартное событие
+            let isTouch = e.type === "touchstart";
             let slider = $(this);
-            let doc = $(document).on("mousemove", (e) => {
-                let offset = e.pageX - comparison.position().left;
+            let doc = $(document).on(isTouch ? "touchmove" : "mousemove", function(e) {
+                let offsetX = isTouch ? e.originalEvent.touches[0].pageX : e.pageX;
+                let comparisonOffset = comparison.offset().left;
                 let width = comparison.width();
+                let offset = offsetX - comparisonOffset;
                 if (offset < 0) offset = 0;
                 if (offset > width) offset = width;
                 slider.css("left", offset + "px");
                 before.css("width", offset + "px");
             });
-            doc.on("mouseup", () => doc.off("mousemove"));
+            doc.on(isTouch ? "touchend" : "mouseup", () => doc.off(isTouch ? "touchmove" : "mousemove"));
         });
-};
+}
+
 imageComparison("#image-comparison");
