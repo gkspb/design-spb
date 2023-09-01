@@ -2335,7 +2335,7 @@ iframe {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  background-color: #afafaf;
+  background-color: #797979;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
   cursor: pointer;
   text-align: center;
@@ -4787,8 +4787,7 @@ a {
 }
 
 .breadcrumbs {
-  color: white;
-  font-size: 2rem;
+  color: #fff;
   position: absolute;
   left: 4.5rem;
   top: 0;
@@ -4867,9 +4866,38 @@ a {
 .image-comparison__slider:focus,
 .image-comparison__slider:hover::before,
 .image-comparison__slider:focus::before {
-  background-color: #ccc;
+  background-color: #fff;
   outline: none;
   border: none;
+}
+
+.tabs {
+  position: relative;
+  box-shadow: 0 0 3px #fff;
+}
+
+.tabs:before, .tabs:after {
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  width: 45%;
+  top: 80%;
+  box-shadow: 0 1.5rem 1rem #797979;
+}
+
+.tabs:before,
+.tabs:after {
+  z-index: -1;
+}
+
+.tabs:before {
+  left: 10px;
+  transform: rotate(-3deg);
+}
+
+.tabs:after {
+  right: 10px;
+  transform: rotate(3deg);
 }
 
 .footer {

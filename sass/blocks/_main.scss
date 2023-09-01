@@ -961,12 +961,12 @@
         row-gap: 2rem;
     }
     &-btn {
-        color: #fff;
+        color: $white;
         font-family: Montserrat Medium;
         font-weight: 500;
         line-height: 1.42rem;
         border-radius: 1rem;
-        border: 2px solid #fff;
+        border: 2px solid $white;
         padding: 0.92rem 0;
         width: 14.38rem;
         background: $black;
@@ -1090,7 +1090,7 @@ iframe {
     display: inline-block;
     vertical-align: middle;
     user-select: none;
-    background-color: $grey;
+    background-color: $darkGrey;
     transition:
         color 0.15s ease-in-out,
         background-color 0.15s ease-in-out;
@@ -2948,8 +2948,7 @@ a {
 }
 
 .breadcrumbs {
-    color: white;
-    font-size: 2rem;
+    color: $white;
     position: absolute;
     left: 4.5rem;
     top: 0;
@@ -3007,7 +3006,7 @@ a {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 2px solid $white;
     background-size: 90%;
 }
 
@@ -3015,7 +3014,36 @@ a {
 .image-comparison__slider:focus,
 .image-comparison__slider:hover::before,
 .image-comparison__slider:focus::before {
-    background-color: #ccc;
+    background-color: $white;
     outline: none;
     border: none;
+}
+
+.tabs {
+    position: relative;
+    box-shadow: 0 0 3px $white;
+}
+
+.tabs:before, .tabs:after {
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    width: 45%;
+    top: 80%;
+    box-shadow: 0 1.5rem 1rem $darkGrey
+}
+
+.tabs:before,
+.tabs:after {
+    z-index: -1;
+}
+
+.tabs:before {
+    left: 10px;
+    transform: rotate(-3deg);
+}
+
+.tabs:after {
+    right: 10px;
+    transform: rotate(3deg);
 }
