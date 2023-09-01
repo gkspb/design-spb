@@ -2175,6 +2175,23 @@ body.disabled {
     row-gap: 2rem;
   }
 }
+.map-btn {
+  color: #fff;
+  font-family: Montserrat Medium;
+  font-weight: 500;
+  line-height: 1.42rem;
+  border-radius: 1rem;
+  border: 2px solid #fff;
+  padding: 0.92rem 0;
+  width: 14.38rem;
+  background: #141414;
+}
+.map-link {
+  position: absolute;
+  z-index: 9;
+  right: 5%;
+  bottom: 10%;
+}
 .map-tel {
   flex-direction: column;
 }
