@@ -83,6 +83,7 @@ let swiper2 = new Swiper(".mySwiper2", {
 let swiper3 = new Swiper(".mySwiper3", {
 	slidesPerView: 2,
 	spaceBetween: 20,
+	loop: true,
 	pagination: {
 		el: ".swiper-pagination",
 		clickable: true,
@@ -356,4 +357,6 @@ function imageComparison(selector) {
         });
 }
 
-imageComparison("#image-comparison");
+$(window).on("load", function() {
+    imageComparison("#image-comparison");
+});

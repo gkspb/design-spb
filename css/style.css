@@ -1482,6 +1482,9 @@ body.disabled {
     display: none;
   }
 }
+.news-main a:last-child {
+  width: 21.5rem;
+}
 .news-main__img {
   width: 100%;
   -o-object-fit: cover;
@@ -3265,6 +3268,7 @@ iframe {
 @media (max-width: 600px) {
   .selection-list__item::before {
     top: -10%;
+    left: -10%;
   }
 }
 .selection-content-item {

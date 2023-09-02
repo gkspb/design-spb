@@ -443,6 +443,9 @@
         @media (max-width: 767px) {
             display: none;
         }
+        a:last-child{
+            width: 21.5rem;
+        }
         &__img {
             width: 100%;
             object-fit: cover;
@@ -1743,6 +1746,7 @@ iframe {
             }
             @media (max-width: 600px) {
                 top: -10%;
+                left: -10%;
             }
         }
     }
